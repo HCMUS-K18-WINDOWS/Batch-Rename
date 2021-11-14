@@ -1,0 +1,43 @@
+{
+  "rules": [
+    {
+      "type": "STRINGREPLACE",
+      "req": [ "input", "output" ],
+      "value": "something"
+    },
+    {
+      "type": "ADDPREFIX",
+      "value": "OOO"
+    },
+    {
+      "type": "REGEX",
+      "req": "/a-zA-Z/",
+      "value": "something"
+    },
+    {
+      "type": "ORDER",
+      "req": "type"
+    },
+    {
+      "type": "EXT",
+      "req": "txt",
+      "value": "md"
+    },
+    {
+      "type": "TRIM"
+    },
+    {
+      "type": "CHARREPLACE",
+      "req": [ " " ],
+      "value": "-"
+    },
+    {
+      "type": "ADDPOSTFIX",
+      "value": "YYY"
+    },
+    {
+      "type": "CHANGECASE",
+      "req": "Lower"
+    }
+  ]
+}
