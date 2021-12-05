@@ -19,7 +19,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using System.Reflection;
+using Path = System.IO.Path;
+using RenameRuleContract;
 
 namespace Dashboard1
 {
@@ -62,6 +64,47 @@ namespace Dashboard1
 
                 //Lưu địa chỉ thư mục vào ListBox
                 dataListBoxFolder.Items.Add(sPath);
+            }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            LoadExternalDll();
+        }
+
+        public void LoadExternalDll()
+        {
+            string exePath = Assembly.GetExecutingAssembly().Location;
+            string folder = Path.GetDirectoryName(exePath);
+            var infos = new DirectoryInfo(folder).GetFiles("*.dll");
+            var plugins = new List<IRenameRule>();
+
+            // Nạp vào bộ nhớ từng file đl
+            foreach (var fi in infos)
+            {
+                Assembly assembly = Assembly.LoadFile((fi.FullName));
+                var types = assembly.GetTypes();
+
+                foreach (var type in types)
+                {
+                    if (type.IsClass &&
+                        typeof(IRenameRule).IsAssignableFrom(type))
+                    {
+                        try
+                        {
+                            plugins.Add(Activator.CreateInstance(type) as IRenameRule);
+                        }
+                        catch (Exception ex)
+                        {
+                            continue;
+                        }
+                    }
+                }
+            }
+
+            foreach (var plugin in plugins)
+            {
+                Console.WriteLine("Plugin: " + plugin.Rename("lequocdat"));
             }
         }
     }

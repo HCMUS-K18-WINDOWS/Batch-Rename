@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "ddacf7b1-143a-4d41-ae55-832248fe96c0": {
+      "ProjectGuid": "ddacf7b1-143a-4d41-ae55-832248fe96c0",
+      "DisplayName": "BatchRename",
+      "ColorIndex": 0
+    },
+    "aa567d9a-c8ae-4d1b-bcb3-95a00f2d8b10": {
+      "ProjectGuid": "aa567d9a-c8ae-4d1b-bcb3-95a00f2d8b10",
+      "DisplayName": "RenameRuleContract",
+      "ColorIndex": 1
+    },
+    "4a585730-74a8-4566-827a-a907c66641d3": {
+      "ProjectGuid": "4a585730-74a8-4566-827a-a907c66641d3",
+      "DisplayName": "RenameRuleLibrary",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 3
+}

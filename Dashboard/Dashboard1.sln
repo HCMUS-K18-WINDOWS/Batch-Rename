@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27004.2009
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashboard1", "Dashboard1\Dashboard1.csproj", "{DDACF7B1-143A-4D41-AE55-832248FE96C0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatchRename", "Dashboard1\BatchRename.csproj", "{DDACF7B1-143A-4D41-AE55-832248FE96C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenameRuleContract", "RenameRuleContract\RenameRuleContract.csproj", "{AA567D9A-C8AE-4D1B-BCB3-95A00F2D8B10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenameRuleLibrary", "RenameRuleLibrary\RenameRuleLibrary.csproj", "{4A585730-74A8-4566-827A-A907C66641D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{DDACF7B1-143A-4D41-AE55-832248FE96C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDACF7B1-143A-4D41-AE55-832248FE96C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDACF7B1-143A-4D41-AE55-832248FE96C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA567D9A-C8AE-4D1B-BCB3-95A00F2D8B10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA567D9A-C8AE-4D1B-BCB3-95A00F2D8B10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA567D9A-C8AE-4D1B-BCB3-95A00F2D8B10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA567D9A-C8AE-4D1B-BCB3-95A00F2D8B10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A585730-74A8-4566-827A-A907C66641D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A585730-74A8-4566-827A-A907C66641D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A585730-74A8-4566-827A-A907C66641D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A585730-74A8-4566-827A-A907C66641D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

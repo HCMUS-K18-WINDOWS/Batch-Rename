@@ -1,0 +1,9 @@
+D:\windows\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net48\RenameRuleContract.csproj.AssemblyReference.cache
+D:\windows\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net48\RenameRuleContract.GeneratedMSBuildEditorConfig.editorconfig
+D:\windows\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net48\RenameRuleContract.AssemblyInfoInputs.cache
+D:\windows\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net48\RenameRuleContract.AssemblyInfo.cs
+D:\windows\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net48\RenameRuleContract.csproj.CoreCompileInputs.cache
+D:\windows\Batch-Rename\Dashboard\RenameRuleContract\bin\Debug\net48\RenameRuleContract.dll
+D:\windows\Batch-Rename\Dashboard\RenameRuleContract\bin\Debug\net48\RenameRuleContract.pdb
+D:\windows\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net48\RenameRuleContract.dll
+D:\windows\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net48\RenameRuleContract.pdb

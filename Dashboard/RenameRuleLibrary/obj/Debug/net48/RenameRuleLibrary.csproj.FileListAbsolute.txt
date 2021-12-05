@@ -1,0 +1,12 @@
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net48\RenameRuleLibrary.csproj.AssemblyReference.cache
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net48\RenameRuleLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net48\RenameRuleLibrary.AssemblyInfoInputs.cache
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net48\RenameRuleLibrary.AssemblyInfo.cs
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net48\RenameRuleLibrary.csproj.CoreCompileInputs.cache
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\bin\Debug\net48\RenameRuleLibrary.dll
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\bin\Debug\net48\RenameRuleLibrary.pdb
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\bin\Debug\net48\RenameRuleContract.dll
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\bin\Debug\net48\RenameRuleContract.pdb
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net48\RenameRuleLibrary.csproj.CopyComplete
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net48\RenameRuleLibrary.dll
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net48\RenameRuleLibrary.pdb

@@ -1,0 +1,5 @@
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\RenameRuleLibrary.csproj.AssemblyReference.cache
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\RenameRuleLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\RenameRuleLibrary.AssemblyInfoInputs.cache
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\RenameRuleLibrary.AssemblyInfo.cs
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\RenameRuleLibrary.csproj.CoreCompileInputs.cache
