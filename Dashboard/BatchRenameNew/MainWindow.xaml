@@ -1,0 +1,154 @@
+﻿<Window x:Class="BatchRenameNew.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BatchRenameNew"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        xmlns:MetroChart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
+        mc:Ignorable="d" Height="600" Width="1024" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ScrollThumbs" TargetType="{x:Type Thumb}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Thumb}">
+                            <Grid x:Name="Grid">
+                                <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Fill="Transparent" />
+                                <Border x:Name="Rectangle1" CornerRadius="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto"  Background="{TemplateBinding Background}" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="Tag" Value="Horizontal">
+                                    <Setter TargetName="Rectangle1" Property="Width" Value="Auto" />
+                                    <Setter TargetName="Rectangle1" Property="Height" Value="7" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Tạo Taskbar-->
+        <Grid x:Name="GridBarraTitulo" Grid.ColumnSpan="2" Background="#33CCFF" MouseDown="GridBarraTitulo_MouseDown">
+            <!--Tạo các icon, lấy hình từ package đã import vào chương trình-->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0">
+
+                <Button Click="UploadFile_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White">
+                    <materialDesign:PackIcon Kind="File"/>
+                </Button>
+                <Button Click="UploadFolder_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White">
+                    <materialDesign:PackIcon Kind="Folder"/>
+                </Button>
+                <Button x:Name="ButtonFechar" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonFechar_Click">
+                    <materialDesign:PackIcon Kind="Power"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <!--Khu vực hiển thị danh sách các file đã up-->
+        <Grid Grid.Column="1" Grid.Row="1" Background="#FFCFCFCF">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Background="Azure">
+                <TextBlock FontSize="20" Text="File" Background="Aqua" TextAlignment="Center"></TextBlock>
+                <ListBox Grid.Column="0" x:Name="dataListBoxFile"></ListBox>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Background="#CCFFFF">
+                <TextBlock FontSize="20" Text="Folder" Background="#00FFCC" TextAlignment="Center"></TextBlock>
+                <ListBox Grid.Column="1" x:Name="dataListBoxFolder"></ListBox>
+            </StackPanel>
+
+
+        </Grid>
+
+        <!--Khu vực chứa các tùy chọn-->
+        <Grid Grid.Row="1">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Snow" Offset="1"/>
+                    <GradientStop Color="#CCFFFF"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+            </Grid.Effect>
+
+            <Grid Background="#CCFFFF">
+                <TextBlock Background="#66CCFF" Height="Auto">
+                    <Grid Width="199" Height="100" >
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="BATCH RENAME" FontWeight="Bold" FontSize="18" Foreground="#000055" FontFamily="Champagne &amp; Limousines"/>
+                        <Grid.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#66CCFF" Offset="1"/>
+                                <GradientStop Color="#66FFFF"/>
+                            </LinearGradientBrush>  
+                        </Grid.Background>
+                    </Grid>
+                </TextBlock>
+
+            </Grid>
+
+            <StackPanel Grid.Row="1">
+                <Label Height="10"></Label>
+                <Button Margin="10" Background="#66CCFF" BorderBrush="#003399">
+                    <Grid Width="150">
+                        <TextBlock HorizontalAlignment="Center" Text="New Case" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+
+                <Button Margin="10" Background="#66CCFF" BorderBrush="#003399">
+                    <Grid Width="150">
+                        <TextBlock HorizontalAlignment="Center" Text="Move" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+
+                <Button Margin="10" Background="#66CCFF" BorderBrush="#003399">
+                    <Grid Width="150">
+                        <TextBlock HorizontalAlignment="Center" Text="Remove Pattern" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+
+                <Button Margin="10" Background="#66CCFF" BorderBrush="#003399">
+                    <Grid Width="150">
+                        <TextBlock HorizontalAlignment="Center" Text="Replace" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+
+                <Button Margin="10" Background="#66CCFF" BorderBrush="#003399">
+                    <Grid Width="150">
+                        <TextBlock HorizontalAlignment="Center" Text="Trim" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+
+                <Button Margin="10" Background="#66CCFF" BorderBrush="#003399">
+                    <Grid Width="150">
+                        <TextBlock HorizontalAlignment="Center" Text="New Name" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+
+
+    </Grid>
+</Window>

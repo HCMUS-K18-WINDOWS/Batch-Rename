@@ -20,7 +20,27 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Miscellaneous Files",
       "ColorIndex": -1
+    },
+    "92eaba6c-9760-4bd5-a35d-dfe4efaa0f4a": {
+      "ProjectGuid": "92eaba6c-9760-4bd5-a35d-dfe4efaa0f4a",
+      "DisplayName": "RenameRuleParserContract",
+      "ColorIndex": 3
+    },
+    "6c363027-4307-4e28-ba91-3fcc12e50589": {
+      "ProjectGuid": "6c363027-4307-4e28-ba91-3fcc12e50589",
+      "DisplayName": "BatchRename6.0",
+      "ColorIndex": 4
+    },
+    "0d5baeb7-c33c-4972-a716-ee9d466fbaf1": {
+      "ProjectGuid": "0d5baeb7-c33c-4972-a716-ee9d466fbaf1",
+      "DisplayName": "test",
+      "ColorIndex": 5
+    },
+    "67430247-9ea9-4570-845b-0450ab3c49ca": {
+      "ProjectGuid": "67430247-9ea9-4570-845b-0450ab3c49ca",
+      "DisplayName": "BatchRenameNew",
+      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 7
 }

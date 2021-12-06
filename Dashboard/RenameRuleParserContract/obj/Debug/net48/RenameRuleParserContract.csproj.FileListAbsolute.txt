@@ -1,0 +1,9 @@
+D:\windows\Batch-Rename\Dashboard\RenameRuleParserContract\obj\Debug\net48\RenameRuleParserContract.csproj.AssemblyReference.cache
+D:\windows\Batch-Rename\Dashboard\RenameRuleParserContract\obj\Debug\net48\RenameRuleParserContract.GeneratedMSBuildEditorConfig.editorconfig
+D:\windows\Batch-Rename\Dashboard\RenameRuleParserContract\obj\Debug\net48\RenameRuleParserContract.AssemblyInfoInputs.cache
+D:\windows\Batch-Rename\Dashboard\RenameRuleParserContract\obj\Debug\net48\RenameRuleParserContract.AssemblyInfo.cs
+D:\windows\Batch-Rename\Dashboard\RenameRuleParserContract\obj\Debug\net48\RenameRuleParserContract.csproj.CoreCompileInputs.cache
+D:\windows\Batch-Rename\Dashboard\RenameRuleParserContract\bin\Debug\net48\RenameRuleParserContract.dll
+D:\windows\Batch-Rename\Dashboard\RenameRuleParserContract\bin\Debug\net48\RenameRuleParserContract.pdb
+D:\windows\Batch-Rename\Dashboard\RenameRuleParserContract\obj\Debug\net48\RenameRuleParserContract.dll
+D:\windows\Batch-Rename\Dashboard\RenameRuleParserContract\obj\Debug\net48\RenameRuleParserContract.pdb

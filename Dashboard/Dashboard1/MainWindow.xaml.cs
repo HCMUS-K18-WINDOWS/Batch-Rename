@@ -27,9 +27,11 @@ namespace Dashboard1
 {
     public partial class MainWindow : Window
     {
+        public List<IRenameRule> plugins { get; set; }
         public MainWindow()
         {
             InitializeComponent();
+            plugins = new List<IRenameRule>();
         }
 
         private void ButtonFechar_Click(object sender, RoutedEventArgs e)
@@ -77,7 +79,6 @@ namespace Dashboard1
             string exePath = Assembly.GetExecutingAssembly().Location;
             string folder = Path.GetDirectoryName(exePath);
             var infos = new DirectoryInfo(folder).GetFiles("*.dll");
-            var plugins = new List<IRenameRule>();
 
             // Nạp vào bộ nhớ từng file đl
             foreach (var fi in infos)
@@ -104,7 +105,7 @@ namespace Dashboard1
 
             foreach (var plugin in plugins)
             {
-                Console.WriteLine("Plugin: " + plugin.Rename("lequocdat"));
+                Console.WriteLine("Plugin: " + plugin.ToString());
             }
         }
     }

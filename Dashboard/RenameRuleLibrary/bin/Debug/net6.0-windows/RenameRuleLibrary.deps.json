@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "RenameRuleLibrary/1.0.0": {
+        "dependencies": {
+          "RenameRuleContract": "1.0.0"
+        },
+        "runtime": {
+          "RenameRuleLibrary.dll": {}
+        }
+      },
+      "RenameRuleContract/1.0.0": {
+        "runtime": {
+          "RenameRuleContract.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RenameRuleLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RenameRuleContract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

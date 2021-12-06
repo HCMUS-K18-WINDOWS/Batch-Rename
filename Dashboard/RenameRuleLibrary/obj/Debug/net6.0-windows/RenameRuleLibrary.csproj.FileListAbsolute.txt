@@ -3,3 +3,13 @@ D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\Ren
 D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\RenameRuleLibrary.AssemblyInfoInputs.cache
 D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\RenameRuleLibrary.AssemblyInfo.cs
 D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\RenameRuleLibrary.csproj.CoreCompileInputs.cache
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\bin\Debug\net6.0-windows\RenameRuleLibrary.deps.json
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\bin\Debug\net6.0-windows\RenameRuleLibrary.dll
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\bin\Debug\net6.0-windows\ref\RenameRuleLibrary.dll
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\bin\Debug\net6.0-windows\RenameRuleLibrary.pdb
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\bin\Debug\net6.0-windows\RenameRuleContract.dll
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\bin\Debug\net6.0-windows\RenameRuleContract.pdb
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\RenameRuleLibrary.csproj.CopyComplete
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\RenameRuleLibrary.dll
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\ref\RenameRuleLibrary.dll
+D:\windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\RenameRuleLibrary.pdb
