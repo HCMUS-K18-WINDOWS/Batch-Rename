@@ -40,5 +40,10 @@ namespace BatchRename
         {
             return this.MemberwiseClone();
         }
+
+        public string[] GetAllAttributesName()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

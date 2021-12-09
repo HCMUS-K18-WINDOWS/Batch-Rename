@@ -21,10 +21,7 @@ namespace BatchRename
         {
             Postfix = postfix;
         }
-        public string Rename(string original)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public bool SetAttribute(string key, object value)
         {
@@ -46,6 +43,16 @@ namespace BatchRename
         public object Clone()
         {
             return this.MemberwiseClone();
+        }
+
+        public string[] GetAllAttributesName()
+        {
+            return new string[] { "Postfix" };
+        }
+
+        public void Rename(FileInfo original)
+        {
+            throw new NotImplementedException();
         }
     }
 }

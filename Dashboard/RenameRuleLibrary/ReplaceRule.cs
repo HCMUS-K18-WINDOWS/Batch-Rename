@@ -47,5 +47,10 @@ namespace BatchRename
         {
             throw new NotImplementedException();
         }
+
+        public string[] GetAllAttributesName()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

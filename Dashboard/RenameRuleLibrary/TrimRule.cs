@@ -16,6 +16,11 @@ namespace BatchRename
             throw new NotImplementedException();
         }
 
+        public string[] GetAllAttributesName()
+        {
+            throw new NotImplementedException();
+        }
+
         public object GetAttribute(string key)
         {
             throw new NotImplementedException();

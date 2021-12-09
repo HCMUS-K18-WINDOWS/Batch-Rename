@@ -8,8 +8,9 @@ namespace RenameRuleContract
     public interface IRenameRule : ICloneable
     {
         public string Name { get;}
-        string Rename(string original);
+        void Rename(FileInfo original);
         bool SetAttribute(string key, object value);
         object GetAttribute(string key);
+        string[] GetAllAttributesName();
     }
 }
