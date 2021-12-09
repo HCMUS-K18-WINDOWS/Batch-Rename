@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ndlpvUOvvihd8SI8K+chXf1ljQObxl0OI5WWaVuKOClNzNdnNQgfL6q7WNDHuGurpI8+vso17oQUIxZwSa3IwQ==",
+  "dgSpecHash": "fEx+EhvxlMHh2+maOiNfVCo1DNZYj+suOb6GQPrJvifbzEZ44FekxqC1zV5x8/JIrPkrKEPF5bOgbUwzV21ZdA==",
   "success": true,
   "projectFilePath": "D:\\windows\\Batch-Rename\\Dashboard\\RenameRuleLibrary\\RenameRuleLibrary.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\lequo\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

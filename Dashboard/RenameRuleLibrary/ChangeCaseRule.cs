@@ -10,6 +10,13 @@ namespace BatchRename
     public class ChangeCaseRule : IRenameRule
     {
         public string Type { get; set; }
+
+        public string Name => throw new NotImplementedException();
+
+        public ChangeCaseRule()
+        {
+
+        }
         public ChangeCaseRule(string type)
         {
             Type = type;
@@ -17,6 +24,21 @@ namespace BatchRename
         public string Rename(string original)
         {
             throw new NotImplementedException();
+        }
+
+        public bool SetAttribute(string key, object value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object GetAttribute(string key)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
     }
 }

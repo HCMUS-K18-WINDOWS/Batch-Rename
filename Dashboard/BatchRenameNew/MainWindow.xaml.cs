@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using BatchRename;
+using Microsoft.Win32;
 using RenameRuleContract;
 using System;
 using System.Collections.Generic;
@@ -24,12 +25,13 @@ namespace BatchRenameNew
     /// </summary>
     public partial class MainWindow : Window
     {
-
         public List<IRenameRule> plugins { get; set; }
+        public List<IRenameRuleParser> parsers { get; set; }
         public MainWindow()
         {
             InitializeComponent();
             plugins = new List<IRenameRule>();
+            parsers = new List<IRenameRuleParser>();
         }
 
         private void ButtonFechar_Click(object sender, RoutedEventArgs e)
@@ -69,42 +71,8 @@ namespace BatchRenameNew
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            LoadExternalDll();
-        }
-
-        public void LoadExternalDll()
-        {
-            string exePath = Assembly.GetExecutingAssembly().Location;
-            string folder = Path.GetDirectoryName(exePath);
-            var infos = new DirectoryInfo(folder).GetFiles("*.dll");
-
-            // Nạp vào bộ nhớ từng file đl
-            foreach (var fi in infos)
-            {
-                Assembly assembly = Assembly.LoadFile((fi.FullName));
-                var types = assembly.GetTypes();
-
-                foreach (var type in types)
-                {
-                    if (type.IsClass &&
-                        typeof(IRenameRule).IsAssignableFrom(type))
-                    {
-                        try
-                        {
-                            plugins.Add(Activator.CreateInstance(type) as IRenameRule);
-                        }
-                        catch (Exception ex)
-                        {
-                            continue;
-                        }
-                    }
-                }
-            }
-
-            foreach (var plugin in plugins)
-            {
-                Console.WriteLine("Plugin: " + plugin.ToString());
-            }
+            RuleManager.GetInstance().LoadExternalDll();
+            RuleParserManager.GetInstance().LoadExternalDll();
         }
     }
 }

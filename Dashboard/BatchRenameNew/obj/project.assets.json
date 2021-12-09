@@ -53,23 +53,6 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
         ]
-      },
-      "RenameRuleParserContract/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.1",
-          "RenameRuleContract": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/RenameRuleParserContract.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/RenameRuleParserContract.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
       }
     }
   },
@@ -277,11 +260,6 @@
       "type": "project",
       "path": "../RenameRuleContract/RenameRuleContract.csproj",
       "msbuildProject": "../RenameRuleContract/RenameRuleContract.csproj"
-    },
-    "RenameRuleParserContract/1.0.0": {
-      "type": "project",
-      "path": "../RenameRuleParserContract/RenameRuleParserContract.csproj",
-      "msbuildProject": "../RenameRuleParserContract/RenameRuleParserContract.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -290,8 +268,7 @@
       "MaterialDesignThemes >= 2.3.1.953",
       "ModernUICharts.WPF.Beta >= 0.9.1",
       "Newtonsoft.Json >= 13.0.1",
-      "RenameRuleContract >= 1.0.0",
-      "RenameRuleParserContract >= 1.0.0"
+      "RenameRuleContract >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -323,9 +300,6 @@
           "projectReferences": {
             "D:\\windows\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj": {
               "projectPath": "D:\\windows\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj"
-            },
-            "D:\\windows\\Batch-Rename\\Dashboard\\RenameRuleParserContract\\RenameRuleParserContract.csproj": {
-              "projectPath": "D:\\windows\\Batch-Rename\\Dashboard\\RenameRuleParserContract\\RenameRuleParserContract.csproj"
             }
           }
         }

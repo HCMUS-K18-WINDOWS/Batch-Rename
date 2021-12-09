@@ -9,14 +9,43 @@ namespace BatchRename
 {
     public class AddPostFixRule : IRenameRule
     {
-        public string Value { get; set; }
-        public AddPostFixRule(string value)
+        public string Postfix { get; set; }
+
+        public string Name => "AddPostFix";
+
+        public AddPostFixRule()
         {
-            Value = value;
+
+        }
+        public AddPostFixRule(string postfix)
+        {
+            Postfix = postfix;
         }
         public string Rename(string original)
         {
             throw new NotImplementedException();
+        }
+
+        public bool SetAttribute(string key, object value)
+        {
+            switch (key)
+            {
+                case "Prefix":
+                    Postfix = (string)value;
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+        public object GetAttribute(string key)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
     }
 }

@@ -12,12 +12,34 @@ namespace BatchRename
         public List<char> Replacements { get; set; }
         public char Value { get; set; }
 
+        public string Name => throw new NotImplementedException();
+
+        public CharReplaceRule()
+        {
+
+        }
+
         public CharReplaceRule(List<char> req, char value)
         {
             Replacements = req;
             Value = Value;
         }
         public string Rename(string original)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool SetAttribute(string key, object value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object GetAttribute(string key)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object Clone()
         {
             throw new NotImplementedException();
         }

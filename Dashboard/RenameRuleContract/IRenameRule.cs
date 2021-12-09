@@ -5,8 +5,11 @@ using System.Text;
 
 namespace RenameRuleContract
 {
-    public interface IRenameRule
+    public interface IRenameRule : ICloneable
     {
+        public string Name { get;}
         string Rename(string original);
+        bool SetAttribute(string key, object value);
+        object GetAttribute(string key);
     }
 }

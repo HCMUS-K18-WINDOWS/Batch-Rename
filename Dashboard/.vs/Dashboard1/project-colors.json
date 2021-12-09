@@ -40,7 +40,12 @@
       "ProjectGuid": "67430247-9ea9-4570-845b-0450ab3c49ca",
       "DisplayName": "BatchRenameNew",
       "ColorIndex": 6
+    },
+    "3e19be9b-aaef-4d2c-9ce3-578af0246eac": {
+      "ProjectGuid": "3e19be9b-aaef-4d2c-9ce3-578af0246eac",
+      "DisplayName": "RuleParserLibrary",
+      "ColorIndex": 7
     }
   },
-  "NextColorIndex": 7
+  "NextColorIndex": 8
 }

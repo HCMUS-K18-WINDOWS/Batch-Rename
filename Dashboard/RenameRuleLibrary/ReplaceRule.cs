@@ -11,6 +11,13 @@ namespace BatchRename
         public List<string> Needles { get; set; }
         public string Replacer { get; set; }
 
+        public string Name => throw new NotImplementedException();
+
+        public ReplaceRule()
+        {
+
+        }
+
         public ReplaceRule(List<string> needle, string replacer)
         {
             Needles = needle;
@@ -24,6 +31,21 @@ namespace BatchRename
                 result = result.Replace(needle, Replacer);
             }
             return result;
+        }
+
+        public bool SetAttribute(string key, object value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object GetAttribute(string key)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object Clone()
+        {
+            throw new NotImplementedException();
         }
     }
 }

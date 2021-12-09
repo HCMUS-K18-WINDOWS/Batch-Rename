@@ -14,9 +14,7 @@ D:\windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\Materi
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\De.TorstenMandelkow.MetroChart.dll
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\RenameRuleContract.dll
-D:\windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\RenameRuleParserContract.dll
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\RenameRuleContract.pdb
-D:\windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\RenameRuleParserContract.pdb
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\MainWindow.baml
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.g.resources
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.GeneratedMSBuildEditorConfig.editorconfig

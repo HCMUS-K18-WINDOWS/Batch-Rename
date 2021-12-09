@@ -12,8 +12,7 @@
           "MaterialDesignThemes": "2.3.1.953",
           "ModernUICharts.WPF.Beta": "0.9.1",
           "Newtonsoft.Json": "13.0.1",
-          "RenameRuleContract": "1.0.0",
-          "RenameRuleParserContract": "1.0.0"
+          "RenameRuleContract": "1.0.0"
         },
         "runtime": {
           "BatchRenameNew.dll": {}
@@ -58,15 +57,6 @@
         "runtime": {
           "RenameRuleContract.dll": {}
         }
-      },
-      "RenameRuleParserContract/1.0.0": {
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.1",
-          "RenameRuleContract": "1.0.0"
-        },
-        "runtime": {
-          "RenameRuleParserContract.dll": {}
-        }
       }
     }
   },
@@ -105,11 +95,6 @@
       "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
     },
     "RenameRuleContract/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "RenameRuleParserContract/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -10,6 +10,8 @@ namespace BatchRename
     {
         public string Prefix { get; set; }
 
+        public string Name => throw new NotImplementedException();
+
         public AddPrefixRule()
         {
 
@@ -23,6 +25,28 @@ namespace BatchRename
         {
             string result = "";
             return $"{Prefix}{result}";
+        }
+
+        public bool SetAttribute(string key, object value)
+        {
+            switch(key)
+            {
+                case "Prefix":
+                    Prefix = (string)value;
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
+
+        public object GetAttribute(string key)
+        {
+            throw new NotImplementedException();
         }
     }
 }

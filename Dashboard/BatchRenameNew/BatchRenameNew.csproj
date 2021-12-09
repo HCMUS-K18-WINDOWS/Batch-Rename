@@ -17,7 +17,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RenameRuleContract\RenameRuleContract.csproj" />
-    <ProjectReference Include="..\RenameRuleParserContract\RenameRuleParserContract.csproj" />
   </ItemGroup>
 
 </Project>
