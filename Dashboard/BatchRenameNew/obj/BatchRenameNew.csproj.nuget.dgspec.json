@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\windows\\Batch-Rename\\Dashboard\\BatchRenameNew\\BatchRenameNew.csproj": {}
+    "E:\\Code\\Windows\\Batch-Rename\\Dashboard\\BatchRenameNew\\BatchRenameNew.csproj": {}
   },
   "projects": {
-    "D:\\windows\\Batch-Rename\\Dashboard\\BatchRenameNew\\BatchRenameNew.csproj": {
+    "E:\\Code\\Windows\\Batch-Rename\\Dashboard\\BatchRenameNew\\BatchRenameNew.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\windows\\Batch-Rename\\Dashboard\\BatchRenameNew\\BatchRenameNew.csproj",
+        "projectUniqueName": "E:\\Code\\Windows\\Batch-Rename\\Dashboard\\BatchRenameNew\\BatchRenameNew.csproj",
         "projectName": "BatchRenameNew",
-        "projectPath": "D:\\windows\\Batch-Rename\\Dashboard\\BatchRenameNew\\BatchRenameNew.csproj",
-        "packagesPath": "C:\\Users\\lequo\\.nuget\\packages\\",
-        "outputPath": "D:\\windows\\Batch-Rename\\Dashboard\\BatchRenameNew\\obj\\",
+        "projectPath": "E:\\Code\\Windows\\Batch-Rename\\Dashboard\\BatchRenameNew\\BatchRenameNew.csproj",
+        "packagesPath": "C:\\Users\\tuanv\\.nuget\\packages\\",
+        "outputPath": "E:\\Code\\Windows\\Batch-Rename\\Dashboard\\BatchRenameNew\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lequo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tuanv\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "D:\\windows\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj": {
-                "projectPath": "D:\\windows\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj"
+              "E:\\Code\\Windows\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj": {
+                "projectPath": "E:\\Code\\Windows\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj"
               }
             }
           }
@@ -83,17 +83,17 @@
         }
       }
     },
-    "D:\\windows\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj": {
+    "E:\\Code\\Windows\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\windows\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj",
+        "projectUniqueName": "E:\\Code\\Windows\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj",
         "projectName": "RenameRuleContract",
-        "projectPath": "D:\\windows\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj",
-        "packagesPath": "C:\\Users\\lequo\\.nuget\\packages\\",
-        "outputPath": "D:\\windows\\Batch-Rename\\Dashboard\\RenameRuleContract\\obj\\",
+        "projectPath": "E:\\Code\\Windows\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj",
+        "packagesPath": "C:\\Users\\tuanv\\.nuget\\packages\\",
+        "outputPath": "E:\\Code\\Windows\\Batch-Rename\\Dashboard\\RenameRuleContract\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lequo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tuanv\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

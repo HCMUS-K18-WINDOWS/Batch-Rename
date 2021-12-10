@@ -9,31 +9,32 @@ namespace BatchRename
 {
     public class TrimRule : IRenameRule
     {
-        public string Name => throw new NotImplementedException();
+        public string Name => "Trim";
 
         public object Clone()
         {
-            throw new NotImplementedException();
+            return this.MemberwiseClone();
         }
 
         public string[] GetAllAttributesName()
         {
-            throw new NotImplementedException();
+            return Array.Empty<string>();
         }
 
-        public object GetAttribute(string key)
+        public object? GetAttribute(string key)
         {
-            throw new NotImplementedException();
+            return null;
         }
 
-        public string Rename(string original)
+        public void Rename(FileInfo original)
         {
-            throw new NotImplementedException();
+            string oldName = original.NewName;
+            original.NewName = oldName.Trim();
         }
 
         public bool SetAttribute(string key, object value)
         {
-            throw new NotImplementedException();
+            return false;
         }
     }
 }

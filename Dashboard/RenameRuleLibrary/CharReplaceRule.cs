@@ -34,7 +34,7 @@ namespace BatchRename
             throw new NotImplementedException();
         }
 
-        public object GetAttribute(string key)
+        public object? GetAttribute(string key)
         {
             throw new NotImplementedException();
         }
@@ -45,6 +45,11 @@ namespace BatchRename
         }
 
         public string[] GetAllAttributesName()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Rename(FileInfo original)
         {
             throw new NotImplementedException();
         }

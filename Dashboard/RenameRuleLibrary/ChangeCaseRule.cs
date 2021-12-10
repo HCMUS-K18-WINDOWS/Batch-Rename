@@ -36,12 +36,17 @@ namespace BatchRename
             throw new NotImplementedException();
         }
 
-        public object Clone()
+        public object? Clone()
         {
             return this.MemberwiseClone();
         }
 
         public string[] GetAllAttributesName()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Rename(FileInfo original)
         {
             throw new NotImplementedException();
         }

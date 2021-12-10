@@ -3,49 +3,75 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace BatchRename
 {
     public class RegexRule : IRenameRule
     {
-        public string Regex { get; set; }
+        public string Pattern { get; set; }
         public string Value { get; set; }
 
-        public string Name => throw new NotImplementedException();
+        public string Name => "Regex";
 
         public RegexRule()
         {
-
+            Pattern = "";
+            Value = "";
         }
         public RegexRule(string regex, string value)
         {
-            Regex = regex;
+            Pattern = regex;
             Value = value;
-        }
-        public string Rename(string original)
-        {
-            throw new NotImplementedException();
         }
 
         public bool SetAttribute(string key, object value)
         {
-            throw new NotImplementedException();
+            if (value == null) return false;
+            string strValue = (string)value;
+            switch (key)
+            {
+                case "Pattern":
+                    Pattern = strValue;
+                    break;
+                case "Replace":
+                    Value = strValue;
+                    break;
+                default:
+                    return false;
+            }
+            return true;
         }
 
-        public object GetAttribute(string key)
+        public object? GetAttribute(string key)
         {
-            throw new NotImplementedException();
+            switch (key)
+            {
+                case "Pattern":
+                    return Pattern;
+                case "Replace":
+                    return Value;
+                default:
+                    return null;
+            }
         }
 
         public object Clone()
         {
-            throw new NotImplementedException();
+            return this.MemberwiseClone();
         }
 
         public string[] GetAllAttributesName()
         {
-            throw new NotImplementedException();
+            return new string[] {"Pattern", "Replace"};
+        }
+
+        public void Rename(FileInfo original)
+        {
+            string oldName = original.NewName;
+            string newName = Regex.Replace(oldName, Pattern, Value);
+            original.NewName = newName;
         }
     }
 }

@@ -9,42 +9,74 @@ namespace BatchRename
 {
     public class OrderRule : IRenameRule
     {
-        public string Type { get; set; }
+        public int Padding { get; set; }
+        private int startValue;
+        public int StartValue { get { return startValue; } set { startValue = value; count = value; } }
+        private int count = 0;
 
-        public string Name => throw new NotImplementedException();
+        public string Name => "Order";
 
         public OrderRule()
         {
-
+            Padding = 0;
+            StartValue = 1;
         }
-        public OrderRule(string type)
+        public OrderRule(int startValue)
         {
-            Type = type;
-        }
-
-        public string Rename(string original)
-        {
-            throw new NotImplementedException();
+            StartValue = startValue;
+            count = StartValue;
         }
 
         public bool SetAttribute(string key, object value)
         {
-            throw new NotImplementedException();
+            string strValue = (string) value;
+            if (strValue == null || strValue.Length == 0)
+            {
+                return false;
+            }
+            switch (key)
+            {
+                case "Start":
+                    StartValue = int.Parse(strValue);
+                    break;
+                case "Number of digit":
+                    Padding = int.Parse(strValue);
+                    break;
+                default:
+                    return false;
+            }
+            return true;
         }
 
-        public object GetAttribute(string key)
+        public object? GetAttribute(string key)
         {
-            throw new NotImplementedException();
+            switch (key)
+            {
+                case "Start":
+                    return StartValue;
+                case "Number of digit":
+                    return Padding;
+                default:
+                    return null;
+            }
         }
 
         public object Clone()
         {
-            throw new NotImplementedException();
+            return this.MemberwiseClone();
         }
 
         public string[] GetAllAttributesName()
         {
-            throw new NotImplementedException();
+            return new string[] {"Start", "Number of digit"};
+        }
+
+        public void Rename(FileInfo original)
+        {
+            string padding = "D" + (int)Padding;
+            string oldName = original.NewName;
+            string newName = oldName + count.ToString(padding);
+            original.NewName = newName;
         }
     }
 }

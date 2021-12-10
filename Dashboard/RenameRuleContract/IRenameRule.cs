@@ -10,7 +10,7 @@ namespace RenameRuleContract
         public string Name { get;}
         void Rename(FileInfo original);
         bool SetAttribute(string key, object value);
-        object GetAttribute(string key);
+        object? GetAttribute(string key);
         string[] GetAllAttributesName();
     }
 }

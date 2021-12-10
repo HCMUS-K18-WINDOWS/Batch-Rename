@@ -16,7 +16,8 @@
     },
     {
       "type": "ORDER",
-      "req": "type"
+      "start": "1",
+      "digit": "0"
     },
     {
       "type": "EXT",

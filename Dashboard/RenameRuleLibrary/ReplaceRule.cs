@@ -11,11 +11,12 @@ namespace BatchRename
         public List<string> Needles { get; set; }
         public string Replacer { get; set; }
 
-        public string Name => throw new NotImplementedException();
+        public string Name => "Replace";
 
         public ReplaceRule()
         {
-
+            Needles = new List<string>();
+            Replacer = "";
         }
 
         public ReplaceRule(List<string> needle, string replacer)
@@ -23,34 +24,64 @@ namespace BatchRename
             Needles = needle;
             Replacer = replacer;
         }
-        public string Rename(string original)
-        {
-            string result = original;
-            foreach (var needle in Needles)
-            {
-                result = result.Replace(needle, Replacer);
-            }
-            return result;
-        }
 
         public bool SetAttribute(string key, object value)
         {
-            throw new NotImplementedException();
+            if (value == null) return false;
+            string strValue = (string) value;
+            switch (key)
+            {
+                case "Needles":
+                    {
+                        var needles = strValue.Split(new char[] { ',' });
+                        for (int i = 0; i < needles.Length; i++)
+                        {
+                            Needles.Add(needles[i].Trim());
+                        }
+                        break;
+                    }
+                case "Replacer":
+                    {
+                        Replacer = strValue;
+                        break;
+                    }
+                default:
+                    return false;
+            }
+            return true;
         }
 
-        public object GetAttribute(string key)
+        public object? GetAttribute(string key)
         {
-            throw new NotImplementedException();
+            switch (key)
+            {
+                case "Needles":
+                    return String.Join(", ", Needles);
+                case "Replacer":
+                    return Replacer;
+                default:
+                    return null;
+            }
         }
 
         public object Clone()
         {
-            throw new NotImplementedException();
+            return this.MemberwiseClone();
         }
 
         public string[] GetAllAttributesName()
         {
-            throw new NotImplementedException();
+            return new string[] {"Needles", "Replacer"};
+        }
+
+        public void Rename(FileInfo original)
+        {
+            string result = original.NewName;
+            foreach (var needle in Needles)
+            {
+                result = result.Replace(needle, Replacer);
+            }
+            original.NewName = result;
         }
     }
 }

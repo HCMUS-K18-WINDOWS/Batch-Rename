@@ -35,7 +35,7 @@ namespace BatchRename
             }
         }
 
-        public object GetAttribute(string key)
+        public object? GetAttribute(string key)
         {
             throw new NotImplementedException();
         }
