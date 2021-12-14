@@ -30,13 +30,14 @@ namespace BatchRenameNew
         public List<IRenameRule> Plugins { get; set; }
         public List<IRenameRuleParser> Parsers { get; set; }
         public List<IRenameRule> Presets { get; set; }
-        public List<IRenameRule> rules { get; set; }
+        public List<IRenameRule> Rules { get; set; }
         public MainWindow()
         {
             InitializeComponent();
             Plugins = new List<IRenameRule>();
             Parsers = new List<IRenameRuleParser>();
             Presets = new List<IRenameRule>();
+            Rules = new List<IRenameRule>();
         }
 
         public void LoadFilePreset()
@@ -109,7 +110,7 @@ namespace BatchRenameNew
 
         private void AddNewRule(IRenameRule rule)
         {
-            rules.Add(rule);
+            Rules.Add(rule);
         }
     }
 }
