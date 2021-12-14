@@ -12,7 +12,7 @@ namespace BatchRename
         public List<char> Replacements { get; set; }
         public char Value { get; set; }
 
-        public string Name => throw new NotImplementedException();
+        public string Name => "CharReplace";
 
         public CharReplaceRule()
         {

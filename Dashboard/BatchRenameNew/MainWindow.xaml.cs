@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -16,7 +17,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using WinForms = System.Windows.Forms;
+using System.Diagnostics;
+//using WinForms = System.Windows.Forms;
 
 namespace BatchRenameNew
 {
@@ -25,13 +27,32 @@ namespace BatchRenameNew
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<IRenameRule> plugins { get; set; }
-        public List<IRenameRuleParser> parsers { get; set; }
+        public List<IRenameRule> Plugins { get; set; }
+        public List<IRenameRuleParser> Parsers { get; set; }
+        public List<IRenameRule> Presets { get; set; }
+        public List<IRenameRule> rules { get; set; }
         public MainWindow()
         {
             InitializeComponent();
-            plugins = new List<IRenameRule>();
-            parsers = new List<IRenameRuleParser>();
+            Plugins = new List<IRenameRule>();
+            Parsers = new List<IRenameRuleParser>();
+            Presets = new List<IRenameRule>();
+        }
+
+        public void LoadFilePreset()
+        {
+            string fileName = "preset.json";
+            string jsonString = File.ReadAllText(fileName);
+            JsonNode rules = JsonNode.Parse(jsonString)["rules"];
+            int length = ((JsonArray)rules).Count;
+
+            for (int i = 0; i < length; i++)
+            {
+                IRenameRuleParser ruleParser = RuleParserManager.GetInstance().CreateRuleParser(rules[i]["type"].ToString());
+                IRenameRule newRule = ruleParser.Parse(rules[i]);
+                Presets.Add(newRule);
+            }
+            Console.WriteLine(Presets.Count());
         }
 
         private void ButtonFechar_Click(object sender, RoutedEventArgs e)
@@ -58,21 +79,37 @@ namespace BatchRenameNew
 
         private void UploadFolder_Click(object sender, RoutedEventArgs e)
         {
-            WinForms.FolderBrowserDialog folderDialog = new WinForms.FolderBrowserDialog();
-            if (folderDialog.ShowDialog() == WinForms.DialogResult.OK)
-            {
-                //Lấy địa chỉ thư mục đã chọn
-                String sPath = folderDialog.SelectedPath;
+            //WinForms.FolderBrowserDialog folderDialog = new WinForms.FolderBrowserDialog();
+            //if (folderDialog.ShowDialog() == WinForms.DialogResult.OK)
+            //{
+            //    //Lấy địa chỉ thư mục đã chọn
+            //    String sPath = folderDialog.SelectedPath;
 
-                //Lưu địa chỉ thư mục vào ListBox
-                dataListBoxFolder.Items.Add(sPath);
-            }
+            //    //Lưu địa chỉ thư mục vào ListBox
+            //    dataListBoxFolder.Items.Add(sPath);
+            //}
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             RuleManager.GetInstance().LoadExternalDll();
             RuleParserManager.GetInstance().LoadExternalDll();
+            LoadFilePreset();
+        }
+
+        private void NewRuleBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var NewRuleScreen = new NewRuleWindow();
+            NewRuleScreen.MyEvent += AddNewRule;
+           if (NewRuleScreen.ShowDialog().Value == true)
+           {
+
+           }
+        }
+
+        private void AddNewRule(IRenameRule rule)
+        {
+            rules.Add(rule);
         }
     }
 }

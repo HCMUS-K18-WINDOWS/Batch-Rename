@@ -12,6 +12,7 @@ namespace BatchRenameNew
     {
         private Dictionary<string, IRenameRuleParser> rules = new Dictionary<string, IRenameRuleParser>();
         private static RuleParserManager? instance;
+
         private RuleParserManager()
         {
 
@@ -32,7 +33,7 @@ namespace BatchRenameNew
             rules.Add(rule.getName(), rule);
         }
 
-        public IRenameRuleParser CreateRule(string strRuleName)
+        public IRenameRuleParser CreateRuleParser(string strRuleName)
         {
             if (rules.ContainsKey(strRuleName))
             {
@@ -40,6 +41,7 @@ namespace BatchRenameNew
             }
             return null;
         }
+
 
         public void LoadExternalDll()
         {
@@ -50,7 +52,7 @@ namespace BatchRenameNew
             // Nạp vào bộ nhớ từng file đl
             foreach (var fi in infos)
             {
-                Assembly assembly = Assembly.LoadFile((fi.FullName));
+                Assembly assembly = Assembly.LoadFrom((fi.FullName));
                 var types = assembly.GetTypes();
 
                 foreach (var type in types)

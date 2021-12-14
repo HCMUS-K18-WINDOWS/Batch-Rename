@@ -21,9 +21,10 @@ namespace BatchRename
             Padding = 0;
             StartValue = 1;
         }
-        public OrderRule(int startValue)
+        public OrderRule(int startValue, int padding)
         {
             StartValue = startValue;
+            Padding = padding;
             count = StartValue;
         }
 

@@ -1,43 +1,43 @@
 {
   "rules": [
     {
-      "type": "STRINGREPLACE",
+      "type": "Replace",
       "req": [ "input", "output" ],
       "value": "something"
     },
     {
-      "type": "ADDPREFIX",
+      "type": "AddPrefix",
       "value": "OOO"
     },
     {
-      "type": "REGEX",
+      "type": "Regex",
       "req": "/a-zA-Z/",
       "value": "something"
     },
     {
-      "type": "ORDER",
-      "start": "1",
-      "digit": "0"
+      "type": "Order",
+      "start": 1,
+      "digit": 0
     },
     {
-      "type": "EXT",
+      "type": "Extension",
       "req": "txt",
       "value": "md"
     },
     {
-      "type": "TRIM"
+      "type": "Trim"
     },
     {
-      "type": "CHARREPLACE",
+      "type": "CharReplace",
       "req": [ " " ],
       "value": "-"
     },
     {
-      "type": "ADDPOSTFIX",
+      "type": "AddPostfix",
       "value": "YYY"
     },
     {
-      "type": "CHANGECASE",
+      "type": "ChangeCase",
       "req": "Lower"
     }
   ]

@@ -1,9 +1,5 @@
-D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.csproj.AssemblyReference.cache
-D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\MainWindow.g.cs
-D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\App.g.cs
-D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew_MarkupCompile.cache
-D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew_MarkupCompile.lref
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\BatchRenameNew.exe
+D:\windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\preset.json
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\BatchRenameNew.deps.json
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\BatchRenameNew.runtimeconfig.json
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\BatchRenameNew.dll
@@ -15,6 +11,12 @@ D:\windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\De.Tor
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\RenameRuleContract.dll
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\RenameRuleContract.pdb
+D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.csproj.AssemblyReference.cache
+D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\MainWindow.g.cs
+D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\App.g.cs
+D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew_MarkupCompile.cache
+D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew_MarkupCompile.lref
+D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\App.baml
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\MainWindow.baml
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.g.resources
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.GeneratedMSBuildEditorConfig.editorconfig
@@ -26,4 +28,5 @@ D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchR
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\ref\BatchRenameNew.dll
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.pdb
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.genruntimeconfig.cache
-D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\App.baml
+D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\NewRuleWindow.g.cs
+D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\NewRuleWindow.baml

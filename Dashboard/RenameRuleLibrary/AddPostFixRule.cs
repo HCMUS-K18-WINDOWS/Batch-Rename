@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace BatchRename
 {
-    public class AddPostFixRule : IRenameRule
+    public class AddPostfixRule : IRenameRule
     {
         public string Postfix { get; set; }
 
-        public string Name => "AddPostFix";
+        public string Name => "AddPostfix";
 
-        public AddPostFixRule()
+        public AddPostfixRule()
         {
 
         }
-        public AddPostFixRule(string postfix)
+        public AddPostfixRule(string postfix)
         {
             Postfix = postfix;
         }

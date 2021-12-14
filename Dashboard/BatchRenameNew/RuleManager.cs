@@ -18,6 +18,20 @@ namespace BatchRenameNew
 
         }
 
+        public string[] GetAllRulesName()
+        {
+            return rules.Keys.ToArray();
+        }
+
+        public string[]? GetAllFieldName(string ruleName)
+        {
+            if(rules.ContainsKey(ruleName))
+            {
+                return rules[ruleName].GetAllAttributesName();
+            }
+            return null;
+        }
+
         public static RuleManager GetInstance()
         {
             if(instance == null)
@@ -51,7 +65,7 @@ namespace BatchRenameNew
             // Nạp vào bộ nhớ từng file đl
             foreach (var fi in infos)
             {
-                Assembly assembly = Assembly.LoadFile((fi.FullName));
+                Assembly assembly = Assembly.LoadFrom((fi.FullName));
                 var types = assembly.GetTypes();
 
                 foreach (var type in types)

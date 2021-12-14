@@ -12,8 +12,10 @@ namespace BatchRename
 
         public IRenameRule Parse(JsonNode obj)
         {
-            string type = obj["type"].ToString();
-            return new OrderRule(type);
+            int start = (int)obj["start"];
+            int digit = (int)obj["digit"];
+
+            return new OrderRule(start, digit);
         }
     }
 }

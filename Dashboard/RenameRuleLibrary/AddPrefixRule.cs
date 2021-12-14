@@ -10,7 +10,7 @@ namespace BatchRename
     {
         public string Prefix { get; set; }
 
-        public string Name => throw new NotImplementedException();
+        public string Name => "AddPrefix";
 
         public AddPrefixRule()
         {

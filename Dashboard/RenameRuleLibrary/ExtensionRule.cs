@@ -10,14 +10,16 @@ namespace RenameRuleLibrary
     public class ExtensionRule : IRenameRule
     {
         public string Name => "Extension";
+        public string OldExtension { get; set; }
         public string NewExtension { get; set; }
 
         public ExtensionRule()
         {
             NewExtension = "";
         }
-        public ExtensionRule(string newExtension)
+        public ExtensionRule(string oldExtension, string newExtension)
         {
+            OldExtension = oldExtension;
             NewExtension = newExtension;
         }
         public object Clone()

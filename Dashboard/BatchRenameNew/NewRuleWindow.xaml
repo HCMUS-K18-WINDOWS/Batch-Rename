@@ -1,0 +1,15 @@
+﻿<Window x:Class="BatchRenameNew.NewRuleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BatchRenameNew"
+        mc:Ignorable="d"
+        Title="NewRuleWindow" Height="480" Width="800" Loaded="Window_Loaded">
+    <Canvas>
+        <ComboBox x:Name="RulesCbb" Canvas.Left="340" Canvas.Top="122" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
+        <Canvas x:Name="canvasField" Height="203" Width="800" Canvas.Left="10" Canvas.Top="169">
+        </Canvas>
+        <Button x:Name="CreateBtn" Content="Create rule" Click="CreateBtn_Click" Canvas.Left="340" Canvas.Top="377" RenderTransformOrigin="0.811,1.314"/>
+    </Canvas>
+</Window>

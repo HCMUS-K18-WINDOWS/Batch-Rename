@@ -11,7 +11,7 @@ namespace BatchRename
     {
         public string Type { get; set; }
 
-        public string Name => throw new NotImplementedException();
+        public string Name => "ChangeCase";
 
         public ChangeCaseRule()
         {
@@ -43,7 +43,7 @@ namespace BatchRename
 
         public string[] GetAllAttributesName()
         {
-            throw new NotImplementedException();
+            return new string[] { "Type" };
         }
 
         public void Rename(FileInfo original)

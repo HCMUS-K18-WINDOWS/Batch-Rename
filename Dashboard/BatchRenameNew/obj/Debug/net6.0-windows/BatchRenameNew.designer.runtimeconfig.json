@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\tuanv\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\tuanv\\.nuget\\packages"
+      "C:\\Users\\lequo\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\lequo\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
