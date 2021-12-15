@@ -20,6 +20,7 @@ namespace BatchRenameNew
     /// </summary>
     public partial class NewRuleWindow : Window
     {
+        private RequirementManager _requirementManager;
         public NewRuleWindow()
         {
             InitializeComponent();
@@ -30,24 +31,20 @@ namespace BatchRenameNew
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var selectedItem = RulesCbb.SelectedItem;
-            canvasField.Children.Clear();
-            StackPanel mainPanel = new StackPanel();
-            mainPanel.Orientation = Orientation.Vertical;
-            string[] fieldNames = RuleManager.GetInstance().GetAllFieldName(selectedItem.ToString());
-            foreach(string name in fieldNames)
+            var selectedItem = (string) RulesCbb.SelectedItem;
+            if (selectedItem == null)
             {
-                TextBlock label = new TextBlock();
-                label.Text = name;
-                TextBox input = new TextBox();
-                input.Width = 150;
-                StackPanel panel = new StackPanel();
-                //panel.Orientation = Orientation.Horizontal;
-                panel.Children.Add(label);
-                panel.Children.Add(input);
-                mainPanel.Children.Add(panel);
+                return;
             }
-            canvasField.Children.Add(mainPanel);
+            try
+            {
+                _requirementManager = new RequirementManager(selectedItem);
+                canvasField.Children.Clear();
+                canvasField.Children.Add(_requirementManager.BuildElement());
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -57,7 +54,8 @@ namespace BatchRenameNew
 
         private void CreateBtn_Click(object sender, RoutedEventArgs e)
         {
-            IRenameRule newRule = RuleManager.GetInstance().CreateRule(RulesCbb.SelectedItem.ToString());
+            if (_requirementManager == null) return;
+            var newRule = _requirementManager.CreateRule();
             MyEvent?.Invoke(newRule);
         }
     }

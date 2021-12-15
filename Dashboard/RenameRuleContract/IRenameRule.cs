@@ -11,6 +11,6 @@ namespace RenameRuleContract
         void Rename(FileInfo original);
         bool SetAttribute(string key, object value);
         object? GetAttribute(string key);
-        string[] GetAllAttributesName();
+        RuleRequirement[] GetAllAttributesRequirement();
     }
 }

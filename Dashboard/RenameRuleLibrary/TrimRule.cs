@@ -16,9 +16,9 @@ namespace BatchRename
             return this.MemberwiseClone();
         }
 
-        public string[] GetAllAttributesName()
+        public RuleRequirement[] GetAllAttributesRequirement()
         {
-            return Array.Empty<string>();
+            return Array.Empty<RuleRequirement>();
         }
 
         public object? GetAttribute(string key)

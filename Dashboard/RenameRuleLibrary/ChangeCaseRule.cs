@@ -41,9 +41,14 @@ namespace BatchRename
             return this.MemberwiseClone();
         }
 
-        public string[] GetAllAttributesName()
+        public RuleRequirement[] GetAllAttributesRequirement()
         {
-            return new string[] { "Type" };
+            var possibles = new string[] {"Upper", "Lower", "Capital", "camelCase"};
+            var requirement = new RuleRequirement("Type", RequirementType.String)
+            {
+                PossibleValues = possibles
+            };
+            return new RuleRequirement[] { requirement };
         }
 
         public void Rename(FileInfo original)

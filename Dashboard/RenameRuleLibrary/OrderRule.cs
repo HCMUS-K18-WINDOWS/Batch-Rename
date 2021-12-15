@@ -30,18 +30,14 @@ namespace BatchRename
 
         public bool SetAttribute(string key, object value)
         {
-            string strValue = (string) value;
-            if (strValue == null || strValue.Length == 0)
-            {
-                return false;
-            }
+            var intValue = (int) value;
             switch (key)
             {
                 case "Start":
-                    StartValue = int.Parse(strValue);
+                    StartValue = intValue;
                     break;
                 case "Number of digit":
-                    Padding = int.Parse(strValue);
+                    Padding = intValue;
                     break;
                 default:
                     return false;
@@ -67,9 +63,10 @@ namespace BatchRename
             return this.MemberwiseClone();
         }
 
-        public string[] GetAllAttributesName()
+        public RuleRequirement[] GetAllAttributesRequirement()
         {
-            return new string[] {"Start", "Number of digit"};
+            return new RuleRequirement[] { new RuleRequirement("Start", RequirementType.Number), 
+                new RuleRequirement("Number of digit", RequirementType.Number) };
         }
 
         public void Rename(FileInfo original)

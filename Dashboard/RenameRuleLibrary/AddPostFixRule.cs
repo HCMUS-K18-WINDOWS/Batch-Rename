@@ -45,9 +45,9 @@ namespace BatchRename
             return this.MemberwiseClone();
         }
 
-        public string[] GetAllAttributesName()
+        public RuleRequirement[] GetAllAttributesRequirement()
         {
-            return new string[] { "Postfix" };
+            return null;
         }
 
         public void Rename(FileInfo original)

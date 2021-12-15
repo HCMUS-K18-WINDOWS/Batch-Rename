@@ -67,19 +67,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lequo\\.nuget\\packages\\": {}
+    "C:\\Users\\tuanv\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\windows\\Batch-Rename\\Dashboard\\RenameRuleLibrary\\RenameRuleLibrary.csproj",
+      "projectUniqueName": "E:\\Code\\Windows\\Batch-Rename\\Dashboard\\RenameRuleLibrary\\RenameRuleLibrary.csproj",
       "projectName": "RenameRuleLibrary",
-      "projectPath": "D:\\windows\\Batch-Rename\\Dashboard\\RenameRuleLibrary\\RenameRuleLibrary.csproj",
-      "packagesPath": "C:\\Users\\lequo\\.nuget\\packages\\",
-      "outputPath": "D:\\windows\\Batch-Rename\\Dashboard\\RenameRuleLibrary\\obj\\",
+      "projectPath": "E:\\Code\\Windows\\Batch-Rename\\Dashboard\\RenameRuleLibrary\\RenameRuleLibrary.csproj",
+      "packagesPath": "C:\\Users\\tuanv\\.nuget\\packages\\",
+      "outputPath": "E:\\Code\\Windows\\Batch-Rename\\Dashboard\\RenameRuleLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\lequo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\tuanv\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -93,8 +93,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "D:\\windows\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj": {
-              "projectPath": "D:\\windows\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj"
+            "E:\\Code\\Windows\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj": {
+              "projectPath": "E:\\Code\\Windows\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj"
             }
           }
         }

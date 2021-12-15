@@ -23,11 +23,11 @@ namespace BatchRenameNew
             return rules.Keys.ToArray();
         }
 
-        public string[]? GetAllFieldName(string ruleName)
+        public RuleRequirement[]? GetAllFieldRequirement(string ruleName)
         {
             if(rules.ContainsKey(ruleName))
             {
-                return rules[ruleName].GetAllAttributesName();
+                return rules[ruleName].GetAllAttributesRequirement();
             }
             return null;
         }

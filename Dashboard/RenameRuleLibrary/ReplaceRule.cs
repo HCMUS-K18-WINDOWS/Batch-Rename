@@ -69,9 +69,10 @@ namespace BatchRename
             return this.MemberwiseClone();
         }
 
-        public string[] GetAllAttributesName()
+        public RuleRequirement[] GetAllAttributesRequirement()
         {
-            return new string[] {"Needles", "Replacer"};
+            return new RuleRequirement[] {new RuleRequirement("Needles", RequirementType.String), 
+                new RuleRequirement("Replacer", RequirementType.String)};
         }
 
         public void Rename(FileInfo original)

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\
+E:\Code\Windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\
 BatchRenameNew
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\windows\Batch-Rename\Dashboard\BatchRenameNew\App.xaml
+E:\Code\Windows\Batch-Rename\Dashboard\BatchRenameNew\App.xaml
 2-1178317557
 
-9251015085
-199-1153729543
+10526719036
+199215947631
 MainWindow.xaml;NewRuleWindow.xaml;
 
-False
+True
 

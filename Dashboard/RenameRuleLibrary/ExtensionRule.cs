@@ -27,17 +27,21 @@ namespace RenameRuleLibrary
             return this.MemberwiseClone();
         }
 
-        public string[] GetAllAttributesName()
+        public RuleRequirement[] GetAllAttributesRequirement()
         {
-            return new string[] {"NewExtension"};
+            var requirement1 = new RuleRequirement("Old extension", RequirementType.String);
+            var requirement2 = new RuleRequirement("New extension", RequirementType.String);
+            return new RuleRequirement[] { requirement1, requirement2 };
         }
 
         public object? GetAttribute(string key)
         {
             switch (key)
             {
-                case "NewExtension":
+                case "New extension":
                     return NewExtension;
+                case "Old extension":
+                    return OldExtension;
                 default:
                     return null;
             }
@@ -45,7 +49,10 @@ namespace RenameRuleLibrary
 
         public void Rename(FileInfo original)
         {
-            original.NewExtension = NewExtension;
+            if (original.OldExtension == OldExtension || original.OldExtension == "*")
+            {
+                original.NewExtension = NewExtension;
+            }
         }
 
         public bool SetAttribute(string key, object value)
@@ -53,8 +60,11 @@ namespace RenameRuleLibrary
             string strValue = (string)value;
             switch (key)
             {
-                case "NewExtension":
+                case "New extension":
                     NewExtension = strValue;
+                    break;
+                case "Old extension":
+                    OldExtension = strValue;
                     break;
                 default:
                     return false;

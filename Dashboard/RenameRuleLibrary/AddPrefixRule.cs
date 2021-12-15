@@ -49,7 +49,7 @@ namespace BatchRename
             throw new NotImplementedException();
         }
 
-        public string[] GetAllAttributesName()
+        public RuleRequirement[] GetAllAttributesRequirement()
         {
             throw new NotImplementedException();
         }
