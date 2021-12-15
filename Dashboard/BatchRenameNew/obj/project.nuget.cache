@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "mJYj1DB5V/shL0qhSn8cuNvj0uvGsWy3uGqnywZWHLJnI+f+XlitZnzFX5JFvbabWzoJRp2qjUO9RQYB4Qpnlg==",
+  "dgSpecHash": "6Kk+9eqrXDFLR795fAR0heWsqX5YZaug5h3PEsQwUWN+f6HQ15kkX6tGnFnkXNANLBCUn+b6ZxBqPMYZYGIIhQ==",
   "success": true,
-  "projectFilePath": "E:\\Code\\Windows\\Batch-Rename\\Dashboard\\BatchRenameNew\\BatchRenameNew.csproj",
+  "projectFilePath": "D:\\windows\\Batch-Rename\\Dashboard\\BatchRenameNew\\BatchRenameNew.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\tuanv\\.nuget\\packages\\materialdesigncolors\\2.0.4\\materialdesigncolors.2.0.4.nupkg.sha512",
-    "C:\\Users\\tuanv\\.nuget\\packages\\materialdesignthemes\\2.3.1.953\\materialdesignthemes.2.3.1.953.nupkg.sha512",
-    "C:\\Users\\tuanv\\.nuget\\packages\\modernuicharts.wpf.beta\\0.9.1\\modernuicharts.wpf.beta.0.9.1.nupkg.sha512",
-    "C:\\Users\\tuanv\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\lequo\\.nuget\\packages\\materialdesigncolors\\2.0.4\\materialdesigncolors.2.0.4.nupkg.sha512",
+    "C:\\Users\\lequo\\.nuget\\packages\\materialdesignthemes\\2.3.1.953\\materialdesignthemes.2.3.1.953.nupkg.sha512",
+    "C:\\Users\\lequo\\.nuget\\packages\\modernuicharts.wpf.beta\\0.9.1\\modernuicharts.wpf.beta.0.9.1.nupkg.sha512",
+    "C:\\Users\\lequo\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": [
     {

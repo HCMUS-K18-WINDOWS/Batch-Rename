@@ -1,5 +1,4 @@
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\BatchRenameNew.exe
-D:\windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\preset.json
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\BatchRenameNew.deps.json
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\BatchRenameNew.runtimeconfig.json
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\BatchRenameNew.dll
@@ -62,3 +61,4 @@ E:\Code\Windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\B
 E:\Code\Windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\ref\BatchRenameNew.dll
 E:\Code\Windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.pdb
 E:\Code\Windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.genruntimeconfig.cache
+D:\windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\Presets\preset.json

@@ -111,11 +111,32 @@
 
             <StackPanel Grid.Row="1">
                 <Label Height="10"></Label>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="Load" Click="Load_Click" Content="Load" Margin="3">
+                        
+                    </Button>
+                    <ComboBox x:Name="PresetsCbb" Width="120"/>
+                </StackPanel>
+
                 <Button x:Name="NewRuleBtn" Margin="10" Background="#66CCFF" BorderBrush="#003399" Click="NewRuleBtn_Click">
                     <Grid Width="150">
                         <TextBlock HorizontalAlignment="Center" Text="New Rule" FontFamily="Champagne &amp; Limousines"/>
                     </Grid>
                 </Button>
+
+                <ListView x:Name="RuleListView" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn/>
+                        </GridView>
+                    </ListView.View>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+  
+                </ListView>
 
                 <Button Margin="10" Background="#66CCFF" BorderBrush="#003399">
                     <Grid Width="150">
@@ -146,7 +167,9 @@
                         <TextBlock HorizontalAlignment="Center" Text="New Name" FontFamily="Champagne &amp; Limousines"/>
                     </Grid>
                 </Button>
+                
             </StackPanel>
+            
         </Grid>
 
 

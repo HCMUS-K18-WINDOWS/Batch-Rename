@@ -18,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Diagnostics;
+using System.ComponentModel;
 //using WinForms = System.Windows.Forms;
 
 namespace BatchRenameNew
@@ -29,21 +30,22 @@ namespace BatchRenameNew
     {
         public List<IRenameRule> Plugins { get; set; }
         public List<IRenameRuleParser> Parsers { get; set; }
-        public List<IRenameRule> Presets { get; set; }
-        public List<IRenameRule> Rules { get; set; }
+        public BindingList<IRenameRule> Presets { get; set; }
+        public BindingList<IRenameRule> Rules { get; set; }
         public MainWindow()
         {
             InitializeComponent();
             Plugins = new List<IRenameRule>();
             Parsers = new List<IRenameRuleParser>();
-            Presets = new List<IRenameRule>();
-            Rules = new List<IRenameRule>();
+            Presets = new BindingList<IRenameRule>();
+            Rules = new BindingList<IRenameRule>();
+            RuleListView.ItemsSource = Rules;
         }
 
-        public void LoadFilePreset()
+        public void LoadFilePreset(string fileName)
         {
-            string fileName = "preset.json";
-            string jsonString = File.ReadAllText(fileName);
+            string filePath = $"Presets/{fileName}";
+            string jsonString = File.ReadAllText(filePath);
             JsonNode rules = JsonNode.Parse(jsonString)["rules"];
             int length = ((JsonArray)rules).Count;
 
@@ -51,9 +53,8 @@ namespace BatchRenameNew
             {
                 IRenameRuleParser ruleParser = RuleParserManager.GetInstance().CreateRuleParser(rules[i]["type"].ToString());
                 IRenameRule newRule = ruleParser.Parse(rules[i]);
-                Presets.Add(newRule);
+                Rules.Add(newRule);
             }
-            Console.WriteLine(Presets.Count());
         }
 
         private void ButtonFechar_Click(object sender, RoutedEventArgs e)
@@ -95,7 +96,19 @@ namespace BatchRenameNew
         {
             RuleManager.GetInstance().LoadExternalDll();
             RuleParserManager.GetInstance().LoadExternalDll();
-            LoadFilePreset();
+            LoadPresetFolder();
+            
+        }
+
+        private void LoadPresetFolder()
+        {
+            var currentFolder = AppDomain.CurrentDomain.BaseDirectory;
+            DirectoryInfo d = new DirectoryInfo($"{currentFolder}/Presets");
+            System.IO.FileInfo[] files = d.GetFiles("*.json");
+            foreach(System.IO.FileInfo file in files)
+            {
+                PresetsCbb.Items.Add(file.Name);
+            }
         }
 
         private void NewRuleBtn_Click(object sender, RoutedEventArgs e)
@@ -111,6 +124,22 @@ namespace BatchRenameNew
         private void AddNewRule(IRenameRule rule)
         {
             Rules.Add(rule);
+        }
+
+        private void Load_Click(object sender, RoutedEventArgs e)
+        {
+            if(PresetsCbb.SelectedItem != null)
+            {
+                LoadFilePreset(PresetsCbb.SelectedItem.ToString());
+                foreach(var rule in Rules)
+                {
+                    Console.WriteLine(rule.Name);
+                }
+                
+            } else
+            {
+                MessageBox.Show("Please choose a file preset!");
+            }
         }
     }
 }
