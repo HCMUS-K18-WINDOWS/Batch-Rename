@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "fEx+EhvxlMHh2+maOiNfVCo1DNZYj+suOb6GQPrJvifbzEZ44FekxqC1zV5x8/JIrPkrKEPF5bOgbUwzV21ZdA==",
+  "dgSpecHash": "tywh0oj+5lJu+4VSkgHiiUTxkIfqwfe/9/a9XjLmJHAaWLPkU78R5N3U/uP0W7ZrEQj17NNw98M5sR5mpn7PpQ==",
   "success": true,
-  "projectFilePath": "D:\\windows\\Batch-Rename\\Dashboard\\RenameRuleLibrary\\RenameRuleLibrary.csproj",
+  "projectFilePath": "D:\\HỌC\\năm 4\\học kì 1 - năm 4\\Lập trình windows\\BA1\\Batch-Rename\\Dashboard\\RenameRuleLibrary\\RenameRuleLibrary.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\lequo\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\moonc\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }

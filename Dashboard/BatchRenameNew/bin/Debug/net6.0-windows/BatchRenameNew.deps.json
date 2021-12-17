@@ -9,7 +9,7 @@
       "BatchRenameNew/1.0.0": {
         "dependencies": {
           "MaterialDesignColors": "2.0.4",
-          "MaterialDesignThemes": "2.3.1.953",
+          "MaterialDesignThemes": "4.3.0",
           "ModernUICharts.WPF.Beta": "0.9.1",
           "Newtonsoft.Json": "13.0.1",
           "RenameRuleContract": "1.0.0"
@@ -26,14 +26,14 @@
           }
         }
       },
-      "MaterialDesignThemes/2.3.1.953": {
+      "MaterialDesignThemes/4.3.0": {
         "dependencies": {
           "MaterialDesignColors": "2.0.4"
         },
         "runtime": {
-          "lib/net45/MaterialDesignThemes.Wpf.dll": {
-            "assemblyVersion": "2.3.1.953",
-            "fileVersion": "2.3.1.953"
+          "lib/netcoreapp3.1/MaterialDesignThemes.Wpf.dll": {
+            "assemblyVersion": "4.3.0.3",
+            "fileVersion": "4.3.0.3"
           }
         }
       },
@@ -73,12 +73,12 @@
       "path": "materialdesigncolors/2.0.4",
       "hashPath": "materialdesigncolors.2.0.4.nupkg.sha512"
     },
-    "MaterialDesignThemes/2.3.1.953": {
+    "MaterialDesignThemes/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Ccy3II1LWYOXl4A9417hqVTdJjcrUWGW0Ln658JZ7DHDclzoFtClxphDJB4fbX1kDsTghvOIv154a/ycm9MyCw==",
-      "path": "materialdesignthemes/2.3.1.953",
-      "hashPath": "materialdesignthemes.2.3.1.953.nupkg.sha512"
+      "sha512": "sha512-edXh0Hl2LukyEZN+REVFuN+gaaUFo6AfHSaBjuZ95k4Qz1TljcxnfCznMKkGaQoEsy5ryk85ZbeRY/tOzFmKxg==",
+      "path": "materialdesignthemes/4.3.0",
+      "hashPath": "materialdesignthemes.4.3.0.nupkg.sha512"
     },
     "ModernUICharts.WPF.Beta/0.9.1": {
       "type": "package",

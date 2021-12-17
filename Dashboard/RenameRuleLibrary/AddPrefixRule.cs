@@ -14,17 +14,18 @@ namespace BatchRename
 
         public AddPrefixRule()
         {
-
+            Prefix = "";
         }
 
         public AddPrefixRule(string prefix)
         {
             Prefix = prefix;
         }
-        public string Rename(string original)
+
+        public void Rename(FileInfo original)
         {
-            string result = "";
-            return $"{Prefix}{result}";
+            string result = $"{Prefix}{original.OldName}";
+            original.NewName = result;
         }
 
         public bool SetAttribute(string key, object value)
@@ -46,17 +47,18 @@ namespace BatchRename
 
         public object? GetAttribute(string key)
         {
-            throw new NotImplementedException();
+            switch (key)
+            {
+                case "Prefix":
+                    return Prefix;
+                default:
+                    return null;
+            }
         }
 
         public RuleRequirement[] GetAllAttributesRequirement()
         {
-            throw new NotImplementedException();
-        }
-
-        public void Rename(FileInfo original)
-        {
-            throw new NotImplementedException();
+            return new RuleRequirement[] { new RuleRequirement("Prefix", RequirementType.String) };
         }
     }
 }

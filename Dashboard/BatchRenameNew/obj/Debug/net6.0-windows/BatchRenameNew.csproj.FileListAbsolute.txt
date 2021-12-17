@@ -62,3 +62,35 @@ E:\Code\Windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\r
 E:\Code\Windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.pdb
 E:\Code\Windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.genruntimeconfig.cache
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\Presets\preset.json
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\BatchRenameNew.exe
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\Presets\preset.json
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\BatchRenameNew.deps.json
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\BatchRenameNew.runtimeconfig.json
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\BatchRenameNew.dll
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\ref\BatchRenameNew.dll
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\BatchRenameNew.pdb
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\MaterialDesignColors.dll
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\De.TorstenMandelkow.MetroChart.dll
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\RenameRuleContract.dll
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\RenameRuleContract.pdb
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.csproj.AssemblyReference.cache
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\MainWindow.g.cs
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\NewRuleWindow.g.cs
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\App.g.cs
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew_MarkupCompile.cache
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew_MarkupCompile.lref
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\App.baml
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\MainWindow.baml
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\NewRuleWindow.baml
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.g.resources
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.GeneratedMSBuildEditorConfig.editorconfig
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.AssemblyInfoInputs.cache
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.AssemblyInfo.cs
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.csproj.CoreCompileInputs.cache
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.csproj.CopyComplete
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.dll
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\ref\BatchRenameNew.dll
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.pdb
+D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.genruntimeconfig.cache

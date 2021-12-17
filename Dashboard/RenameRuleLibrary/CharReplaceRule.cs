@@ -9,49 +9,66 @@ namespace BatchRename
 {
     public class CharReplaceRule : IRenameRule
     {
-        public List<char> Replacements { get; set; }
-        public char Value { get; set; }
+
+        public char CharBefore { get; set; }
+        public char CharAfter { get; set; }
 
         public string Name => "CharReplace";
 
         public CharReplaceRule()
         {
-
+            //Value = '';
         }
 
-        public CharReplaceRule(List<char> req, char value)
+        public CharReplaceRule(char value1, char value2)
         {
-            Replacements = req;
-            Value = Value;
+            CharBefore = value1;
+            CharAfter = value2;
         }
-        public string Rename(string original)
+        public void Rename(FileInfo original)
         {
             throw new NotImplementedException();
         }
 
         public bool SetAttribute(string key, object value)
         {
-            throw new NotImplementedException();
+            switch (key)
+            {
+                case "CharBefore":
+                    CharBefore = (char)value;
+                    return true;
+                case "CharAfter":
+                    CharAfter = (char)value;
+                    return true;
+                default:
+                    return false;
+            }
         }
 
         public object? GetAttribute(string key)
         {
-            throw new NotImplementedException();
+            switch (key)
+            {
+                case "CharBefore":
+                    return CharBefore;
+                case "CharAfter":
+                    return CharAfter;
+                default:
+                    return null;
+            }
         }
 
         public object Clone()
         {
-            throw new NotImplementedException();
+            return this.MemberwiseClone();
         }
 
         public RuleRequirement[] GetAllAttributesRequirement()
         {
-            throw new NotImplementedException();
+            return new RuleRequirement[] { new RuleRequirement("CharBefore", RequirementType.String), 
+                new RuleRequirement("CharAfter", RequirementType.String) };
         }
 
-        public void Rename(FileInfo original)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

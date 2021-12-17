@@ -11,16 +11,19 @@
           "lib/netcoreapp3.1/MaterialDesignColors.dll": {}
         }
       },
-      "MaterialDesignThemes/2.3.1.953": {
+      "MaterialDesignThemes/4.3.0": {
         "type": "package",
         "dependencies": {
-          "MaterialDesignColors": "1.1.2"
+          "MaterialDesignColors": "[2.0.4, 3.0.0)"
         },
         "compile": {
-          "lib/net45/MaterialDesignThemes.Wpf.dll": {}
+          "lib/netcoreapp3.1/MaterialDesignThemes.Wpf.dll": {}
         },
         "runtime": {
-          "lib/net45/MaterialDesignThemes.Wpf.dll": {}
+          "lib/netcoreapp3.1/MaterialDesignThemes.Wpf.dll": {}
+        },
+        "build": {
+          "build/MaterialDesignThemes.targets": {}
         }
       },
       "ModernUICharts.WPF.Beta/0.9.1": {
@@ -73,148 +76,43 @@
         "materialdesigncolors.nuspec"
       ]
     },
-    "MaterialDesignThemes/2.3.1.953": {
-      "sha512": "Ccy3II1LWYOXl4A9417hqVTdJjcrUWGW0Ln658JZ7DHDclzoFtClxphDJB4fbX1kDsTghvOIv154a/ycm9MyCw==",
+    "MaterialDesignThemes/4.3.0": {
+      "sha512": "edXh0Hl2LukyEZN+REVFuN+gaaUFo6AfHSaBjuZ95k4Qz1TljcxnfCznMKkGaQoEsy5ryk85ZbeRY/tOzFmKxg==",
       "type": "package",
-      "path": "materialdesignthemes/2.3.1.953",
+      "path": "materialdesignthemes/4.3.0",
+      "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net45/MaterialDesignThemes.Wpf.XML",
-        "lib/net45/MaterialDesignThemes.Wpf.dll",
-        "lib/net45/MaterialDesignThemes.Wpf.pdb",
-        "materialdesignthemes.2.3.1.953.nupkg.sha512",
+        "build/MaterialDesignThemes.targets",
+        "build/Resources/Roboto/Roboto-Black.ttf",
+        "build/Resources/Roboto/Roboto-BlackItalic.ttf",
+        "build/Resources/Roboto/Roboto-Bold.ttf",
+        "build/Resources/Roboto/Roboto-BoldItalic.ttf",
+        "build/Resources/Roboto/Roboto-Italic.ttf",
+        "build/Resources/Roboto/Roboto-Light.ttf",
+        "build/Resources/Roboto/Roboto-LightItalic.ttf",
+        "build/Resources/Roboto/Roboto-Medium.ttf",
+        "build/Resources/Roboto/Roboto-MediumItalic.ttf",
+        "build/Resources/Roboto/Roboto-Regular.ttf",
+        "build/Resources/Roboto/Roboto-Thin.ttf",
+        "build/Resources/Roboto/Roboto-ThinItalic.ttf",
+        "build/Resources/Roboto/RobotoCondensed-Bold.ttf",
+        "build/Resources/Roboto/RobotoCondensed-BoldItalic.ttf",
+        "build/Resources/Roboto/RobotoCondensed-Italic.ttf",
+        "build/Resources/Roboto/RobotoCondensed-Light.ttf",
+        "build/Resources/Roboto/RobotoCondensed-LightItalic.ttf",
+        "build/Resources/Roboto/RobotoCondensed-Regular.ttf",
+        "images/MaterialDesignThemes.Icon.png",
+        "lib/net452/MaterialDesignThemes.Wpf.dll",
+        "lib/net452/MaterialDesignThemes.Wpf.pdb",
+        "lib/net452/MaterialDesignThemes.Wpf.xml",
+        "lib/netcoreapp3.1/MaterialDesignThemes.Wpf.dll",
+        "lib/netcoreapp3.1/MaterialDesignThemes.Wpf.pdb",
+        "lib/netcoreapp3.1/MaterialDesignThemes.Wpf.xml",
+        "materialdesignthemes.4.3.0.nupkg.sha512",
         "materialdesignthemes.nuspec",
-        "src/net45/Badged.cs",
-        "src/net45/ButtonProgressAssist.cs",
-        "src/net45/Card.cs",
-        "src/net45/Chip.cs",
-        "src/net45/Clock.cs",
-        "src/net45/ClockChoiceMadeEventArgs.cs",
-        "src/net45/ClockItemButton.cs",
-        "src/net45/ColorZone.cs",
-        "src/net45/ColorZoneAssist.cs",
-        "src/net45/ComboBoxAssist.cs",
-        "src/net45/ComboBoxPopup.cs",
-        "src/net45/Converters/BooleanToVisibilityConverter.cs",
-        "src/net45/Converters/BrushRoundConverter.cs",
-        "src/net45/Converters/BrushToRadialGradientBrushConverter.cs",
-        "src/net45/Converters/CalendarDateCoalesceConverter.cs",
-        "src/net45/Converters/CircularProgressBar/ArcEndPointConverter.cs",
-        "src/net45/Converters/CircularProgressBar/ArcSizeConverter.cs",
-        "src/net45/Converters/CircularProgressBar/LargeArcConverter.cs",
-        "src/net45/Converters/CircularProgressBar/LocalEx.cs",
-        "src/net45/Converters/CircularProgressBar/RotateTransformCentreConverter.cs",
-        "src/net45/Converters/CircularProgressBar/RotateTransformConverter.cs",
-        "src/net45/Converters/CircularProgressBar/StartPointConverter.cs",
-        "src/net45/Converters/ClockItemIsCheckedConverter.cs",
-        "src/net45/Converters/ClockLineConverter.cs",
-        "src/net45/Converters/DrawerOffsetConverter.cs",
-        "src/net45/Converters/EqualityToVisibilityConverter.cs",
-        "src/net45/Converters/HintProxyFabricConverter.cs",
-        "src/net45/Converters/ListViewItemContainerStyleConverter.cs",
-        "src/net45/Converters/MathConverter.cs",
-        "src/net45/Converters/MathMultipleConverter.cs",
-        "src/net45/Converters/NotConverter.cs",
-        "src/net45/Converters/NotZeroToVisibilityConverter.cs",
-        "src/net45/Converters/NullToVisibilityConverter.cs",
-        "src/net45/Converters/NullableDateTimeToCurrentDateConverter.cs",
-        "src/net45/Converters/PointValueConverter.cs",
-        "src/net45/Converters/RangeLengthConverter.cs",
-        "src/net45/Converters/RangePositionConverterConverter.cs",
-        "src/net45/Converters/ShadowConverter.cs",
-        "src/net45/Converters/ShadowEdgeConverter.cs",
-        "src/net45/Converters/ShadowInfo.cs",
-        "src/net45/Converters/SizeToRectConverter.cs",
-        "src/net45/Converters/SnackbarMessageTypeConverter.cs",
-        "src/net45/Converters/TextFieldHintVisibilityConverter.cs",
-        "src/net45/Converters/TimeToVisibilityConverter.cs",
-        "src/net45/CustomPopupPlacementCallbackHelper.cs",
-        "src/net45/DataGridAssist.cs",
-        "src/net45/DateTimeEx.cs",
-        "src/net45/DialogClosingEventArgs.cs",
-        "src/net45/DialogClosingEventHandler.cs",
-        "src/net45/DialogHost.cs",
-        "src/net45/DialogHostEx.cs",
-        "src/net45/DialogOpenedEventArgs.cs",
-        "src/net45/DialogOpenedEventHandler.cs",
-        "src/net45/DialogSession.cs",
-        "src/net45/DpiHelper.cs",
-        "src/net45/DrawerHost.cs",
-        "src/net45/Extensions.cs",
-        "src/net45/Flipper.cs",
-        "src/net45/HintAssist.cs",
-        "src/net45/HintProxyFabric.ComboBox.cs",
-        "src/net45/HintProxyFabric.PasswordBox.cs",
-        "src/net45/HintProxyFabric.TextBox.cs",
-        "src/net45/HintProxyFabric.cs",
-        "src/net45/IHintProxy.cs",
-        "src/net45/ISnackbarMessageQueue.cs",
-        "src/net45/Icon.cs",
-        "src/net45/IconType.cs",
-        "src/net45/ListBoxAssist.cs",
-        "src/net45/ListSortDirectionIndicator.cs",
-        "src/net45/ListViewAssist.cs",
-        "src/net45/MaterialDataGridComboBoxColumn.cs",
-        "src/net45/MaterialDataGridTextColumn.cs",
-        "src/net45/MaterialDateDisplay.cs",
-        "src/net45/MessageQueueExtension.cs",
-        "src/net45/PackIcon.cs",
-        "src/net45/PackIconDataFactory.cs",
-        "src/net45/PackIconExtension.cs",
-        "src/net45/PackIconKind.cs",
-        "src/net45/Palette.cs",
-        "src/net45/PaletteHelper.cs",
-        "src/net45/Plane3D.cs",
-        "src/net45/PopupBox.cs",
-        "src/net45/Properties/AssemblyInfo.cs",
-        "src/net45/Properties/Resources.Designer.cs",
-        "src/net45/Properties/Settings.Designer.cs",
-        "src/net45/RatingBar.cs",
-        "src/net45/RatingBarButton.cs",
-        "src/net45/Ripple.cs",
-        "src/net45/RippleAssist.cs",
-        "src/net45/ScaleHost.cs",
-        "src/net45/Screen.cs",
-        "src/net45/ScrollViewerAssist.cs",
-        "src/net45/ShadowAssist.cs",
-        "src/net45/SmartHint.cs",
-        "src/net45/Snackbar.cs",
-        "src/net45/SnackbarMessage.cs",
-        "src/net45/SnackbarMessageEventArgs.cs",
-        "src/net45/SnackbarMessageQueue.cs",
-        "src/net45/SnackbarMessageQueueItem.cs",
-        "src/net45/Spelling.cs",
-        "src/net45/StringExtensions.cs",
-        "src/net45/TextFieldAssist.cs",
-        "src/net45/TimePicker.cs",
-        "src/net45/ToggleButtonAssist.cs",
-        "src/net45/ToolTipAssist.cs",
-        "src/net45/Transitions/CircleWipe.cs",
-        "src/net45/Transitions/FadeWipe.cs",
-        "src/net45/Transitions/ITransitionEffect.cs",
-        "src/net45/Transitions/ITransitionEffectSubject.cs",
-        "src/net45/Transitions/ITransitionWipe.cs",
-        "src/net45/Transitions/IZIndexController.cs",
-        "src/net45/Transitions/IndexedItemOffsetMultiplierExtension.cs",
-        "src/net45/Transitions/SlideDirection.cs",
-        "src/net45/Transitions/SlideOutWipe.cs",
-        "src/net45/Transitions/SlideWipe.cs",
-        "src/net45/Transitions/TransitionAssist.cs",
-        "src/net45/Transitions/TransitionEffect.cs",
-        "src/net45/Transitions/TransitionEffectBase.cs",
-        "src/net45/Transitions/TransitionEffectExtension.cs",
-        "src/net45/Transitions/TransitionEffectKind.cs",
-        "src/net45/Transitions/TransitionEffectTypeConverter.cs",
-        "src/net45/Transitions/Transitioner.cs",
-        "src/net45/Transitions/TransitionerSlide.cs",
-        "src/net45/Transitions/TransitionerSlideState.cs",
-        "src/net45/Transitions/TransitioningContent.cs",
-        "src/net45/Transitions/TransitioningContentBase.cs",
-        "src/net45/TreeHelper.cs",
-        "src/net45/Underline.cs",
-        "src/net45/ValidationAssist.cs",
-        "src/net45/obj/AppVeyor/GeneratedInternalTypeHelper.g.cs"
+        "tools/VisualStudioToolsManifest.xml"
       ]
     },
     "ModernUICharts.WPF.Beta/0.9.1": {
@@ -265,26 +163,31 @@
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "MaterialDesignColors >= 2.0.4",
-      "MaterialDesignThemes >= 2.3.1.953",
+      "MaterialDesignThemes >= 4.3.0",
       "ModernUICharts.WPF.Beta >= 0.9.1",
       "Newtonsoft.Json >= 13.0.1",
       "RenameRuleContract >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lequo\\.nuget\\packages\\": {}
+    "C:\\Users\\moonc\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\windows\\Batch-Rename\\Dashboard\\BatchRenameNew\\BatchRenameNew.csproj",
+      "projectUniqueName": "D:\\HỌC\\năm 4\\học kì 1 - năm 4\\Lập trình windows\\BA1\\Batch-Rename\\Dashboard\\BatchRenameNew\\BatchRenameNew.csproj",
       "projectName": "BatchRenameNew",
-      "projectPath": "D:\\windows\\Batch-Rename\\Dashboard\\BatchRenameNew\\BatchRenameNew.csproj",
-      "packagesPath": "C:\\Users\\lequo\\.nuget\\packages\\",
-      "outputPath": "D:\\windows\\Batch-Rename\\Dashboard\\BatchRenameNew\\obj\\",
+      "projectPath": "D:\\HỌC\\năm 4\\học kì 1 - năm 4\\Lập trình windows\\BA1\\Batch-Rename\\Dashboard\\BatchRenameNew\\BatchRenameNew.csproj",
+      "packagesPath": "C:\\Users\\moonc\\.nuget\\packages\\",
+      "outputPath": "D:\\HỌC\\năm 4\\học kì 1 - năm 4\\Lập trình windows\\BA1\\Batch-Rename\\Dashboard\\BatchRenameNew\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\lequo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\moonc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -298,8 +201,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "D:\\windows\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj": {
-              "projectPath": "D:\\windows\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj"
+            "D:\\HỌC\\năm 4\\học kì 1 - năm 4\\Lập trình windows\\BA1\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj": {
+              "projectPath": "D:\\HỌC\\năm 4\\học kì 1 - năm 4\\Lập trình windows\\BA1\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj"
             }
           }
         }
@@ -320,7 +223,7 @@
           },
           "MaterialDesignThemes": {
             "target": "Package",
-            "version": "[2.3.1.953, )"
+            "version": "[4.3.0, )"
           },
           "ModernUICharts.WPF.Beta": {
             "target": "Package",
@@ -354,16 +257,6 @@
     }
   },
   "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'MaterialDesignThemes 2.3.1.953' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "MaterialDesignThemes",
-      "targetGraphs": [
-        "net6.0-windows7.0"
-      ]
-    },
     {
       "code": "NU1701",
       "level": "Warning",

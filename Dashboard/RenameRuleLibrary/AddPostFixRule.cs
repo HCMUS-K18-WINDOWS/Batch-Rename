@@ -15,7 +15,7 @@ namespace BatchRename
 
         public AddPostfixRule()
         {
-
+            Postfix = "";
         }
         public AddPostfixRule(string postfix)
         {
@@ -27,7 +27,7 @@ namespace BatchRename
         {
             switch (key)
             {
-                case "Prefix":
+                case "Postfix":
                     Postfix = (string)value;
                     return true;
                 default:
@@ -37,7 +37,13 @@ namespace BatchRename
 
         public object? GetAttribute(string key)
         {
-            throw new NotImplementedException();
+            switch (key)
+            {
+                case "Postfix":
+                    return Postfix;
+                default:
+                    return null;
+            }
         }
 
         public object Clone()
@@ -47,12 +53,13 @@ namespace BatchRename
 
         public RuleRequirement[] GetAllAttributesRequirement()
         {
-            return null;
+            return new RuleRequirement[] { new RuleRequirement("PostFix", RequirementType.String) };
         }
 
         public void Rename(FileInfo original)
         {
-            throw new NotImplementedException();
+            string result = $"{original.OldName}{Postfix}";
+            original.NewName = result;
         }
     }
 }

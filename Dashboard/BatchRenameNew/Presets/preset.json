@@ -38,7 +38,7 @@
     },
     {
       "type": "ChangeCase",
-      "req": "Lower"
+      "req": [ "Upper", "Lower", "Capital", "camelCase" ]
     }
   ]
 }
