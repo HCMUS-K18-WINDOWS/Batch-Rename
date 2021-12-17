@@ -25,7 +25,7 @@ namespace BatchRenameNew
             foreach (RenameRuleContract.FileInfo file in FileList)
             {
                 file.NewName = file.OldName;
-                file.NewExtension = file.NewExtension;
+                file.NewExtension = file.OldExtension;
                 file.Status = "";
             }
         }
@@ -62,18 +62,19 @@ namespace BatchRenameNew
         private static string ApplyNewName(RenameRuleContract.FileInfo file)
         {
             if (file.Status != "OK") return file.OldName + ": namesake";
-            if ((file.OldName == file.NewExtension) || (file.OldExtension == file.NewExtension)) {
+            if ((file.OldName == file.NewExtension) && (file.OldExtension == file.NewExtension)) {
                 return file.OldName + ": no new name";
             }
-            string oldPath = Path.Combine(file.AbsolutePath, file.OldName);
+            var oldFullName = file.OldName + file.OldExtension;
+            string oldPath = Path.Combine(file.AbsolutePath, oldFullName);
             if (File.Exists(oldPath))
             {
-                if (Path.IsPathRooted(oldPath))
-                {
-                    return file.OldName + ": path is rooted";
-                }
-                string directory = Path.GetDirectoryName(file.AbsolutePath);
-                string newPath = Path.Combine(directory, file.NewName);
+                //if (Path.IsPathRooted(oldPath))
+                //{
+                //    return file.OldName + ": path is rooted";
+                //}
+                var fullName = file.NewName + file.NewExtension;
+                string newPath = Path.Combine(file.AbsolutePath, fullName);
                 try
                 {
                     File.Move(oldPath, newPath);

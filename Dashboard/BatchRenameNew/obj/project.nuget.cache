@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "O3/Cqfh7cc+iWfTG5/Xw/I3BCBZ0KWor7WmqQP8lUVpIur5C4Gl3H3tcxIR2tJPSEp7Fwa5IgUyMB9xUvcRLXg==",
+  "dgSpecHash": "Pmi1QVwGN4I7CwzbnGNaP1cnvOlj/FUBulJLMtbFDlDC7f6IlK1S26pE7vDC259lebufnVGOvvdedr0bXrjbCA==",
   "success": true,
-  "projectFilePath": "D:\\HỌC\\năm 4\\học kì 1 - năm 4\\Lập trình windows\\BA1\\Batch-Rename\\Dashboard\\BatchRenameNew\\BatchRenameNew.csproj",
+  "projectFilePath": "E:\\Code\\Windows\\Batch-Rename\\Dashboard\\BatchRenameNew\\BatchRenameNew.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\moonc\\.nuget\\packages\\materialdesigncolors\\2.0.4\\materialdesigncolors.2.0.4.nupkg.sha512",
-    "C:\\Users\\moonc\\.nuget\\packages\\materialdesignthemes\\4.3.0\\materialdesignthemes.4.3.0.nupkg.sha512",
-    "C:\\Users\\moonc\\.nuget\\packages\\modernuicharts.wpf.beta\\0.9.1\\modernuicharts.wpf.beta.0.9.1.nupkg.sha512",
-    "C:\\Users\\moonc\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\tuanv\\.nuget\\packages\\materialdesigncolors\\2.0.4\\materialdesigncolors.2.0.4.nupkg.sha512",
+    "C:\\Users\\tuanv\\.nuget\\packages\\materialdesignthemes\\4.3.0\\materialdesignthemes.4.3.0.nupkg.sha512",
+    "C:\\Users\\tuanv\\.nuget\\packages\\modernuicharts.wpf.beta\\0.9.1\\modernuicharts.wpf.beta.0.9.1.nupkg.sha512",
+    "C:\\Users\\tuanv\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": [
     {

@@ -32,13 +32,15 @@ namespace BatchRename
 
         public bool SetAttribute(string key, object value)
         {
+            var strValue = (string)value;
+            if (strValue.Length == 0) return false;
             switch (key)
             {
                 case "CharBefore":
-                    CharBefore = (char)value;
+                    CharBefore = strValue.ElementAt(0);
                     return true;
                 case "CharAfter":
-                    CharAfter = (char)value;
+                    CharAfter = strValue.ElementAt(0);
                     return true;
                 default:
                     return false;

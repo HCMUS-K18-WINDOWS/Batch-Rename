@@ -71,6 +71,7 @@ namespace BatchRenameNew
                     var combobox = new ComboBox();
                     var possible = (string[]) requirement.PossibleValues;
                     combobox.ItemsSource = possible;
+                    _uiElementDic[requirement.Name] = combobox;
                     uiElement = combobox;
                 }
                 reqS.Children.Add(label);
@@ -98,6 +99,7 @@ namespace BatchRenameNew
                             newRule.SetAttribute(requirement.Name, text);
                             break;
                         case RequirementType.Number:
+                            if (((TextBox)field).Text.Equals("")) break;
                             var number = int.Parse(((TextBox)field).Text);
                             newRule.SetAttribute(requirement.Name, number);
                             break;

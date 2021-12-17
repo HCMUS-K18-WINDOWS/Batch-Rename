@@ -30,7 +30,6 @@ D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchR
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\NewRuleWindow.g.cs
 D:\windows\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\NewRuleWindow.baml
 E:\Code\Windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\BatchRenameNew.exe
-E:\Code\Windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\preset.json
 E:\Code\Windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\BatchRenameNew.deps.json
 E:\Code\Windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\BatchRenameNew.runtimeconfig.json
 E:\Code\Windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\BatchRenameNew.dll
@@ -94,3 +93,4 @@ D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashb
 D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\ref\BatchRenameNew.dll
 D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.pdb
 D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\obj\Debug\net6.0-windows\BatchRenameNew.genruntimeconfig.cache
+E:\Code\Windows\Batch-Rename\Dashboard\BatchRenameNew\bin\Debug\net6.0-windows\Presets\preset.json

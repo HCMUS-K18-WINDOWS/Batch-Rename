@@ -29,8 +29,8 @@
     },
     {
       "type": "CharReplace",
-      "req": [ " " ],
-      "value": "-"
+      "charbefore": " ",
+      "charafter": "-"
     },
     {
       "type": "AddPostfix",

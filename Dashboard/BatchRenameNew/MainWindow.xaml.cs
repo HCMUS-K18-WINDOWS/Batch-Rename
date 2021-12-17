@@ -19,7 +19,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Diagnostics;
 using System.ComponentModel;
-//using WinForms = System.Windows.Forms;
+using WinForms = System.Windows.Forms;
 
 namespace BatchRenameNew
 {
@@ -32,6 +32,7 @@ namespace BatchRenameNew
         public List<IRenameRuleParser> Parsers { get; set; }
         public BindingList<IRenameRule> Presets { get; set; }
         public BindingList<IRenameRule> Rules { get; set; }
+        private FileManager fileManager = new();
         public MainWindow()
         {
             InitializeComponent();
@@ -74,22 +75,59 @@ namespace BatchRenameNew
             if (openFileDialog.ShowDialog() == true)
             {
                 //Lọc qua mảng các file và lưu tên vào ListBox
-                foreach (string filename in openFileDialog.FileNames)
-                    dataListBoxFile.Items.Add(System.IO.Path.GetFileName(filename));
+                foreach (string filename in openFileDialog.FileNames) 
+                {
+                    //var fileInfo = new RenameRuleContract.FileInfo()
+                    //{
+                    //    OldName = System.IO.Path.GetFileNameWithoutExtension(filename),
+                    //    NewName = System.IO.Path.GetFileNameWithoutExtension(filename),
+                    //    OldExtension = System.IO.Path.GetExtension(filename),
+                    //    NewExtension = System.IO.Path.GetExtension(filename),
+                    //    AbsolutePath = System.IO.Path.GetDirectoryName(filename),
+                    //};
+                    //fileManager.AddFile(fileInfo);
+                    GetFiles(filename);
+                    //dataListBoxFile.Items.Add(System.IO.Path.GetFileName(filename));
+                }
+            }
+        }
+
+        private void GetFiles(string directoryName)
+        {
+            if (Directory.Exists(directoryName))
+            {
+                var fileNames = Directory.GetFiles(directoryName, "*.*", SearchOption.AllDirectories);
+                foreach (var file in fileNames)
+                {
+                    GetFiles(file);
+                }
+            } else
+            {
+                dataListBoxFile.Items.Add(System.IO.Path.GetFileName(directoryName));
+                var fileInfo = new RenameRuleContract.FileInfo()
+                {
+                    OldName = System.IO.Path.GetFileNameWithoutExtension(directoryName),
+                    NewName = System.IO.Path.GetFileNameWithoutExtension(directoryName),
+                    OldExtension = System.IO.Path.GetExtension(directoryName),
+                    NewExtension = System.IO.Path.GetExtension(directoryName),
+                    AbsolutePath = System.IO.Path.GetDirectoryName(directoryName),
+                };
+                fileManager.AddFile(fileInfo);
             }
         }
 
         private void UploadFolder_Click(object sender, RoutedEventArgs e)
         {
-            //WinForms.FolderBrowserDialog folderDialog = new WinForms.FolderBrowserDialog();
-            //if (folderDialog.ShowDialog() == WinForms.DialogResult.OK)
-            //{
-            //    //Lấy địa chỉ thư mục đã chọn
-            //    String sPath = folderDialog.SelectedPath;
+            WinForms.FolderBrowserDialog folderDialog = new WinForms.FolderBrowserDialog();
+            if (folderDialog.ShowDialog() == WinForms.DialogResult.OK)
+            {
+                //Lấy địa chỉ thư mục đã chọn
+                String sPath = folderDialog.SelectedPath;
+                GetFiles((string)sPath);
 
-            //    //Lưu địa chỉ thư mục vào ListBox
-            //    dataListBoxFolder.Items.Add(sPath);
-            //}
+                //Lưu địa chỉ thư mục vào ListBox
+                dataListBoxFolder.Items.Add(sPath);
+            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -140,6 +178,12 @@ namespace BatchRenameNew
             {
                 MessageBox.Show("Please choose a file preset!");
             }
+        }
+
+        private void Rename_Click(object sender, RoutedEventArgs e)
+        {
+            fileManager.ApplyRule(Rules.ToList());
+            fileManager.BatchRename();
         }
     }
 }
