@@ -53,7 +53,7 @@ namespace BatchRename
 
         public RuleRequirement[] GetAllAttributesRequirement()
         {
-            return new RuleRequirement[] { new RuleRequirement("PostFix", RequirementType.String) };
+            return new RuleRequirement[] { new RuleRequirement("Postfix", RequirementType.String) };
         }
 
         public void Rename(FileInfo original)

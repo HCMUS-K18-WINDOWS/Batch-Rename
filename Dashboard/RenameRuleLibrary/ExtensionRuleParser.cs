@@ -22,5 +22,10 @@ namespace RenameRuleLibrary
             string value = obj["value"].ToString();
             return new ExtensionRule(req, value);
         }
+
+        public object ParseRuleToFileObject(IRenameRule rule)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

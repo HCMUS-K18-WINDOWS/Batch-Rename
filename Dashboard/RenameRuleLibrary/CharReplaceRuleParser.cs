@@ -19,5 +19,10 @@ namespace BatchRename
             char CharAfter = obj["charafter"].GetValue<char>();
             return new CharReplaceRule(CharBefore, CharAfter);
         }
+
+        public object ParseRuleToFileObject(IRenameRule rule)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -15,5 +15,10 @@ namespace BatchRename
             string req = obj["req"].ToString();
             return new ChangeCaseRule(req);
         }
+
+        public object ParseRuleToFileObject(IRenameRule rule)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

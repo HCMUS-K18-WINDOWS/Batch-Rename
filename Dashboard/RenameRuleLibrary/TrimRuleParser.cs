@@ -14,5 +14,10 @@ namespace BatchRename
         {
             return new TrimRule();
         }
+
+        public object ParseRuleToFileObject(IRenameRule rule)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

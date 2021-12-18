@@ -20,6 +20,9 @@ using System.Windows.Navigation;
 using System.Diagnostics;
 using System.ComponentModel;
 using WinForms = System.Windows.Forms;
+using Newtonsoft.Json;
+using System.Text.Encodings.Web;
+using System.Web;
 
 namespace BatchRenameNew
 {
@@ -184,6 +187,19 @@ namespace BatchRenameNew
         {
             fileManager.ApplyRule(Rules.ToList());
             fileManager.BatchRename();
+        }
+
+        private void SavePresetBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var savePresetScreen = new SavePresetWindow(Rules.ToList());
+            savePresetScreen.Handle += ReloadPresetsFolder;
+            savePresetScreen.ShowDialog();
+        }
+
+        public void ReloadPresetsFolder()
+        {
+            PresetsCbb.Items.Clear();
+            LoadPresetFolder();
         }
     }
 }

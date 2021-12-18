@@ -1,4 +1,5 @@
-﻿using RenameRuleContract;
+﻿using Newtonsoft.Json;
+using RenameRuleContract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,17 @@ namespace BatchRename
         {
             string value = obj["value"].ToString();
             return new AddPrefixRule(value);
+        }
+
+        public object ParseRuleToFileObject(IRenameRule rule)
+        {
+            var addPrefix = rule as AddPrefixRule;
+            var obj = new
+            {
+                type = addPrefix?.Name,
+                value = addPrefix?.Prefix
+            };
+            return obj;
         }
     }
 }

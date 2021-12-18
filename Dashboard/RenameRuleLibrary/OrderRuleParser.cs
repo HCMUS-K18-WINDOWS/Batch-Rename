@@ -17,5 +17,10 @@ namespace BatchRename
 
             return new OrderRule(start, digit);
         }
+
+        public object ParseRuleToFileObject(IRenameRule rule)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

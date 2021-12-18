@@ -16,5 +16,10 @@ namespace BatchRename
             string value = obj["value"].ToString();
             return new RegexRule(req, value);
         }
+
+        public object ParseRuleToFileObject(IRenameRule rule)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
