@@ -58,7 +58,7 @@ namespace BatchRename
 
         public void Rename(FileInfo original)
         {
-            string result = $"{original.OldName}{Postfix}";
+            string result = $"{original.NewName}{Postfix}";
             original.NewName = result;
         }
     }

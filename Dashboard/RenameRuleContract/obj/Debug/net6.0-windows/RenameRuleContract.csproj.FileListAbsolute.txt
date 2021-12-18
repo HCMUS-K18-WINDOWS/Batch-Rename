@@ -21,11 +21,11 @@ E:\Code\Windows\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net6.0-windo
 E:\Code\Windows\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net6.0-windows\RenameRuleContract.dll
 E:\Code\Windows\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net6.0-windows\ref\RenameRuleContract.dll
 E:\Code\Windows\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net6.0-windows\RenameRuleContract.pdb
+E:\Code\Windows\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net6.0-windows\RenameRuleContract.csproj.AssemblyReference.cache
 D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleContract\bin\Debug\net6.0-windows\RenameRuleContract.deps.json
 D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleContract\bin\Debug\net6.0-windows\RenameRuleContract.dll
 D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleContract\bin\Debug\net6.0-windows\ref\RenameRuleContract.dll
 D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleContract\bin\Debug\net6.0-windows\RenameRuleContract.pdb
-D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net6.0-windows\RenameRuleContract.csproj.AssemblyReference.cache
 D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net6.0-windows\RenameRuleContract.GeneratedMSBuildEditorConfig.editorconfig
 D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net6.0-windows\RenameRuleContract.AssemblyInfoInputs.cache
 D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net6.0-windows\RenameRuleContract.AssemblyInfo.cs
@@ -33,4 +33,3 @@ D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashb
 D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net6.0-windows\RenameRuleContract.dll
 D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net6.0-windows\ref\RenameRuleContract.dll
 D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net6.0-windows\RenameRuleContract.pdb
-E:\Code\Windows\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net6.0-windows\RenameRuleContract.csproj.AssemblyReference.cache

@@ -29,12 +29,19 @@ namespace BatchRenameNew
                 file.Status = "";
             }
         }
+
+        public void UpdateName(RenameRuleContract.FileInfo file)
+        {
+            file.OldName = file.NewName;
+            file.OldExtension = file.NewExtension;
+        }
+
         public void ApplyRule(List<IRenameRule> ruleList)
         {
             ResetName();
             foreach(var file in this.FileList)
             {
-                foreach (var rule in ruleList)
+                foreach(var rule in ruleList)
                 {
                     rule.Rename(file);
                 }
@@ -62,17 +69,13 @@ namespace BatchRenameNew
         private static string ApplyNewName(RenameRuleContract.FileInfo file)
         {
             if (file.Status != "OK") return file.OldName + ": namesake";
-            if ((file.OldName == file.NewExtension) && (file.OldExtension == file.NewExtension)) {
+            if ((file.OldName == file.NewName) && (file.OldExtension == file.NewExtension)) {
                 return file.OldName + ": no new name";
             }
             var oldFullName = file.OldName + file.OldExtension;
             string oldPath = Path.Combine(file.AbsolutePath, oldFullName);
             if (File.Exists(oldPath))
             {
-                //if (Path.IsPathRooted(oldPath))
-                //{
-                //    return file.OldName + ": path is rooted";
-                //}
                 var fullName = file.NewName + file.NewExtension;
                 string newPath = Path.Combine(file.AbsolutePath, fullName);
                 try
@@ -103,8 +106,7 @@ namespace BatchRenameNew
                     errors.Add(err);
                 } else
                 {
-                    file.OldExtension = file.NewExtension;
-                    file.OldName = file.NewName;
+                    UpdateName(file);
                 }
             }
             return errors;

@@ -24,7 +24,7 @@ namespace BatchRename
 
         public void Rename(FileInfo original)
         {
-            string result = $"{Prefix}{original.OldName}";
+            string result = $"{Prefix}{original.NewName}";
             original.NewName = result;
         }
 
