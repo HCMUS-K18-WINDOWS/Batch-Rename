@@ -283,5 +283,20 @@ namespace BatchRenameNew
         {
             SaveLastTimeState();
         }
+
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+            var index = RuleListView.SelectedIndex;
+            var _rule = Rules[index];
+
+            var screen = new EditRuleWindow(_rule);
+            screen.ShowDialog();
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            var _rule = (IRenameRule)RuleListView.SelectedItem;
+            Rules.Remove(_rule);
+        }
     }
 }
