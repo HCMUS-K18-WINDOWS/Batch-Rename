@@ -26,18 +26,18 @@ namespace BatchRename
             switch (this.Type)
             {
                 case "Upper":
-                    original.NewName = original.OldName.ToUpper();
+                    original.NewName = original.NewName.ToUpper();
                     break;
                 case "Lower":
-                    original.NewName = original.OldName.ToLower();
+                    original.NewName = original.NewName.ToLower();
                     break;
                 case "Capital":
-                    var OldNameLower = original.OldName.ToLower();
-                    var FirstLetter = char.ToUpper(original.OldName[0]);
+                    var OldNameLower = original.NewName.ToLower();
+                    var FirstLetter = char.ToUpper(OldNameLower[0]);
                     original.NewName = FirstLetter + OldNameLower.Remove(0, 1);
                     break;
                 case "camelCase":
-                    original.NewName = ToCamelCase(original.OldName);
+                    original.NewName = ToCamelCase(original.NewName);
                     break;
                 default:
                     break;

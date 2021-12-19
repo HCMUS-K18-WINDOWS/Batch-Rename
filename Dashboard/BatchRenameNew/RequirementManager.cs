@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,6 +12,8 @@ namespace BatchRenameNew
 {
     public class RequirementManager
     {
+
+        Regex specialChar = new Regex(@"[/\\*:?<>|]");
         private RuleRequirement[] RuleRequirements 
         { 
             get 
@@ -80,7 +83,20 @@ namespace BatchRenameNew
             }
             return wrapper;
         }
-        public IRenameRule CreateRule()
+        public bool CheckText(string text)
+        {
+            MatchCollection matched = specialChar.Matches((string)text);
+            if (matched.Count > 0)
+            {
+                MessageBox.Show("Don't use special char include: \\ / : * ? \" < > |");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        public IRenameRule? CreateRule()
         {
             var newRule = RuleManager.GetInstance().CreateRule(_name);
             foreach(var requirement in this.RuleRequirements)
@@ -96,6 +112,10 @@ namespace BatchRenameNew
                     {
                         case RequirementType.String:
                             var text = ((TextBox)field).Text;
+                            if (!CheckText(text))
+                            {
+                                return null;
+                            }
                             newRule.SetAttribute(requirement.Name, text);
                             break;
                         case RequirementType.Number:

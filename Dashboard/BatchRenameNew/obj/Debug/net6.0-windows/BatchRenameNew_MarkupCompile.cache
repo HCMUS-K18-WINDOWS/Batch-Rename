@@ -1,5 +1,5 @@
 ﻿BatchRenameNew
-1.0.0.0
+
 
 winexe
 C#
@@ -12,7 +12,7 @@ TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\BatchRenameNew\App.xaml
 3-1521328127
 
-11-1055453955
+9-297153380
 2081380053291
 MainWindow.xaml;NewRuleWindow.xaml;SavePresetWindow.xaml;
 
