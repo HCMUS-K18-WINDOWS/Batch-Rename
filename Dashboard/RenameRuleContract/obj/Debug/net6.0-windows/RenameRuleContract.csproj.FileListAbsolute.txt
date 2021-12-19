@@ -1,15 +1,3 @@
-D:\windows\Batch-Rename\Dashboard\RenameRuleContract\bin\Debug\net6.0-windows\RenameRuleContract.deps.json
-D:\windows\Batch-Rename\Dashboard\RenameRuleContract\bin\Debug\net6.0-windows\RenameRuleContract.dll
-D:\windows\Batch-Rename\Dashboard\RenameRuleContract\bin\Debug\net6.0-windows\ref\RenameRuleContract.dll
-D:\windows\Batch-Rename\Dashboard\RenameRuleContract\bin\Debug\net6.0-windows\RenameRuleContract.pdb
-D:\windows\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net6.0-windows\RenameRuleContract.csproj.AssemblyReference.cache
-D:\windows\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net6.0-windows\RenameRuleContract.GeneratedMSBuildEditorConfig.editorconfig
-D:\windows\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net6.0-windows\RenameRuleContract.AssemblyInfoInputs.cache
-D:\windows\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net6.0-windows\RenameRuleContract.AssemblyInfo.cs
-D:\windows\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net6.0-windows\RenameRuleContract.csproj.CoreCompileInputs.cache
-D:\windows\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net6.0-windows\RenameRuleContract.dll
-D:\windows\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net6.0-windows\ref\RenameRuleContract.dll
-D:\windows\Batch-Rename\Dashboard\RenameRuleContract\obj\Debug\net6.0-windows\RenameRuleContract.pdb
 E:\Code\Windows\Batch-Rename\Dashboard\RenameRuleContract\bin\Debug\net6.0-windows\RenameRuleContract.deps.json
 E:\Code\Windows\Batch-Rename\Dashboard\RenameRuleContract\bin\Debug\net6.0-windows\RenameRuleContract.dll
 E:\Code\Windows\Batch-Rename\Dashboard\RenameRuleContract\bin\Debug\net6.0-windows\ref\RenameRuleContract.dll

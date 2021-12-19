@@ -1,11 +1,23 @@
 {
   "position": {
-    "x": 200,
-    "y": 100
+    "x": 191.0,
+    "y": 70.0
   },
   "size": {
     "width": 1024.0,
     "height": 600.0
   },
-  "last_chosen_preset": "preset.json"
+  "last_chosen_preset": "new.json",
+  "files": [
+  ],
+  "rules": [
+    {
+      "type": "AddPostfix",
+      "value": "2"
+    },
+    {
+      "type": "AddPrefix",
+      "value": "1"
+    }
+  ]
 }
