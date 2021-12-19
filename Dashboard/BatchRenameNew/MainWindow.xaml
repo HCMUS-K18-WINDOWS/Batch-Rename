@@ -9,7 +9,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         xmlns:MetroChart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
         mc:Ignorable="d" Height="600" Width="1024" ResizeMode="CanResizeWithGrip" Top="100" Left="160" WindowStyle="None">
-
+    
     <Window.Resources>
         <ResourceDictionary>
             <Style x:Key="ScrollThumbs" TargetType="{x:Type Thumb}">
@@ -64,14 +64,16 @@
         <!--Khu vực hiển thị danh sách các file đã up-->
         <Grid Grid.Column="1" Grid.Row="1" Background="#FFCFCFCF">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="412*"/>
+                <ColumnDefinition Width="341*"/>
+                <ColumnDefinition Width="71*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Background="Azure">
                 <TextBlock FontSize="20" Text="File" Background="Aqua" TextAlignment="Center"></TextBlock>
-                <ListBox Grid.Column="0" x:Name="dataListBoxFile"></ListBox>
+                <ListBox Grid.Column="0" x:Name="dataListBoxFile" ScrollViewer.VerticalScrollBarVisibility="Auto"
+         ScrollViewer.HorizontalScrollBarVisibility="Disabled"></ListBox>
             </StackPanel>
-            <StackPanel Grid.Column="1" Background="#CCFFFF">
+            <StackPanel Grid.Column="1" Background="#CCFFFF" Grid.ColumnSpan="2">
                 <TextBlock FontSize="20" Text="Folder" Background="#00FFCC" TextAlignment="Center"></TextBlock>
                 <ListBox Grid.Column="1" x:Name="dataListBoxFolder"></ListBox>
             </StackPanel>
@@ -114,7 +116,7 @@
                 <Label Height="10"></Label>
                 <StackPanel Orientation="Horizontal">
                     <Button x:Name="Load" Click="Load_Click" Content="Load" Margin="3">
-                        
+
                     </Button>
                     <ComboBox x:Name="PresetsCbb" Width="120"/>
                 </StackPanel>
@@ -125,18 +127,18 @@
                     </Grid>
                 </Button>
 
-                <ListView x:Name="RuleListView" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}">
-                    <ListView.View>
+                <ListView Height="200" x:Name="RuleListView" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}">
+                    <!--<ListView.View>
                         <GridView>
                             <GridViewColumn/>
                         </GridView>
-                    </ListView.View>
+                    </ListView.View>-->
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Name}" />
                         </DataTemplate>
                     </ListView.ItemTemplate>
-  
+
                 </ListView>
 
                 <Button x:Name="Rename" Click="Rename_Click" Margin="10" Background="#66CCFF" BorderBrush="#003399">
@@ -168,9 +170,9 @@
                         <TextBlock HorizontalAlignment="Center" Text="New Name" FontFamily="Champagne &amp; Limousines"/>
                     </Grid>
                 </Button>
-                
+
             </StackPanel>
-            
+
         </Grid>
 
 

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace BatchRename
@@ -17,7 +18,7 @@ namespace BatchRename
 
         public CharReplaceRule()
         {
-            //Value = '';
+
         }
 
         public CharReplaceRule(char value1, char value2)
@@ -27,7 +28,8 @@ namespace BatchRename
         }
         public void Rename(FileInfo original)
         {
-            throw new NotImplementedException();
+            string result = Regex.Replace(original.NewName, CharBefore.ToString(), CharAfter.ToString());
+            original.NewName = result;
         }
 
         public bool SetAttribute(string key, object value)
