@@ -67,24 +67,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\moonc\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\lequo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\HỌC\\năm 4\\học kì 1 - năm 4\\Lập trình windows\\BA1\\Batch-Rename\\Dashboard\\RenameRuleLibrary\\RenameRuleLibrary.csproj",
+      "projectUniqueName": "D:\\windows\\Batch-Rename\\Batch-Rename\\Dashboard\\RenameRuleLibrary\\RenameRuleLibrary.csproj",
       "projectName": "RenameRuleLibrary",
-      "projectPath": "D:\\HỌC\\năm 4\\học kì 1 - năm 4\\Lập trình windows\\BA1\\Batch-Rename\\Dashboard\\RenameRuleLibrary\\RenameRuleLibrary.csproj",
-      "packagesPath": "C:\\Users\\moonc\\.nuget\\packages\\",
-      "outputPath": "D:\\HỌC\\năm 4\\học kì 1 - năm 4\\Lập trình windows\\BA1\\Batch-Rename\\Dashboard\\RenameRuleLibrary\\obj\\",
+      "projectPath": "D:\\windows\\Batch-Rename\\Batch-Rename\\Dashboard\\RenameRuleLibrary\\RenameRuleLibrary.csproj",
+      "packagesPath": "C:\\Users\\lequo\\.nuget\\packages\\",
+      "outputPath": "D:\\windows\\Batch-Rename\\Batch-Rename\\Dashboard\\RenameRuleLibrary\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\moonc\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\lequo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -98,8 +93,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "D:\\HỌC\\năm 4\\học kì 1 - năm 4\\Lập trình windows\\BA1\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj": {
-              "projectPath": "D:\\HỌC\\năm 4\\học kì 1 - năm 4\\Lập trình windows\\BA1\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj"
+            "D:\\windows\\Batch-Rename\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj": {
+              "projectPath": "D:\\windows\\Batch-Rename\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj"
             }
           }
         }
