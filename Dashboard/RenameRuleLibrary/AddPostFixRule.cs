@@ -11,7 +11,7 @@ namespace BatchRename
     {
         public string Postfix { get; set; }
 
-        public string Name => "AddPostfix";
+        public string Name { get => "AddPostfix"; set { } }
 
         public AddPostfixRule()
         {

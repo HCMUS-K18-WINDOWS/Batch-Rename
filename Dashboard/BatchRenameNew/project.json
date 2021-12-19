@@ -1,17 +1,11 @@
 {
-  "name": "NAME",
   "position": {
-    "x": 100,
-    "y": 200
+    "x": 200,
+    "y": 100
   },
   "size": {
-    "width": 400,
-    "height": 300
+    "width": 1024.0,
+    "height": 600.0
   },
-  "files": [
-    {
-      "uri": "./aaa"
-    }
-  ],
-  "rules": []
+  "last_chosen_preset": "preset.json"
 }

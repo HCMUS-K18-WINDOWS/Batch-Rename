@@ -13,7 +13,7 @@ namespace BatchRename
         public char CharBefore { get; set; }
         public char CharAfter { get; set; }
 
-        public string Name => "CharReplace";
+        public string Name { get => "CharReplace"; set { } }
 
         public CharReplaceRule()
         {

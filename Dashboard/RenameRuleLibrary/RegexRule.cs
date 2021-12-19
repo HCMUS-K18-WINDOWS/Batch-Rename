@@ -13,7 +13,7 @@ namespace BatchRename
         public string Pattern { get; set; }
         public string Value { get; set; }
 
-        public string Name => "Regex";
+        public string Name { get => "Regex"; set { } }
 
         public RegexRule()
         {

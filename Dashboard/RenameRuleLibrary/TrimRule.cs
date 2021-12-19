@@ -9,7 +9,7 @@ namespace BatchRename
 {
     public class TrimRule : IRenameRule
     {
-        public string Name => "Trim";
+        public string Name { get => "Trim"; set { } }
 
         public object Clone()
         {

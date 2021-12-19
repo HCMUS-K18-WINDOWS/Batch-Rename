@@ -11,7 +11,7 @@ namespace BatchRename
         public List<string> Needles { get; set; }
         public string Replacer { get; set; }
 
-        public string Name => "Replace";
+        public string Name { get => "Replace"; set { } }
 
         public ReplaceRule()
         {

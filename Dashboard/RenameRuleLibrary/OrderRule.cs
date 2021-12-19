@@ -14,7 +14,7 @@ namespace BatchRename
         public int StartValue { get { return startValue; } set { startValue = value; count = value; } }
         private int count = 0;
 
-        public string Name => "Order";
+        public string Name { get => "Order"; set { } }
 
         public OrderRule()
         {

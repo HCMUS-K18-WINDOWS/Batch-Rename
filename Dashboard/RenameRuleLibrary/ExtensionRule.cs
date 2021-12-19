@@ -9,9 +9,9 @@ namespace RenameRuleLibrary
 {
     public class ExtensionRule : IRenameRule
     {
-        public string Name => "Extension";
         public string OldExtension { get; set; }
         public string NewExtension { get; set; }
+        public string Name { get => "Extension"; set { } }
 
         public ExtensionRule()
         {

@@ -36,6 +36,7 @@ namespace BatchRenameNew
         public BindingList<IRenameRule> Presets { get; set; }
         public BindingList<IRenameRule> Rules { get; set; }
         private FileManager fileManager = new();
+        public string LastChosenPreset { get; set; }
         public MainWindow()
         {
             InitializeComponent();
@@ -44,10 +45,31 @@ namespace BatchRenameNew
             Presets = new BindingList<IRenameRule>();
             Rules = new BindingList<IRenameRule>();
             RuleListView.ItemsSource = Rules;
+            LastChosenPreset = "";
+            LoadProjectConfig();
+        }
+
+        private void LoadProjectConfig()
+        {
+            var d = AppDomain.CurrentDomain.BaseDirectory;
+            var fileConfig = Path.Combine(d, "project.json");
+            if(File.Exists(fileConfig))
+            {
+                JsonNode? config = JsonNode.Parse(File.ReadAllText(fileConfig));
+                if(config != null) { 
+                    LastChosenPreset = config["last_chosen_preset"].ToString();
+                    PresetsCbb.SelectedItem = LastChosenPreset;
+                    this.Left = config["position"]["x"].GetValue<double>();
+                    this.Top = config["position"]["y"].GetValue<double>();
+                    this.Width = config["size"]["width"].GetValue<double>();
+                    this.Height = config["size"]["height"].GetValue<double>();
+                }
+            }
         }
 
         public void LoadFilePreset(string fileName)
         {
+            LastChosenPreset = fileName;
             string filePath = $"Presets/{fileName}";
             string jsonString = File.ReadAllText(filePath);
             JsonNode rules = JsonNode.Parse(jsonString)["rules"];
@@ -135,6 +157,7 @@ namespace BatchRenameNew
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            
             RuleManager.GetInstance().LoadExternalDll();
             RuleParserManager.GetInstance().LoadExternalDll();
             LoadPresetFolder();
@@ -200,6 +223,24 @@ namespace BatchRenameNew
         {
             PresetsCbb.Items.Clear();
             LoadPresetFolder();
+        }
+
+        private void Window_Closing(object sender, CancelEventArgs e)
+        {
+            var config = new
+            {
+                position = new {x = this.Left, y = this.Top},
+                size = new { width = this.Width, height = this.Height},
+                last_chosen_preset = LastChosenPreset != null ? LastChosenPreset: "",
+            };
+
+            var d = AppDomain.CurrentDomain.BaseDirectory;
+            var projectPath = Path.Combine(d, "project.json");
+            if(File.Exists(projectPath))
+            {
+                string jsonConfigString = JsonConvert.SerializeObject(config, Formatting.Indented);
+                File.WriteAllText(projectPath, jsonConfigString);
+            }
         }
     }
 }

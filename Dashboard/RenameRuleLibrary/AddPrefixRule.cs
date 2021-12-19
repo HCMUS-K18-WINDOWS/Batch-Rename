@@ -9,8 +9,7 @@ namespace BatchRename
     public class AddPrefixRule : IRenameRule
     {
         public string Prefix { get; set; }
-
-        public string Name => "AddPrefix";
+        public string Name { get => "AddPrefix"; set{ } }
 
         public AddPrefixRule()
         {

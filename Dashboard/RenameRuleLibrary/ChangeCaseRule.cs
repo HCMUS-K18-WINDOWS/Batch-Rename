@@ -10,8 +10,7 @@ namespace BatchRename
     public class ChangeCaseRule : IRenameRule
     {
         public string Type { get; set; }
-
-        public string Name => "ChangeCase";
+        public string Name { get => "ChangeCase"; set { } }
 
         public ChangeCaseRule()
         {
