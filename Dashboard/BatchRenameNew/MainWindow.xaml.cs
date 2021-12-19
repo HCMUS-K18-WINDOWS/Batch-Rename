@@ -23,6 +23,7 @@ using WinForms = System.Windows.Forms;
 using Newtonsoft.Json;
 using System.Text.Encodings.Web;
 using System.Web;
+using System.Threading;
 
 namespace BatchRenameNew
 {
@@ -36,7 +37,7 @@ namespace BatchRenameNew
         public BindingList<IRenameRule> Presets { get; set; }
         public BindingList<IRenameRule> Rules { get; set; }
         private FileManager fileManager = new();
-        public string LastChosenPreset { get; set; }
+        public string LastChosenPreset { get; set; } 
         public MainWindow()
         {
             InitializeComponent();
@@ -46,7 +47,19 @@ namespace BatchRenameNew
             Rules = new BindingList<IRenameRule>();
             RuleListView.ItemsSource = Rules;
             LastChosenPreset = "";
+
+            RuleManager.GetInstance().LoadExternalDll();
+            RuleParserManager.GetInstance().LoadExternalDll();
             LoadProjectConfig();
+        }
+
+        public async void Backup()
+        {
+            var timer = new PeriodicTimer(TimeSpan.FromSeconds(10));
+            while (await timer.WaitForNextTickAsync())
+            {
+                SaveLastTimeState();
+            }
         }
 
         private void LoadProjectConfig()
@@ -63,7 +76,24 @@ namespace BatchRenameNew
                     this.Top = config["position"]["y"].GetValue<double>();
                     this.Width = config["size"]["width"].GetValue<double>();
                     this.Height = config["size"]["height"].GetValue<double>();
+                    List<RenameRuleContract.FileInfo> files = JsonConvert.DeserializeObject<List<RenameRuleContract.FileInfo>>(config["files"].ToJsonString());
+                    fileManager.FileList = files;
+                    foreach(var file in files)
+                    {
+                        // Đang hiển thị tên cũ và k có extention của file khi load file trong file backup project.json
+                        // => Khi đổi danh sách file thành bảng thì cần chỉnh lại dòng này!
+                        dataListBoxFile.Items.Add(file.OldName);
+                    }
+                    JsonNode? rules = config["rules"];
+                    int ruleLength = ((JsonArray)rules).Count;
+                    for(int i=0; i< ruleLength; i++)
+                    {
+                        var parser = RuleParserManager.GetInstance().CreateRuleParser(rules[i]["type"].ToString());
+                        var rule = parser.Parse(rules[i]);
+                        Rules.Add(rule);
+                    }
                 }
+                 
             }
         }
 
@@ -157,11 +187,8 @@ namespace BatchRenameNew
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            
-            RuleManager.GetInstance().LoadExternalDll();
-            RuleParserManager.GetInstance().LoadExternalDll();
             LoadPresetFolder();
-            
+            Backup();
         }
 
         private void LoadPresetFolder()
@@ -224,23 +251,37 @@ namespace BatchRenameNew
             PresetsCbb.Items.Clear();
             LoadPresetFolder();
         }
-
-        private void Window_Closing(object sender, CancelEventArgs e)
+        
+        public void SaveLastTimeState()
         {
+            var listRules = new List<object>();
+            foreach(var rule in Rules.ToList())
+            {
+                var parser = RuleParserManager.GetInstance().CreateRuleParser(rule.Name);
+                var ruleObj = parser.ParseRuleToFileObject(rule);
+                listRules.Add(ruleObj);
+            }
             var config = new
             {
-                position = new {x = this.Left, y = this.Top},
-                size = new { width = this.Width, height = this.Height},
-                last_chosen_preset = LastChosenPreset != null ? LastChosenPreset: "",
+                position = new { x = this.Left, y = this.Top },
+                size = new { width = this.Width, height = this.Height },
+                last_chosen_preset = LastChosenPreset != null ? LastChosenPreset : "",
+                files = fileManager.FileList,
+                rules = listRules
             };
 
             var d = AppDomain.CurrentDomain.BaseDirectory;
             var projectPath = Path.Combine(d, "project.json");
-            if(File.Exists(projectPath))
+            if (File.Exists(projectPath))
             {
                 string jsonConfigString = JsonConvert.SerializeObject(config, Formatting.Indented);
                 File.WriteAllText(projectPath, jsonConfigString);
             }
+        }
+
+        private void Window_Closing(object sender, CancelEventArgs e)
+        {
+            SaveLastTimeState();
         }
     }
 }
