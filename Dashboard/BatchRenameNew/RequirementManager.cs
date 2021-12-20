@@ -153,6 +153,7 @@ namespace BatchRenameNew
         }
         public bool SetRule()
         {
+            var backupRule = (IRenameRule) _renameRule?.Clone()!;
             foreach (var requirement in this.RuleRequirements)
             {
                 var field = _uiElementDic[requirement.Name];
@@ -169,6 +170,7 @@ namespace BatchRenameNew
                             var text = ((TextBox)field).Text;
                             if (!CheckText(text))
                             {
+                                _renameRule = backupRule;
                                 return false;
                             }
                             _renameRule?.SetAttribute(requirement.Name, text);
