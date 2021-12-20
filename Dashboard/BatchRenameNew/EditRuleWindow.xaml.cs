@@ -20,6 +20,8 @@ namespace BatchRenameNew
     /// </summary>
     public partial class EditRuleWindow : Window
     {
+        private IRenameRule _renameRule;
+        private RequirementManager _requirementManager;
         public EditRuleWindow()
         {
             InitializeComponent();
@@ -28,17 +30,26 @@ namespace BatchRenameNew
         public EditRuleWindow(IRenameRule rule)
         {
             InitializeComponent();
+            this._renameRule = rule;
+            this._requirementManager = new RequirementManager(_renameRule);
             DataContext = rule;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            var panel = _requirementManager.BuildEditElement();
+            canvasField.Children.Add(panel);
         }
 
         private void CreateBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            if (_requirementManager.SetRule())
+            {
+                Close();
+            } else
+            {
+                MessageBox.Show("Invalid rule");
+            }
         }
     }
 }

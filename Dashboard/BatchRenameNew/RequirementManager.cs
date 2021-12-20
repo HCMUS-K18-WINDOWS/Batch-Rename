@@ -31,6 +31,7 @@ namespace BatchRenameNew
         }
         private Dictionary<string, RuleRequirement> _requirements = new();
         private Dictionary<string, UIElement> _uiElementDic = new();
+        private IRenameRule? _renameRule;
         private string _name = string.Empty;
         public RequirementManager(string ruleName)
         {
@@ -43,6 +44,60 @@ namespace BatchRenameNew
             {
                 throw new KeyNotFoundException("Rule is not exist");
             }
+        }
+        public RequirementManager(IRenameRule renameRule)
+        {
+            _name = renameRule.Name;
+            _renameRule = renameRule;
+            RuleRequirements = renameRule.GetAllAttributesRequirement();
+        }
+        public UIElement BuildEditElement()
+        {
+            _uiElementDic.Clear();
+            var wrapper = new StackPanel
+            {
+                Orientation = Orientation.Vertical
+            };
+            foreach (var requirement in this.RuleRequirements)
+            {
+                var reqS = new StackPanel();
+                UIElement uiElement;
+                var label = new Label
+                {
+                    Content = requirement.Name
+                };
+                var content = _renameRule?.GetAttribute(requirement.Name);
+                if (requirement.Type == RequirementType.Boolean)
+                {
+                    var checker = new CheckBox();
+                    var isChecked = (bool) content!;
+                    checker.IsChecked = isChecked;
+                    _uiElementDic[requirement.Name] = checker;
+                    uiElement = checker;
+                }
+                else if (requirement.PossibleValues == null)
+                {
+                    var textbox = new TextBox();
+                    var text = (string) content!;
+                    textbox.Text = text;
+                    _uiElementDic[requirement.Name] = textbox;
+                    uiElement = textbox;
+                }
+                else
+                {
+                    var combobox = new ComboBox();
+                    var possible = (string[])requirement.PossibleValues;
+                    combobox.ItemsSource = possible;
+                    var selectedItem = (string) content!;
+                    combobox.SelectedItem = selectedItem;
+                    _uiElementDic[requirement.Name] = combobox;
+                    uiElement = combobox;
+                }
+                reqS.Children.Add(label);
+                reqS.Children.Add(uiElement);
+                wrapper.Children.Add(reqS);
+            }
+            return wrapper;
         }
         public UIElement BuildElement()
         {
@@ -95,6 +150,53 @@ namespace BatchRenameNew
             {
                 return true;
             }
+        }
+        public bool SetRule()
+        {
+            foreach (var requirement in this.RuleRequirements)
+            {
+                var field = _uiElementDic[requirement.Name];
+                if (requirement.Type == RequirementType.Boolean)
+                {
+                    var checker = ((CheckBox)field).IsChecked;
+                    _renameRule?.SetAttribute(requirement.Name, checker!);
+                }
+                else if (requirement.PossibleValues == null)
+                {
+                    switch (requirement.Type)
+                    {
+                        case RequirementType.String:
+                            var text = ((TextBox)field).Text;
+                            if (!CheckText(text))
+                            {
+                                return false;
+                            }
+                            _renameRule?.SetAttribute(requirement.Name, text);
+                            break;
+                        case RequirementType.Number:
+                            if (((TextBox)field).Text.Equals("")) break;
+                            var number = int.Parse(((TextBox)field).Text);
+                            _renameRule?.SetAttribute(requirement.Name, number);
+                            break;
+                    }
+                }
+                else
+                {
+                    switch (requirement.Type)
+                    {
+                        case RequirementType.String:
+                            var text = (string)((ComboBox)field).SelectedItem;
+                            _renameRule?.SetAttribute(requirement.Name, text);
+                            break;
+                        case RequirementType.Number:
+                            var number = int.Parse((string)((ComboBox)field).SelectedItem);
+                            _renameRule?.SetAttribute(requirement.Name, number);
+                            break;
+                    }
+                }
+
+            }
+            return true;
         }
         public IRenameRule? CreateRule()
         {
