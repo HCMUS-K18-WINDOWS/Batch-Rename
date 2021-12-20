@@ -89,6 +89,32 @@ namespace BatchRenameNew
             }
             return file.OldName + ": does not exist";
         }
+        private static string CopyToNewLocation(RenameRuleContract.FileInfo file, string newLocation)
+        {
+            if (file.Status != "OK") return file.OldName + ": namesake";
+            if ((file.NewName == file.NewExtension) && (file.OldExtension == file.NewExtension))
+            {
+                return file.OldName + ": no new name";
+            }
+            var oldFullName = file.OldName + file.OldExtension;
+            string oldPath = Path.Combine(file.AbsolutePath, oldFullName);
+            if (File.Exists(oldPath))
+            {
+                var fullName = file.NewName + file.NewExtension;
+                string newPath = Path.Combine(newLocation, fullName);
+                try
+                {
+                    File.Copy(oldPath, newPath);
+                }
+                catch (Exception ex)
+                {
+                    Console.Error.WriteLine(ex.ToString());
+                    return file.OldName + ": internal error";
+                }
+                return "";
+            }
+            return file.OldName + ": does not exist";
+        }
         public void ClearAllFile()
         {
             FileList.Clear();
@@ -103,6 +129,25 @@ namespace BatchRenameNew
                 {
                     errors.Add(err);
                 } else
+                    UpdateName(file);
+            }
+            return errors;
+        }
+        public List<string> BatchCopy(string newLocation)
+        {
+            if (!Directory.Exists(newLocation))
+            {
+                return new List<string> { newLocation + " is not exist on disk"};
+            }
+            List<string> errors = new List<string>();
+            foreach (var file in this.FileList)
+            {
+                string err = CopyToNewLocation(file, newLocation);
+                if (err != "")
+                {
+                    errors.Add(err);
+                }
+                else
                     UpdateName(file);
             }
             return errors;
