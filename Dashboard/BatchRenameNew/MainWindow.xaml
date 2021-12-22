@@ -69,11 +69,12 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Background="Azure">
                 <TextBlock FontSize="20" Text="File" Background="Aqua" TextAlignment="Center"></TextBlock>
-                <ListBox Height="543"  ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Column="0" x:Name="dataListBoxFile"></ListBox>
+                <ListBox Drop="listBoxFiles_DragDrop" AllowDrop="True"
+                         Height="543"  ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Column="0" x:Name="dataListBoxFile"></ListBox>
             </StackPanel>
             <StackPanel Grid.Column="1" Background="#CCFFFF" Grid.ColumnSpan="2">
                 <TextBlock FontSize="20" Text="Folder" Background="#00FFCC" TextAlignment="Center"></TextBlock>
-                <ListBox Grid.Column="1" x:Name="dataListBoxFolder"></ListBox>
+                <ListBox Height="543"  ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Column="1" x:Name="dataListBoxFolder"></ListBox>
             </StackPanel>
 
 

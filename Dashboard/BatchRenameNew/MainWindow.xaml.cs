@@ -122,7 +122,15 @@ namespace BatchRenameNew
         {
             DragMove(); //Giúp duy chuyển cửa sổ hộp thoại
         }
-
+        private void listBoxFiles_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] directoryName = (string[])e.Data.GetData(DataFormats.FileDrop);
+            foreach (string file in directoryName)
+            {
+                GetFiles(file);
+            }
+            
+        }
         private void UploadFile_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -132,17 +140,7 @@ namespace BatchRenameNew
                 //Lọc qua mảng các file và lưu tên vào ListBox
                 foreach (string filename in openFileDialog.FileNames) 
                 {
-                    //var fileInfo = new RenameRuleContract.FileInfo()
-                    //{
-                    //    OldName = System.IO.Path.GetFileNameWithoutExtension(filename),
-                    //    NewName = System.IO.Path.GetFileNameWithoutExtension(filename),
-                    //    OldExtension = System.IO.Path.GetExtension(filename),
-                    //    NewExtension = System.IO.Path.GetExtension(filename),
-                    //    AbsolutePath = System.IO.Path.GetDirectoryName(filename),
-                    //};
-                    //fileManager.AddFile(fileInfo);
                     GetFiles(filename);
-                    //dataListBoxFile.Items.Add(System.IO.Path.GetFileName(filename));
                 }
             }
         }

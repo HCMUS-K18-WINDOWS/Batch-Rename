@@ -48,18 +48,26 @@ namespace BatchRenameNew
         }
         public void CheckFile()
         {
-            foreach(var file2Check in this.FileList)
+            if(FileList.Count == 1)
             {
-                foreach (var file in this.FileList)
+                FileList[0].Status = "OK";
+            }
+            else
+            {
+                foreach (var file2Check in this.FileList)
                 {
-                    if (file2Check == file) continue;
-                    if (file2Check.NewName == file.NewName && file2Check.NewExtension == file.NewExtension
-                        && file2Check.AbsolutePath == file2Check.AbsolutePath)
+                    foreach (var file in this.FileList)
                     {
-                        file2Check.Status = "namesake";
-                    } else
-                    {
-                        file2Check.Status = "OK";
+                        if (file2Check == file) continue;
+                        if (file2Check.NewName == file.NewName && file2Check.NewExtension == file.NewExtension
+                            && file2Check.AbsolutePath == file2Check.AbsolutePath)
+                        {
+                            file2Check.Status = "namesake";
+                        }
+                        else
+                        {
+                            file2Check.Status = "OK";
+                        }
                     }
                 }
             }
