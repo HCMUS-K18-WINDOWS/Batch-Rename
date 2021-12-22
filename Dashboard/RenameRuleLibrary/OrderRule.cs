@@ -75,6 +75,7 @@ namespace BatchRename
             string oldName = original.NewName;
             string newName = oldName + count.ToString(padding);
             original.NewName = newName;
+            count++;
         }
     }
 }

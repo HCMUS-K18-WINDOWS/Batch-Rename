@@ -25,7 +25,14 @@ namespace BatchRename
 
         public object ParseRuleToFileObject(IRenameRule rule)
         {
-            throw new NotImplementedException();
+            var replaceRule = rule as ReplaceRule;
+            var obj = new
+            {
+                type = replaceRule?.Name,
+                req = replaceRule?.Needles,
+                value = replaceRule?.Replacer,
+            };
+            return obj;
         }
     }
 }

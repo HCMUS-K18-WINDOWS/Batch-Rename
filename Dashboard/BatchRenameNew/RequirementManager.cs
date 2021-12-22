@@ -78,7 +78,7 @@ namespace BatchRenameNew
                 else if (requirement.PossibleValues == null)
                 {
                     var textbox = new TextBox();
-                    var text = (string) content!;
+                    string text = content!.ToString();
                     textbox.Text = text;
                     _uiElementDic[requirement.Name] = textbox;
                     uiElement = textbox;

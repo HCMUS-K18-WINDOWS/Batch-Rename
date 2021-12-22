@@ -25,7 +25,14 @@ namespace RenameRuleLibrary
 
         public object ParseRuleToFileObject(IRenameRule rule)
         {
-            throw new NotImplementedException();
+            var charReplace = rule as ExtensionRule;
+            var obj = new
+            {
+                type = charReplace?.Name,
+                req = charReplace?.OldExtension,
+                value = charReplace?.NewExtension,
+            };
+            return obj;
         }
     }
 }

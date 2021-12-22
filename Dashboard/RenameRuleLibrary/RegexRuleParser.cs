@@ -19,7 +19,14 @@ namespace BatchRename
 
         public object ParseRuleToFileObject(IRenameRule rule)
         {
-            throw new System.NotImplementedException();
+            var regexRule = rule as RegexRule;
+            var obj = new
+            {
+                type = regexRule?.Name,
+                req = regexRule?.Pattern,
+                value = regexRule?.Value,
+            };
+            return obj;
         }
     }
 }

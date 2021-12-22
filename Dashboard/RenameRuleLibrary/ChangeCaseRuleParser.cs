@@ -18,7 +18,13 @@ namespace BatchRename
 
         public object ParseRuleToFileObject(IRenameRule rule)
         {
-            throw new System.NotImplementedException();
+            var changeCase = rule as ChangeCaseRule;
+            var obj = new
+            {
+                type = changeCase?.Name,
+                req = changeCase?.Type
+            };
+            return obj;
         }
     }
 }

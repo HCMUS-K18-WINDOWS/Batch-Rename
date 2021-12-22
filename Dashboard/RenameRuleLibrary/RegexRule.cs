@@ -71,7 +71,8 @@ namespace BatchRename
         public void Rename(FileInfo original)
         {
             string oldName = original.NewName;
-            string newName = Regex.Replace(oldName, Pattern, Value);
+            string pattern = @$"{Pattern}";
+            string newName = Regex.Replace(oldName, pattern, Value);
             original.NewName = newName;
         }
     }

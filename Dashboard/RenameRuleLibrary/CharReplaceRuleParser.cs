@@ -22,7 +22,14 @@ namespace BatchRename
 
         public object ParseRuleToFileObject(IRenameRule rule)
         {
-            throw new System.NotImplementedException();
+            var charReplace = rule as CharReplaceRule;
+            var obj = new
+            {
+                type = charReplace?.Name,
+                charbefore = charReplace?.CharBefore,
+                charafter = charReplace?.CharAfter,
+            };
+            return obj;
         }
     }
 }

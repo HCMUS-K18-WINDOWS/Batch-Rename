@@ -20,7 +20,14 @@ namespace BatchRename
 
         public object ParseRuleToFileObject(IRenameRule rule)
         {
-            throw new System.NotImplementedException();
+            var orderRule = rule as OrderRule;
+            var obj = new
+            {
+                type = orderRule?.Name,
+                start = orderRule?.StartValue,
+                digit = orderRule?.Padding,
+            };
+            return obj;
         }
     }
 }
