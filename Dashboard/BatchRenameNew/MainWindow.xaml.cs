@@ -236,7 +236,14 @@ namespace BatchRenameNew
         private void Rename_Click(object sender, RoutedEventArgs e)
         {
             fileManager.ApplyRule(Rules.ToList());
-            fileManager.BatchRename();
+            var errors = fileManager.BatchRename();
+            if (errors.Count == 0)
+            {
+                MessageBox.Show("Rename successful", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+            } else
+            {
+                MessageBox.Show(string.Join("\n", errors.ToArray()), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void SavePresetBtn_Click(object sender, RoutedEventArgs e)

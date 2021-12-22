@@ -75,6 +75,10 @@ namespace BatchRenameNew
             if (File.Exists(oldPath))
             {
                 var fullName = file.NewName + file.NewExtension;
+                if (fullName.Length > 255)
+                {
+                    return file.OldName + ": new name must not exceed 255 characters";
+                }
                 string newPath = Path.Combine(file.AbsolutePath, fullName);
                 try
                 {
