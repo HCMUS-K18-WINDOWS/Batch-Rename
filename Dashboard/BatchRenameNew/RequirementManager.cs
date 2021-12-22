@@ -138,8 +138,9 @@ namespace BatchRenameNew
             }
             return wrapper;
         }
-        public bool CheckText(string text)
+        public bool CheckString(RuleRequirement rule,string text)
         {
+            if (rule.Name == "Pattern") return true;
             MatchCollection matched = specialChar.Matches((string)text);
             if (matched.Count > 0)
             {
@@ -151,6 +152,17 @@ namespace BatchRenameNew
                 return true;
             }
         }
+
+        public bool CheckNumber(string text)
+        {
+            if(!Microsoft.VisualBasic.Information.IsNumeric(text))
+            {
+                MessageBox.Show("Use only numbers");
+                return false;
+            }
+            return true;
+        }
+
         public bool SetRule()
         {
             var backupRule = (IRenameRule) _renameRule?.Clone()!;
@@ -168,17 +180,24 @@ namespace BatchRenameNew
                     {
                         case RequirementType.String:
                             var text = ((TextBox)field).Text;
-                            if (!CheckText(text))
+                            if (!CheckString(requirement, text))
                             {
-                                _renameRule = backupRule;
                                 return false;
                             }
-                            _renameRule?.SetAttribute(requirement.Name, text);
+                            else
+                                _renameRule?.SetAttribute(requirement.Name, text);
                             break;
                         case RequirementType.Number:
                             if (((TextBox)field).Text.Equals("")) break;
-                            var number = int.Parse(((TextBox)field).Text);
-                            _renameRule?.SetAttribute(requirement.Name, number);
+                            if (!CheckNumber(((TextBox)field).Text))
+                            {
+                                return false;  
+                            }
+                            else
+                            {
+                                var number = int.Parse(((TextBox)field).Text);
+                                _renameRule?.SetAttribute(requirement.Name, number);
+                            }
                             break;
                     }
                 }
@@ -216,16 +235,24 @@ namespace BatchRenameNew
                     {
                         case RequirementType.String:
                             var text = ((TextBox)field).Text;
-                            if (!CheckText(text))
+                            if (!CheckString(requirement, text))
                             {
                                 return null;
                             }
-                            newRule.SetAttribute(requirement.Name, text);
+                            else
+                                newRule.SetAttribute(requirement.Name, text);
                             break;
                         case RequirementType.Number:
                             if (((TextBox)field).Text.Equals("")) break;
-                            var number = int.Parse(((TextBox)field).Text);
-                            newRule.SetAttribute(requirement.Name, number);
+                            if (!CheckNumber(((TextBox)field).Text))
+                            {
+                                return null;
+                            }
+                            else
+                            {
+                                var number = int.Parse(((TextBox)field).Text);
+                                newRule.SetAttribute(requirement.Name, number);
+                            }
                             break;
                     }
                 } else

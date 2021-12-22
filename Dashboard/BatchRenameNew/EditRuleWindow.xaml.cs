@@ -43,13 +43,15 @@ namespace BatchRenameNew
 
         private void CreateBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (_requirementManager.SetRule())
-            {
-                Close();
-            } else
-            {
-                MessageBox.Show("Invalid rule");
-            }
+            if(_requirementManager.SetRule())
+            MessageBox.Show("Edit successful");
+            //if (_requirementManager.SetRule())
+            //{
+            //    Close();
+            //} else
+            //{
+            //    MessageBox.Show("Invalid rule");
+            //}
         }
     }
 }
