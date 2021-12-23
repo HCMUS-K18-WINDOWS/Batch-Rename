@@ -14,7 +14,7 @@ namespace BatchRename
 
         public ChangeCaseRule()
         {
-            Type = "";
+            Type = "Capital";
         }
         public ChangeCaseRule(string type)
         {
@@ -53,6 +53,11 @@ namespace BatchRename
             switch (key)
             {
                 case "Type":
+                    //if ((string)value == null)
+                    //{
+                    //    Type = "Capital";
+                    //}
+                    //else Type = (string)value;
                     Type = (string)value;
                     return true;
                 default:

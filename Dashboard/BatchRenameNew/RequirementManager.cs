@@ -169,16 +169,22 @@ namespace BatchRenameNew
         public bool CheckString(RuleRequirement rule,string text)
         {
             if (rule.Name == "Pattern") return true;
-            MatchCollection matched = specialChar.Matches((string)text);
-            if (matched.Count > 0)
+            
+            if(rule.Name == "Type" && text == null)
             {
-                MessageBox.Show("Don't use special char include: \\ / : * ? \" < > |");
+                MessageBox.Show("Please choose Type");
                 return false;
             }
-            else
+            else 
             {
-                return true;
+                MatchCollection matched = specialChar.Matches((string)text);
+                if (matched.Count > 0)
+                {
+                    MessageBox.Show("Don't use special char include: \\ / : * ? \" < > |");
+                    return false;
+                }
             }
+            return true;
         }
         public bool CheckNumber(string text)
         {
@@ -234,6 +240,11 @@ namespace BatchRenameNew
                     {
                         case RequirementType.String:
                             var text = (string)((ComboBox)field).SelectedItem;
+                            if (!CheckString(requirement, text))
+                            {
+                                return false;
+                            }
+                            else
                             _renameRule?.SetAttribute(requirement.Name, text);
                             break;
                         case RequirementType.Number:
@@ -288,7 +299,12 @@ namespace BatchRenameNew
                     {
                         case RequirementType.String:
                             var text = (string)((ComboBox)field).SelectedItem;
-                            newRule.SetAttribute(requirement.Name, text);
+                            if (!CheckString(requirement, text))
+                            {
+                                return null;
+                            }
+                            else
+                                newRule.SetAttribute(requirement.Name, text);
                             break;
                         case RequirementType.Number:
                             var number = int.Parse((string)((ComboBox)field).SelectedItem);

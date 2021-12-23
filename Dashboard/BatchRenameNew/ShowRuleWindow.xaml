@@ -8,7 +8,7 @@
         Title="ShowRuleWindow" Height="374" Width="278" Loaded="Window_Loaded">
     <Canvas Background="Azure">
         <TextBlock FontWeight="Bold" FontSize="30" Text="RULE" FontFamily="Champagne &amp; Limousines" Canvas.Left="103" Canvas.Top="29"/>
-        <Label Content="Type" Canvas.Left="24" Canvas.Top="93"></Label>
+        <Label Content="Name" Canvas.Left="24" Canvas.Top="93"></Label>
         <Label Canvas.Left="78" Canvas.Top="93" Width="120" Content="{Binding Name}" Height="24"></Label>
         <Canvas x:Name="canvasField" Height="134" Width="230" Canvas.Top="139" Canvas.Left="24"/>
         <Button x:Name="OK" Content="OK" Canvas.Left="114" Canvas.Top="278" Click="OK_Click" />
