@@ -126,23 +126,21 @@
                     </Grid>
                 </Button>
 
-                <ListView Height="200" x:Name="RuleListView" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}">
+                <ListView Height="200" x:Name="RuleListView" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=1}">
                     <ListView.Resources>
                         <ContextMenu x:Key="taskContextMenu">
                             <MenuItem Header="Edit" Click="Edit_Click"></MenuItem>
                             <MenuItem Header="Delete" Click="Delete_Click"></MenuItem>
                         </ContextMenu>
                     </ListView.Resources>
+                    
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
+                            <EventSetter Event="MouseDoubleClick" Handler="listViewItem_MouseDoubleClick" />
                             <Setter Property="ContextMenu" Value="{StaticResource taskContextMenu}"></Setter>
                         </Style>
                     </ListView.ItemContainerStyle>
-                    <!--<ListView.View>
-                        <GridView>
-                            <GridViewColumn/>
-                        </GridView>
-                    </ListView.View>-->
+
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Name}" />

@@ -39,6 +39,10 @@ namespace BatchRename
                 case "camelCase":
                     original.NewName = ToCamelCase(original.NewName);
                     break;
+                case "PascalCase":
+                    var FirstLetter2 = char.ToUpper(original.NewName[0]);
+                    original.NewName = FirstLetter2 + ToCamelCase(original.NewName.Remove(0, 1));
+                    break;
                 default:
                     break;
             }
@@ -74,7 +78,7 @@ namespace BatchRename
 
         public RuleRequirement[] GetAllAttributesRequirement()
         {
-            var possibles = new string[] {"Upper", "Lower", "Capital", "camelCase"};
+            var possibles = new string[] {"Upper", "Lower", "Capital", "camelCase", "PascalCase" };
             var requirement = new RuleRequirement("Type", RequirementType.String)
             {
                 PossibleValues = possibles

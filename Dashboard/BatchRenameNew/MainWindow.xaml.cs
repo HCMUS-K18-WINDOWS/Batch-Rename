@@ -303,5 +303,13 @@ namespace BatchRenameNew
             var _rule = (IRenameRule)RuleListView.SelectedItem;
             Rules.Remove(_rule);
         }
+
+        private void listViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var index = RuleListView.SelectedIndex;
+            var _rule = Rules[index];
+            var screen = new ShowRuleWindow(_rule);
+            screen.ShowDialog();
+        }
     }
 }

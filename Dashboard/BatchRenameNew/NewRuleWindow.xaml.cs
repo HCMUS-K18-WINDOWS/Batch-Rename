@@ -58,6 +58,7 @@ namespace BatchRenameNew
             var newRule = _requirementManager.CreateRule();
             if (newRule != null)
             {
+                MessageBox.Show("Create successful");
                 MyEvent?.Invoke(newRule);
             }
         }

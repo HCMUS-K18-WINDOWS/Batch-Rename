@@ -16,6 +16,9 @@
     <Compile Update="SavePresetWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ShowRuleWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="EditRuleWindow.xaml">
@@ -28,6 +31,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SavePresetWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ShowRuleWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

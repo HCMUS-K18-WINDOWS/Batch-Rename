@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RenameRuleContract;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,48 +12,36 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using RenameRuleContract;
 
 namespace BatchRenameNew
 {
     /// <summary>
-    /// Interaction logic for EditRuleWindow.xaml
+    /// Interaction logic for ShowRuleWindow.xaml
     /// </summary>
-    public partial class EditRuleWindow : Window
+    public partial class ShowRuleWindow : Window
     {
         private IRenameRule _renameRule;
         private RequirementManager _requirementManager;
-        public EditRuleWindow()
+        public ShowRuleWindow()
         {
             InitializeComponent();
         }
 
-        public EditRuleWindow(IRenameRule rule)
+        public ShowRuleWindow(IRenameRule rule)
         {
             InitializeComponent();
             this._renameRule = rule;
             this._requirementManager = new RequirementManager(_renameRule);
             DataContext = rule;
         }
-
+        private void OK_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var panel = _requirementManager.BuildEditElement();
+            var panel = _requirementManager.BuildShowElement();
             canvasField.Children.Add(panel);
-        }
-
-        private void CreateBtn_Click(object sender, RoutedEventArgs e)
-        {
-            if(_requirementManager.SetRule())
-            MessageBox.Show("Edit successful");
-            Close();
-            //if (_requirementManager.SetRule())
-            //{
-            //    Close();
-            //} else
-            //{
-            //    MessageBox.Show("Invalid rule");
-            //}
         }
     }
 }

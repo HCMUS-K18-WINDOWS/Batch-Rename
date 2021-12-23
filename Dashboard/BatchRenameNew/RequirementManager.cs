@@ -51,6 +51,34 @@ namespace BatchRenameNew
             _renameRule = renameRule;
             RuleRequirements = renameRule.GetAllAttributesRequirement();
         }
+        public UIElement BuildShowElement()
+        {
+            _uiElementDic.Clear();
+            var wrapper = new StackPanel
+            {
+                Orientation = Orientation.Vertical
+            };
+            foreach (var requirement in this.RuleRequirements)
+            {
+                var reqS = new StackPanel();
+                UIElement uiElement;
+                var label = new Label
+                {
+                    Content = requirement.Name
+                };
+                var content = _renameRule?.GetAttribute(requirement.Name);
+                var _contentLabel = new Label();
+                string text = content!.ToString();
+                _contentLabel.Content = text;
+                _uiElementDic[requirement.Name] = _contentLabel;
+                uiElement = _contentLabel;
+                
+                reqS.Children.Add(label);
+                reqS.Children.Add(uiElement);
+                wrapper.Children.Add(reqS);
+            }
+            return wrapper;
+        }
         public UIElement BuildEditElement()
         {
             _uiElementDic.Clear();
@@ -152,7 +180,6 @@ namespace BatchRenameNew
                 return true;
             }
         }
-
         public bool CheckNumber(string text)
         {
             if(!Microsoft.VisualBasic.Information.IsNumeric(text))
