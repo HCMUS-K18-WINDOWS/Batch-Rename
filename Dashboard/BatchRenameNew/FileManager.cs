@@ -1,6 +1,7 @@
 ﻿using RenameRuleContract;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,11 +11,11 @@ namespace BatchRenameNew
 {
     public class FileManager
     {
-        public List<RenameRuleContract.FileInfo> FileList { get; set;}
+        public BindingList<RenameRuleContract.FileInfo> FileList { get; set;}
 
         public FileManager()
         {
-            FileList = new List<RenameRuleContract.FileInfo>();
+            FileList = new BindingList<RenameRuleContract.FileInfo>();
         }
         public void AddFile(RenameRuleContract.FileInfo file)
         {

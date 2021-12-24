@@ -14,5 +14,15 @@ namespace RenameRuleContract
         public string NewExtension { get; set; }
         public string AbsolutePath { get; set; }
         public string Status { get; set; }
+
+        public string GetFullOldNameString()
+        {
+            return OldName + OldExtension;
+        }
+
+        public string GetFullNewNameString()
+        {
+            return NewName + NewExtension;
+        }
     }
 }

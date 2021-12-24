@@ -69,12 +69,14 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Background="Azure">
                 <TextBlock FontSize="20" Text="File" Background="Aqua" TextAlignment="Center"></TextBlock>
-                <ListBox Drop="listBoxFiles_DragDrop" AllowDrop="True"
-                         Height="543"  ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Column="0" x:Name="dataListBoxFile"></ListBox>
+                <ListBox  Drop="listBoxFiles_DragDrop" AllowDrop="True"
+                         Height="543"  ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Column="0" x:Name="dataListBoxFile">
+                </ListBox>
             </StackPanel>
             <StackPanel Grid.Column="1" Background="#CCFFFF" Grid.ColumnSpan="2">
-                <TextBlock FontSize="20" Text="Folder" Background="#00FFCC" TextAlignment="Center"></TextBlock>
-                <ListBox Height="543"  ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Column="1" x:Name="dataListBoxFolder"></ListBox>
+                <TextBlock FontSize="20" Text="Preview" Background="#00FFCC" TextAlignment="Center"></TextBlock>
+                <ListBox Height="543"  ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Column="1" x:Name="dataListBoxFolder">
+                </ListBox>
             </StackPanel>
 
 
@@ -133,7 +135,7 @@
                             <MenuItem Header="Delete" Click="Delete_Click"></MenuItem>
                         </ContextMenu>
                     </ListView.Resources>
-                    
+
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
                             <EventSetter Event="MouseDoubleClick" Handler="listViewItem_MouseDoubleClick" />
@@ -148,6 +150,12 @@
                     </ListView.ItemTemplate>
                 </ListView>
 
+                <Button x:Name="PreviewBtn" Click="PreviewBtn_Click" Margin="10" Background="#66CCFF" BorderBrush="#003399">
+                    <Grid Width="150">
+                        <TextBlock HorizontalAlignment="Center" Text="Preview" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+
                 <Button x:Name="Rename" Click="Rename_Click" Margin="10" Background="#66CCFF" BorderBrush="#003399">
                     <Grid Width="150">
                         <TextBlock HorizontalAlignment="Center" Text="Rename" FontFamily="Champagne &amp; Limousines"/>
@@ -159,19 +167,7 @@
                         <TextBlock HorizontalAlignment="Center" Text="Save preset" FontFamily="Champagne &amp; Limousines"/>
                     </Grid>
                 </Button>
-
-                <Button Margin="10" Background="#66CCFF" BorderBrush="#003399">
-                    <Grid Width="150">
-                        <TextBlock HorizontalAlignment="Center" Text="Replace" FontFamily="Champagne &amp; Limousines"/>
-                    </Grid>
-                </Button>
-
-
             </StackPanel>
-
         </Grid>
-
-
-
     </Grid>
 </Window>

@@ -77,7 +77,7 @@ namespace BatchRenameNew
                     this.Width = config["size"]["width"].GetValue<double>();
                     this.Height = config["size"]["height"].GetValue<double>();
                     List<RenameRuleContract.FileInfo> files = JsonConvert.DeserializeObject<List<RenameRuleContract.FileInfo>>(config["files"].ToJsonString());
-                    fileManager.FileList = files;
+                    fileManager.FileList = new BindingList<RenameRuleContract.FileInfo>(files);
                     foreach(var file in files)
                     {
                         // Đang hiển thị tên cũ và k có extention của file khi load file trong file backup project.json
@@ -179,7 +179,7 @@ namespace BatchRenameNew
                 GetFiles((string)sPath);
 
                 //Lưu địa chỉ thư mục vào ListBox
-                dataListBoxFolder.Items.Add(sPath);
+                //dataListBoxFolder.Items.Add(sPath);
             }
         }
 
@@ -187,6 +187,7 @@ namespace BatchRenameNew
         {
             LoadPresetFolder();
             Backup();
+            //dataListBoxFolder.ItemsSource = fileManager.FileList;
         }
 
         private void LoadPresetFolder()
@@ -311,5 +312,17 @@ namespace BatchRenameNew
             var screen = new ShowRuleWindow(_rule);
             screen.ShowDialog();
         }
+
+        private void PreviewBtn_Click(object sender, RoutedEventArgs e)
+        {
+            dataListBoxFolder.Items.Clear();
+            fileManager.ApplyRule(Rules.ToList());
+            foreach(var file in fileManager.FileList)
+            {
+                dataListBoxFolder.Items.Add(file.GetFullNewNameString());
+            }
+        }
+
+        
     }
 }
