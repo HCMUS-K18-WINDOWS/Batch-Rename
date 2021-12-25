@@ -243,6 +243,10 @@ namespace BatchRenameNew
         private void Rename_Click(object sender, RoutedEventArgs e)
         {
             fileManager.ApplyRule(Rules.ToList());
+            if(fileManager.FileList.Count == 0)
+            {
+                return;
+            }
             var errors = fileManager.BatchRename();
             dataListBoxFile.Items.Clear();
             foreach(var file in fileManager.FileList)
@@ -317,6 +321,11 @@ namespace BatchRenameNew
         {
             var _rule = (IRenameRule)RuleListView.SelectedItem;
             Rules.Remove(_rule);
+        }
+
+        private void DeleteAllRule_Click(object sender, RoutedEventArgs e)
+        {
+            Rules.Clear();
         }
 
         private void listViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
