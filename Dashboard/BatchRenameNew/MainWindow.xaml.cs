@@ -156,7 +156,6 @@ namespace BatchRenameNew
                 }
             } else
             {
-                dataListBoxFile.Items.Add(System.IO.Path.GetFileName(directoryName));
                 var fileInfo = new RenameRuleContract.FileInfo()
                 {
                     OldName = System.IO.Path.GetFileNameWithoutExtension(directoryName),
@@ -165,7 +164,16 @@ namespace BatchRenameNew
                     NewExtension = System.IO.Path.GetExtension(directoryName),
                     AbsolutePath = System.IO.Path.GetDirectoryName(directoryName),
                 };
+                foreach(var file in fileManager.FileList)
+                {
+                    if(file.AbsolutePath == fileInfo.AbsolutePath && file.NewName == fileInfo.NewName)
+                    {
+                        MessageBox.Show($"File: {fileInfo.NewName} exist");
+                        return;
+                    }
+                }
                 fileManager.AddFile(fileInfo);
+                dataListBoxFile.Items.Add(System.IO.Path.GetFileName(directoryName));
             }
         }
 
