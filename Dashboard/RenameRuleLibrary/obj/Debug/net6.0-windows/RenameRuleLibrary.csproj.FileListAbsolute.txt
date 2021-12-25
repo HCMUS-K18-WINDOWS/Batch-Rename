@@ -13,18 +13,3 @@ E:\Code\Windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-window
 E:\Code\Windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\RenameRuleLibrary.dll
 E:\Code\Windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\ref\RenameRuleLibrary.dll
 E:\Code\Windows\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\RenameRuleLibrary.pdb
-D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleLibrary\bin\Debug\net6.0-windows\RenameRuleLibrary.deps.json
-D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleLibrary\bin\Debug\net6.0-windows\RenameRuleLibrary.dll
-D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleLibrary\bin\Debug\net6.0-windows\ref\RenameRuleLibrary.dll
-D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleLibrary\bin\Debug\net6.0-windows\RenameRuleLibrary.pdb
-D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleLibrary\bin\Debug\net6.0-windows\RenameRuleContract.dll
-D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleLibrary\bin\Debug\net6.0-windows\RenameRuleContract.pdb
-D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\RenameRuleLibrary.csproj.AssemblyReference.cache
-D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\RenameRuleLibrary.GeneratedMSBuildEditorConfig.editorconfig
-D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\RenameRuleLibrary.AssemblyInfoInputs.cache
-D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\RenameRuleLibrary.AssemblyInfo.cs
-D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\RenameRuleLibrary.csproj.CoreCompileInputs.cache
-D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\RenameRuleLibrary.csproj.CopyComplete
-D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\RenameRuleLibrary.dll
-D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\ref\RenameRuleLibrary.dll
-D:\HỌC\năm 4\học kì 1 - năm 4\Lập trình windows\BA1\Batch-Rename\Dashboard\RenameRuleLibrary\obj\Debug\net6.0-windows\RenameRuleLibrary.pdb

@@ -76,7 +76,7 @@ namespace BatchRenameNew
         private static string ApplyNewName(RenameRuleContract.FileInfo file)
         {
             if (file.Status != "OK") return file.OldName + ": namesake";
-            if ((file.NewName == file.NewExtension) && (file.OldExtension == file.NewExtension)) {
+            if ((file.NewName == file.OldName) && (file.OldExtension == file.NewExtension)) {
                 return file.OldName + ": no new name";
             }
             var oldFullName = file.OldName + file.OldExtension;
@@ -102,10 +102,13 @@ namespace BatchRenameNew
             }
             return file.OldName + ": does not exist";
         }
+
+
         private static string CopyToNewLocation(RenameRuleContract.FileInfo file, string newLocation)
         {
+
             if (file.Status != "OK") return file.OldName + ": namesake";
-            if ((file.NewName == file.NewExtension) && (file.OldExtension == file.NewExtension))
+            if ((file.NewName == file.OldName) && (file.OldExtension == file.NewExtension))
             {
                 return file.OldName + ": no new name";
             }

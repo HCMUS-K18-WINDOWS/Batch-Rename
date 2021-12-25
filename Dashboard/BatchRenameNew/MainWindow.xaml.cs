@@ -251,7 +251,7 @@ namespace BatchRenameNew
             dataListBoxFile.Items.Clear();
             foreach(var file in fileManager.FileList)
             {
-                dataListBoxFile.Items.Add(file.NewName.ToString());
+                dataListBoxFile.Items.Add(file.GetFullNewNameString());
             }
             if (errors.Count == 0)
             {
@@ -260,7 +260,6 @@ namespace BatchRenameNew
             {
                 MessageBox.Show(string.Join("\n", errors.ToArray()), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
         }
 
         private void SavePresetBtn_Click(object sender, RoutedEventArgs e)
@@ -346,6 +345,30 @@ namespace BatchRenameNew
             }
         }
 
-        
+        private void Copy_Click(object sender, RoutedEventArgs e)
+        {
+            WinForms.FolderBrowserDialog folderDialog = new WinForms.FolderBrowserDialog();
+            if (folderDialog.ShowDialog() == WinForms.DialogResult.OK)
+            {
+                //Lấy địa chỉ thư mục đã chọn
+                String sPath = folderDialog.SelectedPath;
+                fileManager.ApplyRule(Rules.ToList());
+                var errors = fileManager.BatchCopy(sPath);
+                if (errors.Count == 0)
+                {
+                    MessageBox.Show("Copy successful", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show(string.Join("\n", errors.ToArray()), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+        private void Clear_File_Click(object sender, RoutedEventArgs e)
+        {
+            fileManager.FileList.Clear();
+            dataListBoxFile.Items.Clear();
+        }
     }
 }

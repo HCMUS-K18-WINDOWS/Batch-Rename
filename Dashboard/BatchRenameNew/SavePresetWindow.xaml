@@ -6,14 +6,15 @@
         xmlns:local="clr-namespace:BatchRenameNew"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="BatchRenameNew.SavePresetWindow"
         mc:Ignorable="d"
-        Title="SavePresetWindow" Height="450" Width="800">
-    <Canvas>
+        Title="SavePresetWindow" Height="450" Width="477">
+    <Canvas Background="Azure">
 
-        <StackPanel Orientation="Horizontal" Canvas.Left="277" Canvas.Top="217">
+        <TextBlock FontWeight="Bold" FontSize="30" Text="SAVE PRESET" FontFamily="Champagne &amp; Limousines" Canvas.Left="146" Canvas.Top="101"/>
+        <StackPanel Orientation="Horizontal" Canvas.Left="116" Canvas.Top="204">
             <TextBlock Text="File name" Margin="5,5,5,5"/>
             <TextBox x:Name="FileNameTb" Canvas.Left="308" TextWrapping="Wrap" Canvas.Top="240" Width="184"/>
         </StackPanel>
-        <Button x:Name="SavePresetBtn" Click="SavePresetBtn_Click" Canvas.Left="369" Canvas.Top="267">
+        <Button x:Name="SavePresetBtn" Click="SavePresetBtn_Click" Canvas.Left="208" Canvas.Top="331">
             Save
         </Button>
     </Canvas>
