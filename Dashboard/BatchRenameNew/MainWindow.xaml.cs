@@ -236,6 +236,11 @@ namespace BatchRenameNew
         {
             fileManager.ApplyRule(Rules.ToList());
             var errors = fileManager.BatchRename();
+            dataListBoxFile.Items.Clear();
+            foreach(var file in fileManager.FileList)
+            {
+                dataListBoxFile.Items.Add(file.NewName.ToString());
+            }
             if (errors.Count == 0)
             {
                 MessageBox.Show("Rename successful", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -243,6 +248,7 @@ namespace BatchRenameNew
             {
                 MessageBox.Show(string.Join("\n", errors.ToArray()), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+
         }
 
         private void SavePresetBtn_Click(object sender, RoutedEventArgs e)
