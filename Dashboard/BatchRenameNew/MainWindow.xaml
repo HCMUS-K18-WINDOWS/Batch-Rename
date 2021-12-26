@@ -9,10 +9,11 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         xmlns:MetroChart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
         mc:Ignorable="d" Height="600" Width="1024" ResizeMode="CanResizeWithGrip" Top="100" Left="160" WindowStyle="None"
-        MinHeight="400" MinWidth="1024">
+        MinHeight="400" MinWidth="774">
 
     <Window.Resources>
-        <ResourceDictionary>
+        <local:IndexConverter x:Key="indexConverter"/>
+        <!--<ResourceDictionary>
             <Style x:Key="ScrollThumbs" TargetType="{x:Type Thumb}">
                 <Setter Property="Template">
                     <Setter.Value>
@@ -31,7 +32,7 @@
                     </Setter.Value>
                 </Setter>
             </Style>
-        </ResourceDictionary>
+        </ResourceDictionary>-->
     </Window.Resources>
 
 
@@ -46,7 +47,7 @@
         </Grid.RowDefinitions>
 
         <!--Tạo Taskbar-->
-        <Grid x:Name="GridBarraTitulo" Grid.ColumnSpan="2" Background="#33CCFF" MouseDown="GridBarraTitulo_MouseDown">
+        <Grid x:Name="GridBarraTitulo" Grid.Row="0" Grid.ColumnSpan="2" Background="#33CCFF" MouseDown="GridBarraTitulo_MouseDown">
             <!--Tạo các icon, lấy hình từ package đã import vào chương trình-->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0">
                 <Button x:Name="ButtonFechar" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonFechar_Click">
@@ -62,51 +63,37 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <DockPanel Grid.Column="0" Background="White">
-                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
-                    <Button Margin="5" Width="115" Click="PreviewBtn_Click" x:Name="Preview_File" Background="#33CCFF" BorderBrush="#003399">
-                        <Grid Width="150">
-                            <Label Foreground="White" HorizontalAlignment="Left" Content="Preview" FontFamily="Champagne &amp; Limousines" Margin="21,0,0,0"/>
-                            <materialDesign:PackIcon Height="24" Width="25" Kind="Search" VerticalAlignment="Center"/>
-                        </Grid>
-                    </Button>
-                    <Button Width="145" Click="Clear_File_Click" x:Name="Clear_File" Background="Red" BorderBrush="#003399">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <DockPanel Grid.ColumnSpan="2" Grid.Row="0" Background="Azure">
+                <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+                    <Button Margin="5" Width="103" Click="Clear_File_Click" x:Name="Clear_File" Background="Red" BorderBrush="#003399">
                         <Grid Width="150">
                             <Label Foreground="White" HorizontalAlignment="Left" Content="Clear All" FontFamily="Champagne &amp; Limousines" Margin="15,0,0,0"/>
                             <materialDesign:PackIcon Height="24" Width="25" Kind="Delete" VerticalAlignment="Center" Margin="-6,0,0,0"/>
                         </Grid>
                     </Button>
-
-                    <Button x:Name="SwitchBtn" Click="SwitchBtn_Click" Width="130" Background="#33ccff" BorderBrush="#003399" Margin="5, 0,0,0">
+                    <Button Width="115" Click="PreviewBtn_Click" x:Name="Preview_File" Background="#33CCFF" BorderBrush="#003399">
                         <Grid Width="150">
-                            <Label Foreground="White" HorizontalAlignment="Left" Content="Switch" FontFamily="Champagne &amp; Limousines" Margin="15,0,0,0"/>
-                            <materialDesign:PackIcon Height="24" Width="25" Kind="Reload" VerticalAlignment="Center" Margin="-6,0,0,0"/>
+                            <Label Foreground="White" HorizontalAlignment="Left" Content="Preview" FontFamily="Champagne &amp; Limousines" Margin="21,0,0,0"/>
+                            <materialDesign:PackIcon Height="24" Width="25" Kind="Search" VerticalAlignment="Center"/>
                         </Grid>
                     </Button>
-
+                    <Button x:Name="SwitchBtn" Click="SwitchBtn_Click" Background="#33ccff" BorderBrush="#003399" Margin="5, 0,0,0" Width="109">
+                        <Grid Width="150">
+                            <Label Foreground="White" HorizontalAlignment="Left" Content="Switch" FontFamily="Champagne &amp; Limousines" Margin="25,0,0,0"/>
+                            <materialDesign:PackIcon Height="24" Width="25" Kind="Reload" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Button>
                 </StackPanel>
-
-                <DockPanel Background="Aqua" DockPanel.Dock="Top">
-                    <Button Margin="0,0,3,0" DockPanel.Dock="Right" Click="UploadFolder_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Gold">
-                        <materialDesign:PackIcon Kind="Folder" Height="25" Width="25"/>
-                    </Button>
-                    <Button x:Name="UploadFileBtn" Margin="0,0,3,0" DockPanel.Dock="Right" Click="UploadFile_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="WhiteSmoke">
-                        <materialDesign:PackIcon  Kind="File" Height="25" Width="25"/>
-                    </Button>
-                    <TextBlock x:Name="PathHeader" FontSize="20" Text="File"  TextAlignment="Center"></TextBlock>
-                </DockPanel>
-
-
-                <ListBox DockPanel.Dock="Bottom" Background="Azure" Drop="listBoxFiles_DragDrop" AllowDrop="True"
-                         ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Column="0" x:Name="dataListBoxFile">
-                </ListBox>
-            </DockPanel>
-            <DockPanel Grid.Column="1" Background="White" Grid.ColumnSpan="2">
-                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right">
+                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Click="Copy_Click" Width="95"  x:Name="CopyBtn" Background="#33CCFF" BorderBrush="#003399">
                         <Grid Width="150">
-                            <Label Foreground="White" HorizontalAlignment="Left" Content="Copy" FontFamily="Champagne &amp; Limousines" Margin="21,0,0,0"/>
-                            <materialDesign:PackIcon Height="24" Width="25" Kind="ContentCopy"  VerticalAlignment="Center"/>
+                            <Label Foreground="White" HorizontalAlignment="Left" Content="Copy" FontFamily="Champagne &amp; Limousines" Margin="23,0,0,0"/>
+                            <materialDesign:PackIcon Height="24" Width="25" Kind="ContentCopy"  VerticalAlignment="Center" Margin="-2,0,0,0"/>
                         </Grid>
                     </Button>
                     <Button Margin="5" Click="Rename_Click" Width="110" x:Name="Rename" Background="#33CCFF" BorderBrush="#003399">
@@ -116,12 +103,53 @@
                         </Grid>
                     </Button>
                 </StackPanel>
-                <TextBlock DockPanel.Dock="Top" FontSize="20" Text="Preview" Background="#00FFCC" TextAlignment="Center"></TextBlock>
-                <ListBox DockPanel.Dock="Bottom" Background="#CCFFFF" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Column="1" x:Name="dataListBoxFolder">
-                </ListBox>
             </DockPanel>
 
+            <DockPanel Grid.Row="1" Grid.Column="0">
+                <DockPanel DockPanel.Dock="Top" Background="#00FFCC">
+                    <Button x:Name="UploadFileBtn" Margin="3,0,3,0" DockPanel.Dock="Left" Click="UploadFile_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="WhiteSmoke">
+                        <materialDesign:PackIcon  Kind="File" Height="25" Width="25"/>
+                    </Button>
+                    <Button Margin="0,0,3,0" Click="UploadFolder_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Gold">
+                        <materialDesign:PackIcon Kind="Folder" Height="25" Width="25"/>
+                    </Button>
+                    <TextBlock x:Name="PathHeader" FontSize="20" Text="File" TextAlignment="Left" Width="81"></TextBlock>
 
+                </DockPanel>
+                <Border BorderThickness="0,0,2,0" BorderBrush="Gray">
+                    <ListBox DockPanel.Dock="Bottom" Background="#CCFFFF" Drop="listBoxFiles_DragDrop" AllowDrop="True"
+                         ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Column="0" x:Name="dataListBoxFile">
+                        <ListBox.Resources>
+                            <ContextMenu x:Key="taskContextMenuFile">
+                                <MenuItem Header="Delete" Click="Delete_File_Click"></MenuItem>
+                            </ContextMenu>
+                        </ListBox.Resources>
+
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="ContextMenu" Value="{StaticResource taskContextMenuFile}"></Setter>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                    </ListBox>
+                </Border>
+
+            </DockPanel>
+
+            <DockPanel Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2">
+                <TextBlock DockPanel.Dock="Top" FontSize="20" Text="Preview" Background="#00FFCC" TextAlignment="Center"></TextBlock>
+                <ListBox DockPanel.Dock="Bottom" Background="#CCFFFF" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Column="1" x:Name="dataListBoxFolder">
+                    <ListBox.Resources>
+                        <ContextMenu x:Key="taskContextMenuPreview">
+                        </ContextMenu>
+                    </ListBox.Resources>
+
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="ContextMenu" Value="{StaticResource taskContextMenuPreview}"></Setter>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                </ListBox>
+            </DockPanel>
         </Grid>
 
         <!--Khu vực chứa các tùy chọn-->
@@ -170,7 +198,7 @@
                 <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
                     <Button x:Name="NewRuleBtn" Margin="10" Background="#66CCFF" BorderBrush="#003399" Click="NewRuleBtn_Click" >
                         <Grid Width="150">
-                            <Label HorizontalAlignment="Center" Content="New Rule" FontFamily="Champagne &amp; Limousines" Foreground="White"/>
+                            <Label HorizontalAlignment="Left" Content="New Rule" FontFamily="Champagne &amp; Limousines" Foreground="White" Margin="46,0,0,0"/>
                             <materialDesign:PackIcon Foreground="WhiteSmoke" Kind="ShapeSquarePlus" Height="24" Width="25" VerticalAlignment="Center" Margin="16,0,0,0"/>
                         </Grid>
                     </Button>
@@ -197,11 +225,22 @@
                         </Style>
                     </ListView.ItemContainerStyle>
 
-                    <ListView.ItemTemplate>
+                    <!--<ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Margin="10,5,5,5" Text="{Binding Name}" />
+                            <TextBlock Margin="10,5,5,5" Text="{Binding Name}"/>
                         </DataTemplate>
-                    </ListView.ItemTemplate>
+                    </ListView.ItemTemplate>-->
+
+                    <ListView.View>
+                        <GridView>
+                            <GridView.Columns>
+                                <GridViewColumn Header="No." DisplayMemberBinding="{Binding RelativeSource={RelativeSource FindAncestor, 
+                                         AncestorType={x:Type ListViewItem}}, Converter={StaticResource indexConverter}}"/>
+                                <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                            </GridView.Columns>
+                        </GridView>
+                    </ListView.View>
+
                 </ListView>
             </DockPanel>
         </Grid>

@@ -45,7 +45,12 @@
       "ProjectGuid": "3e19be9b-aaef-4d2c-9ce3-578af0246eac",
       "DisplayName": "RuleParserLibrary",
       "ColorIndex": 7
+    },
+    "64d4fa45-787e-46b7-b8ab-a77f698ff43a": {
+      "ProjectGuid": "64d4fa45-787e-46b7-b8ab-a77f698ff43a",
+      "DisplayName": "RuleLibrary2",
+      "ColorIndex": 8
     }
   },
-  "NextColorIndex": 8
+  "NextColorIndex": 9
 }

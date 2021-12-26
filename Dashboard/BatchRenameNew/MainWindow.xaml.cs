@@ -24,6 +24,7 @@ using Newtonsoft.Json;
 using System.Text.Encodings.Web;
 using System.Web;
 using System.Threading;
+using System.Globalization;
 
 namespace BatchRenameNew
 {
@@ -63,6 +64,7 @@ namespace BatchRenameNew
                 SaveLastTimeState();
             }
         }
+
 
         private void LoadProjectConfig()
         {
@@ -402,7 +404,7 @@ namespace BatchRenameNew
         private void DeleteAllRule_Click(object sender, RoutedEventArgs e)
         {
             
-            string message = "Are you sure to Delete All Rules?";
+            string message = "Are you sure to DELETE ALL RULES?";
             string caption = "Notification";
             WinForms.MessageBoxButtons buttons = WinForms.MessageBoxButtons.YesNo;
             WinForms.DialogResult result;
@@ -531,6 +533,19 @@ namespace BatchRenameNew
                 PathHeader.Text = "Folder";
                 isFileFeature = false;
             }
+        }
+
+        private void Delete_File_Click(object sender, RoutedEventArgs e)
+        {
+            var index = dataListBoxFile.SelectedIndex;
+            var _file = fileManager.FileList[index];
+            fileManager.FileList.Remove(_file);
+            dataListBoxFile.Items.Clear();
+            foreach(var file in fileManager.FileList.ToList())
+            {
+                dataListBoxFile.Items.Add(file.GetFullOldNameString());
+            }
+            
         }
     }
 }
