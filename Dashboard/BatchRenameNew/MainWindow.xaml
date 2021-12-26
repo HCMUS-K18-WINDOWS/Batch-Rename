@@ -56,6 +56,7 @@
         </Grid>
 
         <!--Khu vực hiển thị danh sách các file đã up-->
+
         <Grid Grid.Column="1" Grid.Row="1" Background="#FFCFCFCF">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
@@ -71,20 +72,28 @@
                     </Button>
                     <Button Width="145" Click="Clear_File_Click" x:Name="Clear_File" Background="Red" BorderBrush="#003399">
                         <Grid Width="150">
-                            <Label Foreground="White" HorizontalAlignment="Left" Content="Clear All Files" FontFamily="Champagne &amp; Limousines" Margin="15,0,0,0"/>
+                            <Label Foreground="White" HorizontalAlignment="Left" Content="Clear All" FontFamily="Champagne &amp; Limousines" Margin="15,0,0,0"/>
                             <materialDesign:PackIcon Height="24" Width="25" Kind="Delete" VerticalAlignment="Center" Margin="-6,0,0,0"/>
                         </Grid>
                     </Button>
+
+                    <Button x:Name="SwitchBtn" Click="SwitchBtn_Click" Width="130" Background="#33ccff" BorderBrush="#003399" Margin="5, 0,0,0">
+                        <Grid Width="150">
+                            <Label Foreground="White" HorizontalAlignment="Left" Content="Switch" FontFamily="Champagne &amp; Limousines" Margin="15,0,0,0"/>
+                            <materialDesign:PackIcon Height="24" Width="25" Kind="Reload" VerticalAlignment="Center" Margin="-6,0,0,0"/>
+                        </Grid>
+                    </Button>
+
                 </StackPanel>
 
                 <DockPanel Background="Aqua" DockPanel.Dock="Top">
                     <Button Margin="0,0,3,0" DockPanel.Dock="Right" Click="UploadFolder_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Gold">
                         <materialDesign:PackIcon Kind="Folder" Height="25" Width="25"/>
                     </Button>
-                    <Button Margin="0,0,3,0" DockPanel.Dock="Right" Click="UploadFile_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="WhiteSmoke">
+                    <Button x:Name="UploadFileBtn" Margin="0,0,3,0" DockPanel.Dock="Right" Click="UploadFile_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="WhiteSmoke">
                         <materialDesign:PackIcon  Kind="File" Height="25" Width="25"/>
                     </Button>
-                    <TextBlock FontSize="20" Text="File"  TextAlignment="Center"></TextBlock>
+                    <TextBlock x:Name="PathHeader" FontSize="20" Text="File"  TextAlignment="Center"></TextBlock>
                 </DockPanel>
 
 
@@ -94,7 +103,7 @@
             </DockPanel>
             <DockPanel Grid.Column="1" Background="White" Grid.ColumnSpan="2">
                 <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button Click="Copy_Click" Width="95"  x:Name="Copy" Background="#33CCFF" BorderBrush="#003399">
+                    <Button Click="Copy_Click" Width="95"  x:Name="CopyBtn" Background="#33CCFF" BorderBrush="#003399">
                         <Grid Width="150">
                             <Label Foreground="White" HorizontalAlignment="Left" Content="Copy" FontFamily="Champagne &amp; Limousines" Margin="21,0,0,0"/>
                             <materialDesign:PackIcon Height="24" Width="25" Kind="ContentCopy"  VerticalAlignment="Center"/>

@@ -37,7 +37,9 @@ namespace BatchRenameNew
         public BindingList<IRenameRule> Presets { get; set; }
         public BindingList<IRenameRule> Rules { get; set; }
         private FileManager fileManager = new();
-        public string LastChosenPreset { get; set; } 
+        private FileManager folderManager = new();
+        public string LastChosenPreset { get; set; }
+        private bool isFileFeature = true;
         public MainWindow()
         {
             InitializeComponent();
@@ -76,9 +78,18 @@ namespace BatchRenameNew
                     this.Top = config["position"]["y"].GetValue<double>();
                     this.Width = config["size"]["width"].GetValue<double>();
                     this.Height = config["size"]["height"].GetValue<double>();
+                    this.isFileFeature = config["is_file_feature"].GetValue<bool>();
                     List<RenameRuleContract.FileInfo> files = JsonConvert.DeserializeObject<List<RenameRuleContract.FileInfo>>(config["files"].ToJsonString());
-                    fileManager.FileList = new BindingList<RenameRuleContract.FileInfo>(files);
-                    foreach(var file in files)
+                    if (isFileFeature)
+                    {
+                        
+                        fileManager.FileList = new BindingList<RenameRuleContract.FileInfo>(files);
+                    } else
+                    {
+                        folderManager.FileList = new BindingList<RenameRuleContract.FileInfo>(files);
+
+                    }
+                    foreach (var file in files)
                     {
                         // Đang hiển thị tên cũ và k có extention của file khi load file trong file backup project.json
                         // => Khi đổi danh sách file thành bảng thì cần chỉnh lại dòng này!
@@ -86,7 +97,7 @@ namespace BatchRenameNew
                     }
                     JsonNode? rules = config["rules"];
                     int ruleLength = ((JsonArray)rules).Count;
-                    for(int i=0; i< ruleLength; i++)
+                    for (int i = 0; i < ruleLength; i++)
                     {
                         var parser = RuleParserManager.GetInstance().CreateRuleParser(rules[i]["type"].ToString());
                         var rule = parser.Parse(rules[i]);
@@ -145,6 +156,36 @@ namespace BatchRenameNew
             }
         }
 
+        private void GetFolder(string directoryName)
+        {
+            if (Directory.Exists(directoryName))
+            {
+                var fileNames = Directory.GetDirectories(directoryName);
+                foreach (var file in fileNames)
+                {
+                    GetFolder(file);
+                }
+                var fileInfo = new RenameRuleContract.FileInfo()
+                {
+                    OldName = System.IO.Path.GetFileNameWithoutExtension(directoryName),
+                    NewName = System.IO.Path.GetFileNameWithoutExtension(directoryName),
+                    OldExtension = "",
+                    NewExtension = "",
+                    AbsolutePath = System.IO.Path.GetDirectoryName(directoryName)
+                };
+                foreach (var file in folderManager.FileList)
+                {
+                    if (file.AbsolutePath == fileInfo.AbsolutePath && file.NewName == fileInfo.NewName)
+                    {
+                        MessageBox.Show($"Folder: {fileInfo.NewName} exist");
+                        return;
+                    }
+                }
+                folderManager.AddFile(fileInfo);
+                dataListBoxFile.Items.Add(fileInfo.GetFullOldNameString());
+            }    
+        }
+
         private void GetFiles(string directoryName)
         {
             if (Directory.Exists(directoryName))
@@ -184,10 +225,14 @@ namespace BatchRenameNew
             {
                 //Lấy địa chỉ thư mục đã chọn
                 String sPath = folderDialog.SelectedPath;
-                GetFiles((string)sPath);
+                if(isFileFeature)
+                {
 
-                //Lưu địa chỉ thư mục vào ListBox
-                //dataListBoxFolder.Items.Add(sPath);
+                GetFiles((string)sPath);
+                } else
+                {
+                    GetFolder(sPath);
+                }
             }
         }
 
@@ -242,24 +287,55 @@ namespace BatchRenameNew
 
         private void Rename_Click(object sender, RoutedEventArgs e)
         {
-            fileManager.ApplyRule(Rules.ToList());
-            if(fileManager.FileList.Count == 0)
+            if(isFileFeature)
             {
-                return;
-            }
-            var errors = fileManager.BatchRename();
-            dataListBoxFile.Items.Clear();
-            foreach(var file in fileManager.FileList)
-            {
-                dataListBoxFile.Items.Add(file.GetFullNewNameString());
-            }
-            if (errors.Count == 0)
-            {
-                MessageBox.Show("Rename successful", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                fileManager.ApplyRule(Rules.ToList());
+                if (fileManager.FileList.Count == 0)
+                {
+                    return;
+                }
+                var errors = fileManager.BatchRename();
+                dataListBoxFile.Items.Clear();
+                foreach (var file in fileManager.FileList)
+                {
+                    dataListBoxFile.Items.Add(file.GetFullNewNameString());
+                }
+                if (errors.Count == 0)
+                {
+                    MessageBox.Show("Rename successful", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show(string.Join("\n", errors.ToArray()), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             } else
             {
-                MessageBox.Show(string.Join("\n", errors.ToArray()), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                folderManager.ApplyRule(Rules.ToList());
+                if (folderManager.FileList.Count == 0)
+                {
+                    return;
+                }
+                var errors = folderManager.BatchRename();
+                dataListBoxFile.Items.Clear();
+                foreach (var file in folderManager.FileList)
+                {
+                    dataListBoxFile.Items.Add(file.GetFullNewNameString());
+                }
+                if (errors.Count == 0)
+                {
+                    MessageBox.Show("Rename successful", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    
+                }
+                else
+                {
+                    MessageBox.Show(string.Join("\n", errors.ToArray()), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                }
+                dataListBoxFolder.Items.Clear();
+                folderManager.FileList.Clear();
+                dataListBoxFile.Items.Clear();
             }
+            
         }
 
         private void SavePresetBtn_Click(object sender, RoutedEventArgs e)
@@ -289,7 +365,8 @@ namespace BatchRenameNew
                 position = new { x = this.Left, y = this.Top },
                 size = new { width = this.Width, height = this.Height },
                 last_chosen_preset = LastChosenPreset != null ? LastChosenPreset : "",
-                files = fileManager.FileList,
+                is_file_feature = isFileFeature,
+                files = isFileFeature ? fileManager.FileList : folderManager.FileList,
                 rules = listRules
             };
 
@@ -324,7 +401,20 @@ namespace BatchRenameNew
 
         private void DeleteAllRule_Click(object sender, RoutedEventArgs e)
         {
-            Rules.Clear();
+            
+            string message = "Are you sure to Delete All Rules?";
+            string caption = "Notification";
+            WinForms.MessageBoxButtons buttons = WinForms.MessageBoxButtons.YesNo;
+            WinForms.DialogResult result;
+            if(Rules.Count() == 0)
+            {
+                return;
+            }
+            result = WinForms.MessageBox.Show(message, caption, buttons);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                Rules.Clear();
+            }
         }
 
         private void listViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -338,11 +428,22 @@ namespace BatchRenameNew
         private void PreviewBtn_Click(object sender, RoutedEventArgs e)
         {
             dataListBoxFolder.Items.Clear();
-            fileManager.ApplyRule(Rules.ToList());
-            foreach(var file in fileManager.FileList)
+            if(isFileFeature)
             {
-                dataListBoxFolder.Items.Add(file.GetFullNewNameString());
+                fileManager.ApplyRule(Rules.ToList());
+                foreach (var file in fileManager.FileList)
+                {
+                    dataListBoxFolder.Items.Add(file.GetFullNewNameString());
+                }
+            } else
+            {
+                folderManager.ApplyRule(Rules.ToList());
+                foreach (var file in folderManager.FileList)
+                {
+                    dataListBoxFolder.Items.Add(file.GetFullNewNameString());
+                }
             }
+            
         }
 
         private void Copy_Click(object sender, RoutedEventArgs e)
@@ -367,8 +468,69 @@ namespace BatchRenameNew
 
         private void Clear_File_Click(object sender, RoutedEventArgs e)
         {
-            fileManager.FileList.Clear();
-            dataListBoxFile.Items.Clear();
+            string message = "Are you sure to DELETE ALL?";
+            string caption = "Notification";
+            WinForms.MessageBoxButtons buttons = WinForms.MessageBoxButtons.YesNo;
+            WinForms.DialogResult result;
+            if(isFileFeature)
+            {
+                if (fileManager.FileList.Count() == 0)
+                {
+                    return;
+                }
+                result = WinForms.MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    fileManager.FileList.Clear();
+                    dataListBoxFile.Items.Clear();
+                }
+            } else
+            {
+                if (folderManager.FileList.Count() == 0)
+                {
+                    return;
+                }
+                result = WinForms.MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    folderManager.FileList.Clear();
+                    dataListBoxFile.Items.Clear();
+                }
+            }
+            
+        }
+
+        private void SwitchBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if(!isFileFeature)
+            {
+                dataListBoxFile.Items.Clear();
+                if (fileManager.FileList.Count() > 0)
+                {
+                    foreach (var file in fileManager.FileList.ToList())
+                    {
+                        dataListBoxFile.Items.Add(file.GetFullOldNameString());
+                    }
+                }
+                UploadFileBtn.Visibility = Visibility.Visible;
+                CopyBtn.Visibility = Visibility.Visible;
+                PathHeader.Text = "File";
+                isFileFeature = true;
+            } else
+            {
+                dataListBoxFile.Items.Clear();
+                if(folderManager.FileList.Count() > 0)
+                {
+                    foreach(var folder in folderManager.FileList.ToList())
+                    {
+                        dataListBoxFile.Items.Add(folder.GetFullOldNameString());
+                    }
+                }
+                UploadFileBtn.Visibility = Visibility.Hidden;
+                CopyBtn.Visibility = Visibility.Hidden;
+                PathHeader.Text = "Folder";
+                isFileFeature = false;
+            }
         }
     }
 }

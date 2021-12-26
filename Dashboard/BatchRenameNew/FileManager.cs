@@ -99,6 +99,24 @@ namespace BatchRenameNew
                     return file.OldName + ": internal error";
                 }
                 return "";
+            } else if(Directory.Exists(oldPath))
+            {
+                var fullName = file.NewName + file.NewExtension;
+                if (fullName.Length > 255)
+                {
+                    return file.OldName + ": new name must not exceed 255 characters";
+                }
+                string newPath = Path.Combine(file.AbsolutePath, fullName);
+                try
+                {
+                    Directory.Move(oldPath, newPath);
+                }
+                catch (Exception ex)
+                {
+                    Console.Error.WriteLine(ex.ToString());
+                    return file.OldName + ": internal error";
+                }
+                return "";
             }
             return file.OldName + ": does not exist";
         }
@@ -128,8 +146,37 @@ namespace BatchRenameNew
                     return file.OldName + ": internal error";
                 }
                 return "";
+            } else if(Directory.Exists(oldPath))
+            {
+                var fullName = file.NewName + file.NewExtension;
+                string newPath = Path.Combine(newLocation, fullName);
+                try
+                {
+                    CopyFilesRecursively(oldPath, newPath);
+                }
+                catch (Exception ex)
+                {
+                    Console.Error.WriteLine(ex.ToString());
+                    return file.OldName + ": internal error";
+                }
+                return "";
             }
             return file.OldName + ": does not exist";
+        }
+
+        private static void CopyFilesRecursively(string sourcePath, string targetPath)
+        {
+            //Now Create all of the directories
+            foreach (string dirPath in Directory.GetDirectories(sourcePath, "*", SearchOption.AllDirectories))
+            {
+                Directory.CreateDirectory(dirPath.Replace(sourcePath, targetPath));
+            }
+
+            //Copy all the files & Replaces any files with the same name
+            foreach (string newPath in Directory.GetFiles(sourcePath, "*.*", SearchOption.AllDirectories))
+            {
+                File.Copy(newPath, newPath.Replace(sourcePath, targetPath), true);
+            }
         }
         public void ClearAllFile()
         {

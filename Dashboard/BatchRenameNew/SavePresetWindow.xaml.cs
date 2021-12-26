@@ -47,6 +47,12 @@ namespace BatchRenameNew
             string fileContentJson = JsonConvert.SerializeObject(fileContentObject, Formatting.Indented, config);
             string d = AppDomain.CurrentDomain.BaseDirectory;
             string fileName = FileNameTb.Text;
+            if(fileName.Equals(""))
+            {
+                MessageBox.Show($"Please enter filename!");
+                return;
+            }
+            fileName += ".json";
             string filePath = System.IO.Path.Combine(d, "Presets", fileName);
             if (!System.IO.File.Exists(filePath))
             {

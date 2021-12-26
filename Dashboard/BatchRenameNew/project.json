@@ -7,6 +7,7 @@
     "width": 1024.0,
     "height": 600.0
   },
+  "is_file_feature": true,
   "last_chosen_preset": "preset.json",
   "files": [
   ],
