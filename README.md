@@ -1,6 +1,6 @@
 # Batch Rename
 
-![alt text](https://i.imgur.com/uvWWhkj.png)
+![alt text](https://i.imgur.com/jffvwc4.jpg)
 
 # Mục lục
 
@@ -42,7 +42,7 @@
 | STT | Họ và tên       | Chức năng                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Đánh giá (h) |
 | --- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
 | 1   | Lê Quốc Đạt     | - Create a set of rules for renaming the files.<br> - Dynamically load all renaming rules from external DLL files. <br> - Storing parameters for renaming using XML file / JSON / excel / database. <br>- Save this set of rules into presets for quickly loading later if you need to reuse <br> - Last time state: When exiting the application, auto-save and load the <br> 1. The current size of the screen. <br>2. Current position of the screen. <br> 3. Last chosen preset. <br> - Autosave & load the current working condition to prevent sudden power loss <br> 1. The current file list <br> 2. The current set of renaming rules, together with the parameters <br> - Let the user see the preview of the result. | 35           |
-| 2   | Huỳnh Quang Nam | Create a set of rules for renaming the files.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| 2   | Huỳnh Quang Nam |- Select all files and folders you want to rename <br> - Create a set of rules for renaming the files: <br> 1. Each rule can be added from a menu <br> 2. Each rule's parameters can be edited <br> - Drag & Drop a file/folder to add to the list <br> - Checking exceptions when editing/creating rules <br> - Add option Edit/Delete for Rules <br> - Add option Delete for Files <br> - Setting function Delete All Rules/ Delete All Files <br> - Using regular expression <br> - Design UI                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | 30
 | 3   | Vũ Lê Tuấn      | - Apply the set of rules in numerical order to each file, make them have a new name. <br> - Edit rule. <br> - Adding recursively: just specify a folder only, the application will automatically scan and add all the files inside. <br> - Handle duplication. <br> - Using regular expression. <br> - Checking exceptions when editing rules. <br> - Create a copy of all the files and move them to a selected folder rather than perform the renaming on the original file. <br> - Rename folders. <br> - Dynamically create UIElement for rules creation and editing.                                                                                                                                                       | 30           |
 
 ## Kiến trúc và kỹ thuật
@@ -92,6 +92,10 @@
 
 - Thiết kế UI tùy biến theo kích thước.
 - Validate giá trị của rule parameter khi edit và create rule.
+- Dynamic create rule ui element.
+- Thêm chức năng Rename Folder
+- Thêm chức năng Delete Rule/File và Delete All Rules/Files
+- Ở trạng thái file, khi load Folder sẽ load toàn bộ File có trong Folder và Folder con
 
 ## Điểm tự đánh giá
 
@@ -101,3 +105,4 @@
 
 - Github: https://github.com/lequocdatfit/Batch-Rename
 - Video demo:
+

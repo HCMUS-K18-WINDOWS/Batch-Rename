@@ -72,11 +72,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\HỌC\\năm 4\\học kì 1 - năm 4\\Lập trình windows\\BA1\\Batch-Rename-master\\Batch-Rename-master\\Dashboard\\RenameRuleLibrary\\RenameRuleLibrary.csproj",
+      "projectUniqueName": "D:\\HỌC\\năm 4\\học kì 1 - năm 4\\Lập trình windows\\BA1\\Batch-Rename\\Dashboard\\RenameRuleLibrary\\RenameRuleLibrary.csproj",
       "projectName": "RenameRuleLibrary",
-      "projectPath": "D:\\HỌC\\năm 4\\học kì 1 - năm 4\\Lập trình windows\\BA1\\Batch-Rename-master\\Batch-Rename-master\\Dashboard\\RenameRuleLibrary\\RenameRuleLibrary.csproj",
+      "projectPath": "D:\\HỌC\\năm 4\\học kì 1 - năm 4\\Lập trình windows\\BA1\\Batch-Rename\\Dashboard\\RenameRuleLibrary\\RenameRuleLibrary.csproj",
       "packagesPath": "C:\\Users\\moonc\\.nuget\\packages\\",
-      "outputPath": "D:\\HỌC\\năm 4\\học kì 1 - năm 4\\Lập trình windows\\BA1\\Batch-Rename-master\\Batch-Rename-master\\Dashboard\\RenameRuleLibrary\\obj\\",
+      "outputPath": "D:\\HỌC\\năm 4\\học kì 1 - năm 4\\Lập trình windows\\BA1\\Batch-Rename\\Dashboard\\RenameRuleLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\moonc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -93,8 +93,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "D:\\HỌC\\năm 4\\học kì 1 - năm 4\\Lập trình windows\\BA1\\Batch-Rename-master\\Batch-Rename-master\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj": {
-              "projectPath": "D:\\HỌC\\năm 4\\học kì 1 - năm 4\\Lập trình windows\\BA1\\Batch-Rename-master\\Batch-Rename-master\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj"
+            "D:\\HỌC\\năm 4\\học kì 1 - năm 4\\Lập trình windows\\BA1\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj": {
+              "projectPath": "D:\\HỌC\\năm 4\\học kì 1 - năm 4\\Lập trình windows\\BA1\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj"
             }
           }
         }

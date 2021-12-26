@@ -138,9 +138,18 @@ namespace BatchRenameNew
         private void listBoxFiles_DragDrop(object sender, DragEventArgs e)
         {
             string[] directoryName = (string[])e.Data.GetData(DataFormats.FileDrop);
-            foreach (string file in directoryName)
+            if (isFileFeature)
             {
-                GetFiles(file);
+                foreach (string file in directoryName)
+                {
+                    GetFiles(file);
+                }
+            }
+            else {
+                foreach (string file in directoryName)
+                {
+                    GetFolder(file);
+                }
             }
             
         }
@@ -538,12 +547,26 @@ namespace BatchRenameNew
         private void Delete_File_Click(object sender, RoutedEventArgs e)
         {
             var index = dataListBoxFile.SelectedIndex;
-            var _file = fileManager.FileList[index];
-            fileManager.FileList.Remove(_file);
-            dataListBoxFile.Items.Clear();
-            foreach(var file in fileManager.FileList.ToList())
+
+            if (isFileFeature)
             {
-                dataListBoxFile.Items.Add(file.GetFullOldNameString());
+                var _file = fileManager.FileList[index];
+                fileManager.FileList.Remove(_file);
+                dataListBoxFile.Items.Clear();
+                foreach (var file in fileManager.FileList.ToList())
+                {
+                    dataListBoxFile.Items.Add(file.GetFullOldNameString());
+                }
+            }
+            else
+            {
+                var _file = folderManager.FileList[index];
+                folderManager.FileList.Remove(_file);
+                dataListBoxFile.Items.Clear();
+                foreach (var file in folderManager.FileList.ToList())
+                {
+                    dataListBoxFile.Items.Add(file.GetFullOldNameString());
+                }
             }
             
         }
