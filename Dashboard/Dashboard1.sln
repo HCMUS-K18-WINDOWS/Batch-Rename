@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RenameRuleLibrary", "Rename
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BatchRenameNew", "BatchRenameNew\BatchRenameNew.csproj", "{67430247-9EA9-4570-845B-0450AB3C49CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuleLibrary2", "RuleLibrary2\RuleLibrary2.csproj", "{64D4FA45-787E-46B7-B8AB-A77F698FF43A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{67430247-9EA9-4570-845B-0450AB3C49CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67430247-9EA9-4570-845B-0450AB3C49CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67430247-9EA9-4570-845B-0450AB3C49CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64D4FA45-787E-46B7-B8AB-A77F698FF43A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64D4FA45-787E-46B7-B8AB-A77F698FF43A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64D4FA45-787E-46B7-B8AB-A77F698FF43A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64D4FA45-787E-46B7-B8AB-A77F698FF43A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

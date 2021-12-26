@@ -56,6 +56,23 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
         ]
+      },
+      "RuleLibrary2/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "RenameRuleContract": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RuleLibrary2.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RuleLibrary2.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       }
     }
   },
@@ -158,6 +175,11 @@
       "type": "project",
       "path": "../RenameRuleContract/RenameRuleContract.csproj",
       "msbuildProject": "../RenameRuleContract/RenameRuleContract.csproj"
+    },
+    "RuleLibrary2/1.0.0": {
+      "type": "project",
+      "path": "../RuleLibrary2/RuleLibrary2.csproj",
+      "msbuildProject": "../RuleLibrary2/RuleLibrary2.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -166,7 +188,8 @@
       "MaterialDesignThemes >= 4.3.0",
       "ModernUICharts.WPF.Beta >= 0.9.1",
       "Newtonsoft.Json >= 13.0.1",
-      "RenameRuleContract >= 1.0.0"
+      "RenameRuleContract >= 1.0.0",
+      "RuleLibrary2 >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -198,6 +221,9 @@
           "projectReferences": {
             "D:\\windows\\Batch-Rename\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj": {
               "projectPath": "D:\\windows\\Batch-Rename\\Batch-Rename\\Dashboard\\RenameRuleContract\\RenameRuleContract.csproj"
+            },
+            "D:\\windows\\Batch-Rename\\Batch-Rename\\Dashboard\\RuleLibrary2\\RuleLibrary2.csproj": {
+              "projectPath": "D:\\windows\\Batch-Rename\\Batch-Rename\\Dashboard\\RuleLibrary2\\RuleLibrary2.csproj"
             }
           }
         }

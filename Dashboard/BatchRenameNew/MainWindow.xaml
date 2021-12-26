@@ -9,7 +9,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         xmlns:MetroChart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
         mc:Ignorable="d" Height="600" Width="1024" ResizeMode="CanResizeWithGrip" Top="100" Left="160" WindowStyle="None"
-        MinHeight="400" MinWidth="750">
+        MinHeight="400" MinWidth="1024">
 
     <Window.Resources>
         <ResourceDictionary>

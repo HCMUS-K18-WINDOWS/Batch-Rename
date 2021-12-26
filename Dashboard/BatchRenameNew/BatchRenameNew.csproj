@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RenameRuleContract\RenameRuleContract.csproj" />
+    <ProjectReference Include="..\RuleLibrary2\RuleLibrary2.csproj" />
   </ItemGroup>
 
   <ItemGroup>

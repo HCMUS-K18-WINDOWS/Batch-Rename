@@ -93,7 +93,7 @@ namespace BatchRenameNew
                     {
                         // Đang hiển thị tên cũ và k có extention của file khi load file trong file backup project.json
                         // => Khi đổi danh sách file thành bảng thì cần chỉnh lại dòng này!
-                        dataListBoxFile.Items.Add(file.OldName);
+                        dataListBoxFile.Items.Add(file.GetFullOldNameString());
                     }
                     JsonNode? rules = config["rules"];
                     int ruleLength = ((JsonArray)rules).Count;
@@ -160,11 +160,11 @@ namespace BatchRenameNew
         {
             if (Directory.Exists(directoryName))
             {
-                var fileNames = Directory.GetDirectories(directoryName);
-                foreach (var file in fileNames)
-                {
-                    GetFolder(file);
-                }
+                var fileNames = Directory.GetDirectories(directoryName, "*", SearchOption.TopDirectoryOnly);
+                //foreach (var file in fileNames)
+                //{
+                //    GetFolder(file);
+                //}
                 var fileInfo = new RenameRuleContract.FileInfo()
                 {
                     OldName = System.IO.Path.GetFileNameWithoutExtension(directoryName),

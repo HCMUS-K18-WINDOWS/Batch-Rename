@@ -1,44 +1,12 @@
 {
   "rules": [
     {
-      "type": "Replace",
-      "req": [ "input", "output" ],
-      "value": "something"
-    },
-    {
       "type": "AddPrefix",
       "value": "OOO"
     },
     {
-      "type": "Regex",
-      "req": "/a-zA-Z/",
-      "value": "something"
-    },
-    {
-      "type": "Order",
-      "start": 1,
-      "digit": 0
-    },
-    {
-      "type": "Extension",
-      "req": "txt",
-      "value": "md"
-    },
-    {
-      "type": "Trim"
-    },
-    {
-      "type": "CharReplace",
-      "charbefore": " ",
-      "charafter": "-"
-    },
-    {
       "type": "AddPostfix",
       "value": "YYY"
-    },
-    {
-      "type": "ChangeCase",
-      "req": "Upper"
     }
   ]
 }
