@@ -104,5 +104,5 @@
 ## Github and video demo
 
 - Github: https://github.com/lequocdatfit/Batch-Rename
-- Video demo: https://youtu.be/tB1ICt4ce2I
+- Video demo: https://youtu.be/3jLMRO_qmrk
 
