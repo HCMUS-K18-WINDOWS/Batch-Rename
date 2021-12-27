@@ -1,6 +1,6 @@
 # Batch Rename
 
-![alt text](https://i.imgur.com/jffvwc4.jpg)
+![alt text](https://i.imgur.com/BCCfSz3.png)
 
 # Mục lục
 
